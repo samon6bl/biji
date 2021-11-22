@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       de832d23-efee-4760-9f08-211debaaf3bb
+:END:
+#+title: 审计工作
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+
+* 与审计经理/合伙人的沟通
+1. 自己的位置
+2. 领导的作用
+3. 合伙人和经理的不同
+4. 沟通的重要性
+5. 有自己的特色
+* 与同级别同事的沟通
+1. 营造友善的气氛
+2. 明确各人的边界
+3. 树立可靠的口碑
+4. 注重长远的联系

@@ -1,0 +1,38 @@
+#+TITLE: Habit
+# * TODO 戒撸
+:PROPERTIES:
+:STYLE:    habit
+:LAST_REPEAT: [2021-07-22 四 14:08]
+:ID:       653de07e-b9b4-456c-863b-e8d303ef2ca7
+:END:
+[2021-07-24 六]
+- State "DONE"       from "HABT"       [2021-07-22 四 14:08]
+<2021-07-23 五 ++1d>
+* TODO 健康饮食
+:PROPERTIES:
+:STYLE:    habit
+:LAST_REPEAT: [2021-09-08 三 16:15]
+:ID:       331bf711-de6c-4d66-8217-f75dc7e478b3
+:END:
+- State "DONE"       from "TODO"       [2021-09-08 三 16:15]
+- State "DONE"       from "HABT"       [2021-09-02 四 22:49]
+- State "DONE"       from "TODO"       [2021-08-30 一 10:49]
+- State "DONE"       from "TODO"       [2021-08-14 六 22:34]
+- State "DONE"       from "TODO"       [2021-08-07 六 21:48]
+- State "DONE"       from "TODO"       [2021-07-25 日 19:20]
+- State "DONE"       from "TODO"       [2021-07-23 五 23:34]
+- State "DONE"       from "HABT"       [2021-07-22 四 14:08]
+
++ 禁止清单
+  - 反式脂肪酸 eg.甜品、奶茶、零食
+  - 糖油混合物 eg.油炸主食类：烤面包/印度飞饼
+  - 黑糖 eg.所有含白砂糖的食物/果汁
+<2021-09-09 四 ++1d>
+* TODO 跑步 30min
+:PROPERTIES:
+:STYLE:    habit
+:ID:       5e71b83d-5b4b-4749-af4e-605aadcda7cd
+:END:
+- Note taken on [2021-09-08 三 16:17] \\
+  从未开始。
+<2021-07-26 一17:00-18:00 ++1d>

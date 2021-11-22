@@ -1,0 +1,28 @@
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+* 星期五, 10 九月 2021
+** [[id:6fe167a9-a3a0-45f3-b4d0-dd76ceaaa322][English Program]]
+*** 比较级
+部分双音节词和全部的多音节词的比较级为
+more/less + adj./adv.(原形)
+ps：双音节的形容词变比较级是在前面加 more 的有
+careful 认真的
+useful 有用的
+robust 强壮的
+secret 秘密的
+famous 著名的
+careless 粗心的
+honest 诚实的
+boring 无聊的
+healthy 健康的
+** [[id:f87feaf1-5f1c-46c9-a647-4289129d698e][English vocabulary]]
+*** cling
+vi. 粘紧, 附着, 紧贴, 坚持
+相关词组:
+  cling to the hope that...
+  cling to one's own view
+*** way more than
+远远超过

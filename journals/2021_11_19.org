@@ -1,0 +1,12 @@
+* DOING D收入#审计底稿
+:LOGBOOK:
+CLOCK: [2021-11-19 Fri 10:24:12]
+:END:
+** DOING 应收票据
+:LOGBOOK:
+CLOCK: [2021-11-19 Fri 10:24:13]
+:END:
+** TODO 应收账款
+** TODO 预收账款
+** TODO 主营业务收入
+*

@@ -1,0 +1,81 @@
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+* 星期二, 17 八月 2021
+** 财务成本管理计算题
+*** 售后回租 :ATTACH:
+:PROPERTIES:
+:ID:       63c65236-790d-400b-8d22-7714587ff193
+:END:
+[[attachment:_20210817_143901screenshot.png]]
+*** 可转债与认股权证 :ATTACH:
+:PROPERTIES:
+:ID:       b9806114-e4f4-4ba8-930c-9a80f8c87225
+:END:
+
+[[attachment:_20210817_144044screenshot.png]]
+*** 短期借款 :ATTACH:
+:PROPERTIES:
+:ID:       ec3ff807-6ba4-4d90-9f0b-ede1500253df
+:END:
+[[attachment:_20210817_144502screenshot.png]]
+*** 保本分析 :ATTACH:
+:PROPERTIES:
+:ID:       5a096b8a-cc96-48fc-8b36-7e3c39fee7dc
+:END:
+[[attachment:_20210817_144714screenshot.png]]
+[[attachment:_20210817_145003screenshot.png]]
+
+*** 保利分析 :ATTACH:
+:PROPERTIES:
+:ID:       e9add8b5-bfe8-48ff-a8e2-99c8bb981e68
+:END:
+
+[[attachment:_20210817_144918screenshot.png]]
+
+*** 市场型内部转移价格的分类
+
+[[download:_20210817_150539screenshot.png]]
+
+*** 投资中心考核指标
+1. $部门投资报酬率 = \frac{部门税前经营利润}{部门平均净经营资产}$
+2. $剩余收益 =部门税前经营利润 - 部门平均净经营资产\times 要求的报酬率$
+
+*** 四种经济增加值
+
+[[download:_20210817_151339screenshot.png]]
+[[download:_20210817_151425screenshot.png]]
+
+**** 披露的经济增加值
+[[download:_20210817_151519screenshot.png]]
+
+**** 简化的经济增加值
+
+#ATTR_foo: :width 100px
+[[download:_20210817_151718screenshot.png]]
+*** 折旧的计算
+[[download:_20210817_181723screenshot.png]]
+*** 配股权价值
+(除权参考价 - 配股价格)/所需股份数量
+*** 易变现率
+$\frac{所有者权益 + 长期负债 + 短期经营性负债 - 长期资产资产}{经营性流动资产}$
+*** 边际贡献
+$Q\times (P - C_{变动})$
+*** 完全成本法与变动成本法
+完全成本法 = 变动成本 + 制造费用
+变动成本法 = 变动成本 + 变动制造费用
+** [[id:88beadec-77d3-4d11-8411-f54fa26e8b8a][财务管理计算题]] :Notes:
+** 简化的经济增加值 :Notes:
+$经济增加值 = 税后净营业利润 - 调整后的资本 \times 平均资本成本率$
+1. 税后净营业利润 = 净利润 + (利息支出 + 研究发开费用调整项) \times (1-25%)
+2. 调整后资本 = 平均所有者权益 + 平均带息负债 - 平均在建工程
+3. 平均资本成本率 = 债券(税前)资本成本率 \times 平均带息负债/(平均带息负债+平均所有者权益) \times (1-25%)
+[[download:_20210817_225057screenshot.png]]
+** 披露的经济增加值 :Notes:
++ 资本化项目
+  1. 研究与开发费用
+  2. 战略性投资的利息
+  3. 对于为建立品牌、进入新市场或扩大市场份额发生的费用
++ 折旧费用
+  直线折旧法 --> =沉淀资金折旧法(前期少，后期多)

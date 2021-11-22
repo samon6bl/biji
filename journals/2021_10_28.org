@@ -1,0 +1,5 @@
+* DOING [#A] ds
+:LOGBOOK:
+CLOCK: [2021-11-14 Sun 23:21]
+:END:
+*

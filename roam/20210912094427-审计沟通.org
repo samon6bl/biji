@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       39cd8905-c55f-44cd-850b-7dd5a129279b
+:END:
+#+title: 审计沟通
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }

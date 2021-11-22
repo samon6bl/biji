@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       2c056809-2941-48c9-ad6f-7e8142492ae3
+:END:
+#+title: 税法
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+* 学习方法
+#+DOWNLOADED: screenshot @ 2021-09-08 16:54:26
+[[file:images/20210908-165426_screenshot.png]]
+#+DOWNLOADED: screenshot @ 2021-09-08 16:55:03
+[[file:images/20210908-165503_screenshot.png]]

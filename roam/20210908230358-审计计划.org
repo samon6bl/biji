@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       53874717-9cff-49d5-8c1c-d0e398daa2d3
+:END:
+#+title: 审计计划
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+* 具体审计计划
+** 风险评估
+了解 6 个方面(包括内控，必须做)
+** 风险应对
+1. 控制测试(可不做)
+2. 实质性程序(必须做)
+
+多控 + 少实 = 综合性方案
+少控/不控 + 多实 = 实质性方案
+

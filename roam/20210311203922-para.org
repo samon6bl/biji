@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f3826341-462f-4d95-b040-d7e715f4e1dd
+:END:
+#+title: PARA
+* Introduction
+- [[https://pic3.zhimg.com/80/v2-fce42f74d346cefaa17e91012d36bc96_720w.jpg]]
+* 好处
+- 有利于我们实行长期主义
+- Projects, Areas, Resources, Archives 的关联关系

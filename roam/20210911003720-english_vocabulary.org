@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f87feaf1-5f1c-46c9-a647-4289129d698e
+:END:
+#+title: English vocabulary
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }

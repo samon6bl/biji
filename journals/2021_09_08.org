@@ -1,0 +1,10 @@
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+* 星期三, 08 九月 2021
+** [[id:6dd58d6e-c10c-4017-b00b-4dc59daa52f2][审计抽样方法]]
+*** 常见的职责分离
+#+DOWNLOADED: screenshot @ 2021-09-09 00:00:26
+[[file:images/20210909-000026_screenshot.png]]

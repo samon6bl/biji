@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       3d886770-f166-4d4a-935d-9e7972642397
+:END:
+#+title: 审计报告
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }

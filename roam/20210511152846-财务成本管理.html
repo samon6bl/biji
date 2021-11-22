@@ -1,0 +1,5890 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-08-02 一 21:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>财务成本管理</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Bolun Liu" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://gongzhitaao.org/orgcss/org.css"/>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">财务成本管理</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb50cfda">1. 财务成本管理基本原理</a>
+<ul>
+<li><a href="#orgfb396d2">1.1. 企业的组织形式</a></li>
+<li><a href="#org4fd7cea">1.2. 财务管理的主要内容</a></li>
+<li><a href="#orgdf944c4">1.3. 财务管理的目标</a></li>
+<li><a href="#org2f7abf3">1.4. 金融工具与金融市场</a></li>
+</ul>
+</li>
+<li><a href="#org279457b">2. 财务报表分析和财务预测</a>
+<ul>
+<li><a href="#org67827ff">2.1. 财务报表分析方法</a></li>
+<li><a href="#org592aeef">2.2. 财务比率分析</a></li>
+<li><a href="#org430a421">2.3. 财务预测的步骤和方法</a></li>
+<li><a href="#org1102c89">2.4. <span class="priority">[A]</span> 增长率与资本需求的测算</a></li>
+</ul>
+</li>
+<li><a href="#orgfae7eb5">3. 价值评估基础</a>
+<ul>
+<li><a href="#org2ea5992">3.1. 利率</a></li>
+<li><a href="#orgecb5547">3.2. 货币时间价值</a></li>
+<li><a href="#org8a4070e">3.3. 风险与报酬</a></li>
+</ul>
+</li>
+<li><a href="#org435ea28">4. 资本成本</a>
+<ul>
+<li><a href="#org70d813e">4.1. 资本成本的影响因素</a></li>
+<li><a href="#org15fbf09">4.2. 债务资本成本</a></li>
+<li><a href="#org3c6be6f">4.3. 普通股资本成本的估计</a></li>
+<li><a href="#orgb1195a5">4.4. 混合筹资资本成本的估计</a></li>
+<li><a href="#org35e1955">4.5. 加权平均资本成本的计算</a></li>
+</ul>
+</li>
+<li><a href="#orgb2ecf4a">5. 投资项目资本预算</a>
+<ul>
+<li><a href="#orgfd72af7">5.1. 投资项目的评价方法</a></li>
+<li><a href="#org0175414">5.2. 互斥项目的优选问题</a></li>
+<li><a href="#org79d7fce">5.3. 投资项目折现率的估计</a></li>
+<li><a href="#org34035fc">5.4. 投资项目的敏感分析</a></li>
+</ul>
+</li>
+<li><a href="#orgb880df1">6. 债券、股票价值评估</a>
+<ul>
+<li><a href="#orgefa5eab">6.1. 债券价值评估</a></li>
+<li><a href="#orga51578e">6.2. 股票价值评估</a></li>
+</ul>
+</li>
+<li><a href="#org434fcb1">7. 期权价值评估</a>
+<ul>
+<li><a href="#orgb40a668">7.1. 期权投资策略</a></li>
+<li><a href="#org32dde13">7.2. 影响期权价值的主要因素</a></li>
+<li><a href="#org7b7c558">7.3. 金融期权价值的评估方法</a></li>
+</ul>
+</li>
+<li><a href="#org2fc32cd">8. 企业价值评估</a>
+<ul>
+<li><a href="#org0cfd85a">8.1. 企业价值的评估对象</a></li>
+<li><a href="#org1f8c63e">8.2. 企业价值评估方法</a></li>
+</ul>
+</li>
+<li><a href="#orgbbcb253">9. 资本结构</a>
+<ul>
+<li><a href="#orgb099f12">9.1. 资本结构的 MM 理论</a></li>
+<li><a href="#orgf9a4f4c">9.2. 资本结构决策的分析方法</a></li>
+<li><a href="#org1f9c57a">9.3. 杠杆系数的衡量</a></li>
+</ul>
+</li>
+<li><a href="#orgfb44b77">10. 长期筹资</a>
+<ul>
+<li><a href="#org5ef33f8">10.1. 长期债务筹资</a></li>
+<li><a href="#org2860fa5">10.2. 普通股筹资</a></li>
+<li><a href="#org51ad52e">10.3. 混合筹资</a></li>
+<li><a href="#org4cc56b7">10.4. 租赁筹资</a></li>
+</ul>
+</li>
+<li><a href="#orgd41e14b">11. 股利分配、股票分割与股票回购</a>
+<ul>
+<li><a href="#org9fec39f">11.1. 股利理论</a></li>
+</ul>
+</li>
+<li><a href="#orga470f21">12. 营运资本管理</a>
+<ul>
+<li><a href="#orgcd1f2ee">12.1. 营运资本管理策略</a></li>
+<li><a href="#org10760c0">12.2. 营运资本筹资策略</a></li>
+<li><a href="#orgc385f49">12.3. 最佳现金持有量分析</a></li>
+<li><a href="#orgb050b09">12.4. 应收款项管理</a></li>
+<li><a href="#org995fc47">12.5. 存货管理</a></li>
+<li><a href="#org6eecc47">12.6. 短期债务管理</a></li>
+</ul>
+</li>
+<li><a href="#orgb291b19">13. 产品成本计算</a>
+<ul>
+<li><a href="#org2fba222">13.1. 产品成本与期间成本</a></li>
+<li><a href="#orgc7db0bc">13.2. 间接费用的归集和分配</a></li>
+<li><a href="#org759b0a2">13.3. 完工产品在产品的成本分配</a></li>
+<li><a href="#org526c61d">13.4. 产品成本计算的基本方法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ATTACH">ATTACH</span></span></a></li>
+</ul>
+</li>
+<li><a href="#orgcd187c4">14. 标准成本法</a>
+<ul>
+<li><a href="#org720ef98">14.1. 标准成本及其制定</a></li>
+<li><a href="#org3af40f6">14.2. 标准成本的差异分析</a></li>
+</ul>
+</li>
+<li><a href="#org71bf2fb">15. 作业成本法</a>
+<ul>
+<li><a href="#orgc6f1e36">15.1. 作业成本法的概念和特点</a></li>
+<li><a href="#org5dd6f91">15.2. 作业成本计算</a></li>
+<li><a href="#org817b6a7">15.3. 作业成本管理</a></li>
+</ul>
+</li>
+<li><a href="#orgd251987">16. 本量利分析</a>
+<ul>
+<li><a href="#orgb6878f7">16.1. 本量利的一般关系</a></li>
+<li><a href="#org31130e6">16.2. 保本分析</a></li>
+<li><a href="#org2894450">16.3. 保利分析</a></li>
+<li><a href="#org7ad5eeb">16.4. 利润敏感分析</a></li>
+</ul>
+</li>
+<li><a href="#orgd9d2c43">17. 短期经营决策</a>
+<ul>
+<li><a href="#org2ad33ed">17.1. 短期经营决策的概述</a></li>
+<li><a href="#orgdd44d26">17.2. 生产决策</a></li>
+<li><a href="#orga31cfa9">17.3. 定价决策</a></li>
+</ul>
+</li>
+<li><a href="#org4ada976">18. 全面预算</a>
+<ul>
+<li><a href="#org9375838">18.1. 全面预算的概述</a></li>
+<li><a href="#org02efa46">18.2. 全面预算的编制方法</a></li>
+<li><a href="#org99933a4">18.3. 营业预算的编制</a></li>
+<li><a href="#orgfd06eb4">18.4. 财务预算的编制</a></li>
+</ul>
+</li>
+<li><a href="#orga46df66">19. 责任会计</a>
+<ul>
+<li><a href="#org81bb3fc">19.1. 企业组织结构与责任中心划分</a></li>
+<li><a href="#org3fbd452">19.2. 成本中心</a></li>
+<li><a href="#org3b72b60">19.3. 利润中心</a></li>
+<li><a href="#org1a70ba4">19.4. 投资中心</a></li>
+<li><a href="#org007e21e">19.5. 责任中心业绩报告</a></li>
+</ul>
+</li>
+<li><a href="#org4373d22">20. 业绩评价</a>
+<ul>
+<li><a href="#org3bad1b2">20.1. 财务业绩评价与非财务业绩评价</a></li>
+<li><a href="#orgfe4060a">20.2. 关键业绩指标法</a></li>
+<li><a href="#orge7c6b6c">20.3. 经济增加值</a></li>
+<li><a href="#orgaf1cda3">20.4. 平衡计分卡</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb50cfda" class="outline-2">
+<h2 id="orgb50cfda"><span class="section-number-2">1</span> 财务成本管理基本原理</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgfb396d2" class="outline-3">
+<h3 id="orgfb396d2"><span class="section-number-3">1.1</span> 企业的组织形式</h3>
+<div class="outline-text-3" id="text-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">比较项目</th>
+<th scope="col" class="org-left">个人独资企业</th>
+<th scope="col" class="org-left">合伙企业</th>
+<th scope="col" class="org-left">公司制企业</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">投资人承担的责任</td>
+<td class="org-left">无限债务责任</td>
+<td class="org-left">1. (1)普通合伙企业：无线、连带责任</td>
+<td class="org-left">有限债务责任</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">(2)有限合伙企业：无限+有限</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">(3)特殊普通合伙企业：1.故意或者重大过失人：无限+其他有限；</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">2. 非故意或重大过失，全体合伙人：无限连带责任</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">组建成本</td>
+<td class="org-left">低</td>
+<td class="org-left">居中</td>
+<td class="org-left">高</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org4fd7cea" class="outline-3">
+<h3 id="org4fd7cea"><span class="section-number-3">1.2</span> 财务管理的主要内容</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<code>财务管理所谈的长期投资的特征</code> 投资的对象为 <code>经营性长期资产</code> 。包括对 <code>子公司</code> 、 <code>合营企业</code> 、 <code>联营企业</code> 的长期股权投资。
+<span class="underline">净现值原则</span>
+</p>
+</div>
+</div>
+<div id="outline-container-orgdf944c4" class="outline-3">
+<h3 id="orgdf944c4"><span class="section-number-3">1.3</span> 财务管理的目标</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+本书观点---<code>股东财富最大化目标</code>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">财务管理的目标</th>
+<th scope="col" class="org-left">未考虑因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">利润最大化</td>
+<td class="org-left">风险、利润取得的时间、投入资本与利润的关系</td>
+</tr>
+
+<tr>
+<td class="org-left">每股收益最大化</td>
+<td class="org-left">风险、利润取得的时间</td>
+</tr>
+
+<tr>
+<td class="org-left">股东财富最大化</td>
+<td class="org-left">股东投资资本不变，股价最大化 = 股东财富最大化</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>经营者的利益要求与协调
+<ul class="org-ul">
+<li>表现
+<ul class="org-ul">
+<li>道德风险</li>
+<li>逆向选择-措施</li>
+</ul></li>
+<li>措施
+<ul class="org-ul">
+<li>监督</li>
+<li>激励</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>
+<span class="underline">监督成本</span>、_激励成本<span class="underline">、</span>偏离股东目标的损失_三者之和最小
+</p>
+<ul class="org-ul">
+<li>债权人的利益相关要求
+<ul class="org-ul">
+<li>表现
+<ul class="org-ul">
+<li>投资于比债权人预期<code>风险更高</code>的新项目</li>
+<li>发行新债</li>
+</ul></li>
+<li>协调办法
+<ul class="org-ul">
+<li>限制性条款</li>
+<li>如有损害利益意图，不再提供新的贷款或提前收回贷款。</li>
+</ul></li>
+</ul></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">类型</th>
+<th scope="col" class="org-left">协调</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">合同利益相关者</td>
+<td class="org-left">(1) <code>遵守合同</code>  就可以 <code>基本满足</code> 合同利益相关者的要求</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">(2) <code>遵守到的规范的约束</code></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">非合同利益相关者</td>
+<td class="org-left">享受的法律保护低于合同利益相关者，受公司的社会责任政策的影响很大</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>
+主张股东财富最大化并非忽略其他相关者利益。股东权益是<code>剩余权益</code>，只有在满足了其他方面的利益之后才会有股东的利益。公司必须交税、给员工发工资等，才能获得税后收益。
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org2f7abf3" class="outline-3">
+<h3 id="org2f7abf3"><span class="section-number-3">1.4</span> 金融工具与金融市场</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+固定收益证券：固定利率债券、浮动利率债券、<code>优先股</code> 、 <code>永续债</code> 。
+<code>可转换债券</code> 属于 <code>衍生证券</code>
+</p>
+<ul class="org-ul">
+<li><p>
+有效资本市场的含义
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">市场有效的含义</td>
+<td class="org-left"><code>价格</code> 能够 <code>同步地（迅速性）、完全地（完整性）</code> 反映全部可用的 <code>信息</code></td>
+</tr>
+
+<tr>
+<td class="org-left">外部标志</td>
+<td class="org-left">(1) <code>信息</code> 充分、均匀披露： <code>信息</code> 能够充分披露和均匀分布，每个投资者在同一时间内得到 <code>等量等质</code> 的信息</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">(2) <code>价格</code> 迅速反映： <code>价格</code> 能 <code>迅速</code> 地根据有关信息变动，不会出现没有反应或反应迟钝</td>
+</tr>
+</tbody>
+</table></li>
+<li>资本市场有效的基础条件
+<ul class="org-ul">
+<li>理性的投资人</li>
+<li>独立的理性偏差</li>
+<li>套利</li>
+</ul></li>
+</ul>
+<p>
+注：三个条件只要有一个存在，资本市场就会是有效的。
+</p>
+<ul class="org-ul">
+<li>有效资本市场对财务管理的意义
+<ul class="org-ul">
+<li>管理者<code>改变会计方法不会</code>提升企业的股票价值。</li>
+<li>金融投机不能使企业获利。</li>
+<li>关注自身股价对企业是有益的。</li>
+</ul></li>
+<li>资本市场有效性的检验</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">市场</th>
+<th scope="col" class="org-left">检验方法</th>
+<th scope="col" class="org-left">检验规则</th>
+<th scope="col" class="org-left">理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">弱式有效资本市场</td>
+<td class="org-left">过滤检验</td>
+<td class="org-left">使用过滤规则交易的收益率，<code>不能持续超过</code> &ldquo;简单购买/持有&rdquo;策略的收益率</td>
+<td class="org-left">过滤原则无用</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">半强势有效资本市场</td>
+<td class="org-left">投资基金表现研究</td>
+<td class="org-left">投资基金的平均业绩， <code>不可能持续超过</code> 是市场整体的收益率</td>
+<td class="org-left">基金经理人无用</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org279457b" class="outline-2">
+<h2 id="org279457b"><span class="section-number-2">2</span> 财务报表分析和财务预测</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org67827ff" class="outline-3">
+<h3 id="org67827ff"><span class="section-number-3">2.1</span> 财务报表分析方法</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>比较分析法
+<code>企业优劣势分析</code>
+<ul class="org-ul">
+<li>比较对象
+<ul class="org-ul">
+<li>与计划预算比较</li>
+<li>与本企业历史比较</li>
+<li>与同类企业比较</li>
+</ul></li>
+<li>比较内容
+<ul class="org-ul">
+<li>比较会计要素的总量</li>
+<li>比构成</li>
+<li>比财务比率</li>
+</ul></li>
+</ul></li>
+<li>因素分析法
+<ul class="org-ul">
+<li>具体方法
+<ul class="org-ul">
+<li>连环替代法</li>
+<li>差额分析法</li>
+</ul></li>
+<li>注意的问题
+<ul class="org-ul">
+<li>分解的关联性</li>
+<li>替代的顺序性</li>
+<li>替代的连环型</li>
+<li>结果的假定性</li>
+</ul></li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org592aeef" class="outline-3">
+<h3 id="org592aeef"><span class="section-number-3">2.2</span> 财务比率分析</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgf24b14f" class="outline-4">
+<h4 id="orgf24b14f"><span class="section-number-4">2.2.1</span> 一致性原则</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+分子、分母的时间特征必须一致，即同为时点指标或者同为时期指标。时点调时期可以采用平均值，为了方便也可以使用期末值。
+</p>
+<ul class="org-ul">
+<li>特殊指标取数原则
+<ul class="org-ul">
+<li>\(现金流量比率=\frac{经营活动现金流量净额}{流动负债}\)</li>
+<li>\(现金流量与负债比率=\frac{经营获得能够现金流量净额}{负债总额}\)</li>
+</ul></li>
+</ul>
+<p>
+分母中的负债总额一般采用<b>期末数。</b>
+</p>
+</div>
+</div>
+<div id="outline-container-org0c0508e" class="outline-4">
+<h4 id="org0c0508e"><span class="section-number-4">2.2.2</span> 短期偿债比率</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ol class="org-ol">
+<li>流动比率 = 流动资产/流动负债</li>
+<li>速动比率(酸性测试比率) = 速冻资产/流动负债</li>
+<li>现金比率 = 货币资金/流动负债</li>
+<li>现金流动比率 = 经营活动现金流量净额/流动负债</li>
+</ol>
+<p>
+营运资本 = 流动资产 - 流动负债 = 长期资本 - 长期资产
+\(1/流动比率 + 营运资本配置比率 = 1\)
+</p>
+<blockquote>
+<p>
+现金流量比率中的流动负债采用<code>期末数</code>。一般情况下:\(流动负债\geq 速动比率 \geq 现金比率\)
+营运资本越多，长期资本用流动资产的金额越大
+</p>
+</blockquote>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">流动资产</th>
+<th scope="col" class="org-left">项目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">速冻资产</td>
+<td class="org-left">货币资金</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">交易性金融资产</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">各种应收款项</td>
+</tr>
+
+<tr>
+<td class="org-left">非速冻资产</td>
+<td class="org-left">存货</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">预付款项</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">一年内到期的非流动资产</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">其他流动资产</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="outline-container-org248ae77" class="outline-5">
+<h5 id="org248ae77">不存在统一、标准的流动比率数值，不同行业的指标没有可比性</h5>
+<div class="outline-text-5" id="text-org248ae77">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">指标</th>
+<th scope="col" class="org-left">流动比率</th>
+<th scope="col" class="org-left">速动比率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">影响指标可信性的因素</td>
+<td class="org-left">流动资产变现能力(存货周转率、应收账款周转率)</td>
+<td class="org-left">应收账款变现能力(应收账款周转率)</td>
+</tr>
+
+<tr>
+<td class="org-left">合理标准</td>
+<td class="org-left">制造业标准为 2</td>
+<td class="org-left">基准值为 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org2a7b763" class="outline-5">
+<h5 id="org2a7b763">影响短期偿债能力的其他因素(表外因素)</h5>
+<div class="outline-text-5" id="text-org2a7b763">
+</div>
+<ul class="org-ul">
+<li><a id="org452e9df"></a>增强偿债能力的因素<br />
+<div class="outline-text-6" id="text-org452e9df">
+<ol class="org-ol">
+<li>可动用的银行授信额度</li>
+<li>可<code>快速变现</code>的非流动资产</li>
+<li>偿债的<code>声誉</code></li>
+</ol>
+</div>
+</li>
+<li><a id="orge6a1f08"></a>降低多起偿债能力的因素<br />
+<div class="outline-text-6" id="text-orge6a1f08">
+<p>
+与担保有关的<code>或有负债事项(不包括预期负债)</code>
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0a22864" class="outline-4">
+<h4 id="org0a22864"><span class="section-number-4">2.2.3</span> 长期偿债能力</h4>
+<div class="outline-text-4" id="text-2-2-3">
+</div>
+<div id="outline-container-orga48baff" class="outline-5">
+<h5 id="orga48baff">还本能力</h5>
+<div class="outline-text-5" id="text-orga48baff">
+<ol class="org-ol">
+<li>\(资产负债率 = \frac{总负债}{总资产}\)</li>
+<li>\(长期资本负债率 = \frac{非流动负债}{非流动负债 + 股东权益}\)</li>
+<li>\(产权比率 = \frac{总负债}{股东权益}\)</li>
+<li>\(权益乘数 = \frac{总资产}{股东权益}\)</li>
+<li>\(现金流量与负债比率 = \frac{经营活动现金流量净额}{负债总额}\)</li>
+</ol>
+<p>
+权益乘数、资产负债率 和 产权比率 三者同方向变动。
+</p>
+</div>
+</div>
+<div id="outline-container-org96c489a" class="outline-5">
+<h5 id="org96c489a">付息能力</h5>
+<div class="outline-text-5" id="text-org96c489a">
+<ol class="org-ol">
+<li>\(利息保障倍数 = \frac{息税前利润}{利息支出} = \frac{净利润 + 利息费用 + 所得税费用}{利息支出}\)
+基准是 1</li>
+<li>\(现金流量利息保障倍数 = \frac{经营活动现金流量净额}{利息支出}\)</li>
+</ol>
+<p>
+利息费用:财务费用里的<code>利息费用</code>
+利息支出:还包括计入资产负债表固定资产等成本的<code>资本化利息</code>。
+</p>
+</div>
+</div>
+<div id="outline-container-orge2c084f" class="outline-5">
+<h5 id="orge2c084f">影响长期偿债能力的其他因素(表外能力)</h5>
+<div class="outline-text-5" id="text-orge2c084f">
+<ol class="org-ol">
+<li>债务担保(降低)</li>
+<li>未决诉讼(降低)</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org5154004" class="outline-4">
+<h4 id="org5154004"><span class="section-number-4">2.2.4</span> 营运能力比率</h4>
+<div class="outline-text-4" id="text-2-2-4">
+</div>
+<div id="outline-container-orgacbb396" class="outline-5">
+<h5 id="orgacbb396">\(应收账款周转次数 = \frac{营业收入}{应收账款}\)</h5>
+<div class="outline-text-5" id="text-orgacbb396">
+<ol class="org-ol">
+<li>应使用<code>赊销额</code> ，因外部人员无法取得赊销数据，采用 <code>全部营业收入 =，导致被 =高估</code>。</li>
+<li>年平均数 或者 <code>多个时点的平均数</code>。</li>
+<li>使用 <code>未计提坏账准备的应收账款</code>。</li>
+<li>不是越短越好。</li>
+<li>与赊销分析、现金分析联系起来。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org98421ed" class="outline-5">
+<h5 id="org98421ed">\(存货周转次数 =\frac{营业收入(营业成本)}{存货}\)</h5>
+<div class="outline-text-5" id="text-org98421ed">
+<ol class="org-ol">
+<li>在<code>短期偿债能力分析</code> 中，使用 <code>营业收入</code> ；在 <code>评估存货管理的业绩</code> ， 应当使用 <code>营业成本</code>。</li>
+<li>不是越少越好。</li>
+<li>应注意应付账款、存货和应收账款之间的关系。</li>
+<li>应关注构成存货的原材料、在产品、半成品和低值易耗品之间的比例关系。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgfe320f5" class="outline-5">
+<h5 id="orgfe320f5">\(流动资产周转次数 = \frac{营业收入}{流动资产}\)</h5>
+</div>
+<div id="outline-container-org53fa5b0" class="outline-5">
+<h5 id="org53fa5b0">\(营运资本周转次数 = \frac{营业收入}{营运资本}\)</h5>
+</div>
+<div id="outline-container-org1544d02" class="outline-5">
+<h5 id="org1544d02">\(非流动资产周转次数 = \frac{营业收入}{非流动资产}\)</h5>
+</div>
+<div id="outline-container-org90d048e" class="outline-5">
+<h5 id="org90d048e">\(总资产周转次数 = \frac{营业收入}{总资产}\)</h5>
+</div>
+<div id="outline-container-org1ead63c" class="outline-5">
+<h5 id="org1ead63c">非流动资产周转率分析</h5>
+<div class="outline-text-5" id="text-org1ead63c">
+<p>
+主要用于 <code>投资预算和项目管理</code>，以确定投资与竞争战略是否一致，收购和剥离政策是否合理等。
+</p>
+</div>
+</div>
+<div id="outline-container-org293dad5" class="outline-5">
+<h5 id="org293dad5">总资产周转率的驱动因素分析</h5>
+<div class="outline-text-5" id="text-org293dad5">
+<ol class="org-ol">
+<li>\(总资产周转天数=\sum 各项资产周转天数\)</li>
+<li>\(总资产与收入比=\sum 各项资产与营业收入的比\)</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orge8a8b0b" class="outline-4">
+<h4 id="orge8a8b0b"><span class="section-number-4">2.2.5</span> 盈利能力比率</h4>
+<div class="outline-text-4" id="text-2-2-5">
+<ol class="org-ol">
+<li>\(营业净利率 = \frac{净利润}{营业收入}\)</li>
+<li>\(总资产净利率 = \frac{净利润}{总资产}=营业净利率\times 总资产周转次数\)</li>
+<li>\(权益净利率 = \frac{净利润}{股东权益}\)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgae124ff" class="outline-4">
+<h4 id="orgae124ff"><span class="section-number-4">2.2.6</span> 市价比率</h4>
+<div class="outline-text-4" id="text-2-2-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">财务数据</th>
+<th scope="col" class="org-left">股数</th>
+<th scope="col" class="org-left">股价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">净收益</td>
+<td class="org-left">$每股收益=(净利润-优先股股息)/流通在外普通股加权平均数股数</td>
+<td class="org-left">市盈率=每股股价/每股收益</td>
+</tr>
+
+<tr>
+<td class="org-left">净资产</td>
+<td class="org-left">每股净资产(每股账面价值) = 普通股股东权益/流通在外普通股股数</td>
+<td class="org-left">市净率=每股市价/每股净资产</td>
+</tr>
+
+<tr>
+<td class="org-left">营业收入</td>
+<td class="org-left">每股营业收入=营业收入/流通在外普通股加权平均股数</td>
+<td class="org-left">市销率=每股市价/每股营业收入</td>
+</tr>
+</tbody>
+</table>
+<ol class="org-ol">
+<li>分母上：流通在外股份数，<code>取普通股的股份数</code>。</li>
+<li><p>
+分子上：
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">指标</th>
+<th scope="col" class="org-left">优先股问题的处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">每股收益</td>
+<td class="org-left">净利润 <code>减去</code> 当年宣告或积累的 <code>优先股股息</code> ，<code>不要减普通股股利</code>。</td>
+</tr>
+
+<tr>
+<td class="org-left">每股净资产</td>
+<td class="org-left">净资产要 <code>减去优先股权益</code> (包括优先股 <code>清算价值</code> 和 <code>拖欠股息</code>)</td>
+</tr>
+</tbody>
+</table></li>
+<li>每股收益有 <code>加权平均(时间加权)</code> 和 <code>全面摊薄(按期末股份数来计算)</code>两种口径。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7fd321a" class="outline-4">
+<h4 id="org7fd321a"><span class="section-number-4">2.2.7</span> 杜邦分析体系</h4>
+<div class="outline-text-4" id="text-2-2-7">
+<p>
+\(权益净利率 = 总资产净利率\times 权益乘数 = 营业净利率\times 总资产周转次数 \times 权益乘数\)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">反映的内容</th>
+<th scope="col" class="org-left">利用的指标</th>
+<th scope="col" class="org-left">可采用的模式</th>
+<th scope="col" class="org-left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">经营战略</td>
+<td class="org-left">营业净利率、总资产周转次数</td>
+<td class="org-left">(1)&ldquo;高盈利、低周转&rdquo;</td>
+<td class="org-left">关键看两者相互作用得到的</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">(2)&ldquo;低盈利、高周转&rdquo;</td>
+<td class="org-left"><code>总资产周转率</code></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">财务政策</td>
+<td class="org-left">权益乘数</td>
+<td class="org-left">(1)低经营风险、高财务杠杆</td>
+<td class="org-left">经营战略和财务政策相匹配</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">(2)高经营风险、低财务杠杆</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org829c570" class="outline-4">
+<h4 id="org829c570"><span class="section-number-4">2.2.8</span> <span class="priority">[A]</span> 管理用财务报表体系</h4>
+<div class="outline-text-4" id="text-2-2-8">
+</div>
+<div id="outline-container-org3789c72" class="outline-5">
+<h5 id="org3789c72">企业活动的分类</h5>
+<div class="outline-text-5" id="text-org3789c72">
+</div>
+<ul class="org-ul">
+<li><a id="org644fc57"></a>经营活动(企业在产品和要素市场上进行)<br />
+<div class="outline-text-6" id="text-org644fc57">
+<ol class="org-ol">
+<li>销售商品或提供劳务等营业活动</li>
+<li>与营业活动有关的生产性资产投资活动</li>
+</ol>
+</div>
+</li>
+<li><a id="org3af6461"></a>金融活动(在资本市场上进行)<br />
+<div class="outline-text-6" id="text-org3af6461">
+<p>
+筹资活动以及多余资本的利用
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgebe5f67" class="outline-5">
+<h5 id="orgebe5f67">基本框架</h5>
+<div class="outline-text-5" id="text-orgebe5f67">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">总体思路</th>
+<th scope="col" class="org-left">经营活动和金融活动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">资产负债表</td>
+<td class="org-left">经营资产和金融资产、经营负债和金融负债</td>
+</tr>
+
+<tr>
+<td class="org-left">利润表</td>
+<td class="org-left">经营损益和金融损益</td>
+</tr>
+
+<tr>
+<td class="org-left">现金流量表</td>
+<td class="org-left">经营现金流量和金融现金流量</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgfa33640" class="outline-5">
+<h5 id="orgfa33640">管理用资产负债表</h5>
+<div class="outline-text-5" id="text-orgfa33640">
+</div>
+<ul class="org-ul">
+<li><a id="org726427a"></a>区分经营资产和金融资产<br />
+<ul class="org-ul">
+<li><a id="org41c68fd"></a>货币资金<br />
+<div class="outline-text-7" id="text-org41c68fd">
+<ol class="org-ol">
+<li>列为<code>经营资产</code>。</li>
+<li>根据行业或公司历史平均的资金货币/营业收入百分比以及本期销售额，推算经营活动需要的货币资金数额，多余部分列为金融资产。</li>
+<li>全部列为<code>金融资产</code>。</li>
+</ol>
+</div>
+</li>
+<li><a id="org05a7608"></a>投资工具<br />
+<div class="outline-text-7" id="text-org05a7608">
+<ol class="org-ol">
+<li>短期权益性投资属于金融资产。</li>
+<li>长期权益性投资(长期股权投资)属于经营资产。</li>
+<li>债券投资、其他债券投资、其他权益工具投资、投资性房地产属于金融资产</li>
+</ol>
+</div>
+</li>
+<li><a id="orgd7601a3"></a>其他应收款<br />
+<div class="outline-text-7" id="text-orgd7601a3">
+<ol class="org-ol">
+<li>其他应收款中的应收利息属于金融资产。</li>
+<li>其他应收款中的应收股利:短期权益性投资属于金融资产；长期权益性投资属于经营资产。</li>
+<li>其他应收款中扣除应收利息、应收股利的部分属于经营资产</li>
+</ol>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org724e51b"></a>区分经营负债和金融负债<br />
+<ul class="org-ul">
+<li><a id="org02a1cda"></a>容易识别<br />
+<div class="outline-text-7" id="text-org02a1cda">
+<p>
+金融负债：短期债券、一年内到期的非流动负债、长期借款、应付债券等其他属于经营负债
+</p>
+</div>
+</li>
+<li><a id="orgc8de87e"></a>不容易识别<br />
+<div class="outline-text-7" id="text-orgc8de87e">
+<ol class="org-ol">
+<li>优先股属于金融负债</li>
+<li>其他应付款中的应付利息和应付股利属于金融负债，扣除之后部分属于经营负债。</li>
+<li>租赁因其的租赁负债属于金融负债。</li>
+</ol>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="orgac8dab9"></a>基本等式<br />
+<div class="outline-text-6" id="text-orgac8dab9">
+<p>
+净经营资产=净负债+所有者权益
+</p>
+</div>
+</li>
+<li><a id="org5cfbb8a"></a>管理用资产负债表<br />
+<div class="outline-text-6" id="text-org5cfbb8a">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">净经营资产</th>
+<th scope="col" class="org-left">净负债+股东权益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">经营营运资本=经营性流动资产-经营性流动负债</td>
+<td class="org-left">净金融负债(净负债)=金融负债-金融资产</td>
+</tr>
+
+<tr>
+<td class="org-left">净经营性长期资产=经营性长期资产-经营性长期负债</td>
+<td class="org-left">股东权益</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org1beffd9" class="outline-5">
+<h5 id="org1beffd9">管理用利润表</h5>
+<div class="outline-text-5" id="text-org1beffd9">
+</div>
+<ul class="org-ul">
+<li><a id="orge9c78f7"></a>金融损益(管理用利润表中的利息费用)的计算<br />
+<div class="outline-text-6" id="text-orge9c78f7">
+<p>
+利息费用 = -金融损益 = 财务费用 - 金融资产公允价值变动收益 + 金融资产减值损失 - 金融资产投资收益
+</p>
+</div>
+</li>
+<li><a id="org1468b61"></a>管理用利润表基本公式<br />
+<div class="outline-text-6" id="text-org1468b61">
+<p>
+\[
+净利润=经营损益+金融损益 \\
+=税后经营净利润-税后利息税费用\\
+=税前经营利润\times (1-所得税税率) - 利息费用\times (1-所得税税率)
+\]
+传统报表：利润总额-所得税费用
+</p>
+<blockquote>
+<p>
+无论在管理用报表还是传统报表下，<code>净利润的金额都是一样的</code>。
+</p>
+</blockquote>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org53f4d67" class="outline-5">
+<h5 id="org53f4d67">管理用现金流量表</h5>
+<div class="outline-text-5" id="text-org53f4d67">
+</div>
+<ul class="org-ul">
+<li><a id="org005aa11"></a>区分经营现金流量与金融现金流量<br />
+<ul class="org-ul">
+<li><a id="orgc39c934"></a>经营现金流量(实体现金流量)<br />
+<div class="outline-text-7" id="text-orgc39c934">
+<p>
+<code>销售商品或提供劳务</code> 等经营活动以及于此有关的 <code>生产性资产投资活动</code> 产生的现金流量。
+</p>
+<blockquote>
+<p>
+可得：影响经营活动现金流量的有<code>经营活动</code> 和 <code>投资活动</code>。
+</p>
+</blockquote>
+</div>
+</li>
+<li><a id="org2ab565f"></a>金融现金流量<br />
+<div class="outline-text-7" id="text-org2ab565f">
+<p>
+金融现金流量 = 债务现金流量 + 股权现金流量
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org7246081"></a>债务现金流量<br />
+<div class="outline-text-8" id="text-org7246081">
+<p>
+债务现金流量 = 支付利息 + 偿还债务 + 购入金融资产 - 借入债务 -出售金融资产
+</p>
+</div>
+</li>
+<li><a id="org3903a88"></a>股权现金流量<br />
+<div class="outline-text-8" id="text-org3903a88">
+<p>
+股权现金流量 = 股利分配 + 股票回购 - 股份发行
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a id="org90423a4"></a>现金流量确定<br />
+<ul class="org-ul">
+<li><a id="org861b80e"></a>剩余流量法<br />
+<div class="outline-text-7" id="text-org861b80e">
+<p>
+企业实体现金流量 = 税后经营净利润 + 折旧与摊销 - 经营营运资本增加 - 资本支出资本支出 = 净经营长期资产增加 + 折旧与摊销
+</p>
+</div>
+</li>
+<li><a id="org8b85c58"></a>融资现金流量法<br />
+<div class="outline-text-7" id="text-org8b85c58">
+<p>
+实体现金流量 = 股权现金流量 + 债务现金流量股权现金流量 = 股利分配 - 股权资本净增加债务现金流量 = 税后利息费用 - 净负债增加
+</p>
+<blockquote>
+<p>
+经营现金流量 = 实体现金流量 = 融资现金流量 = 金融现金流量
+</p>
+</blockquote>
+</div>
+</li>
+<li><a id="orgcc62be8"></a>净投资扣除法<br />
+<div class="outline-text-7" id="text-orgcc62be8">
+<p>
+实体现金流量 = 税后经营净利润 - 实体净投资
+= 税后经营净利润 - 净经营资产增加
+</p>
+<blockquote>
+<p>
+经营现金流量 = 实体现金流量 = 融资现金流量 = 金融现金流量
+</p>
+</blockquote>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org87d2c3b" class="outline-5">
+<h5 id="org87d2c3b">改进的财务分析体系的核心公式</h5>
+<div class="outline-text-5" id="text-org87d2c3b">
+<p>
+权益净利率 = 净经营资产净利率 + (净经营资产净利率 - 税后利息率) x 净负债/股东权益经营差异率 = 经营资产净利率 - 税后利息率净财务无杠杆 = 净负债/股东权益
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">主体</th>
+<th scope="col" class="org-left">管理用资产负债表(1)</th>
+<th scope="col" class="org-left">管理用利润表(2)</th>
+<th scope="col" class="org-left">投资报酬率=(2)/(1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">实体</td>
+<td class="org-left">净经营资产</td>
+<td class="org-left">税后经营及利润</td>
+<td class="org-left">净经营资产净利率</td>
+</tr>
+
+<tr>
+<td class="org-left">债务</td>
+<td class="org-left">净负债</td>
+<td class="org-left">税后利息费用</td>
+<td class="org-left">税后利息率</td>
+</tr>
+
+<tr>
+<td class="org-left">股权</td>
+<td class="org-left">所有者权益</td>
+<td class="org-left">净利润</td>
+<td class="org-left">权益净利率</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org430a421" class="outline-3">
+<h3 id="org430a421"><span class="section-number-3">2.3</span> 财务预测的步骤和方法</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orgc7b756f" class="outline-4">
+<h4 id="orgc7b756f"><span class="section-number-4">2.3.1</span> 销售百分比法</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-orgc17c092" class="outline-5">
+<h5 id="orgc17c092">假设条件</h5>
+<div class="outline-text-5" id="text-orgc17c092">
+<p>
+假设某些资产、负债与销售额存在稳定的百分比关系，根据预计营业收人和相应的百分比项计资产、负货，进而确定筹资需求量前提。
+</p>
+<blockquote>
+<p>
+以管理用报表为基础进行预测时，通常<code>各项经营资产和经营负债与管业收人保特稳定的百分比关系</code>。
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org0c66593" class="outline-5">
+<h5 id="org0c66593">筹资优先顺序</h5>
+<div class="outline-text-5" id="text-org0c66593">
+<ol class="org-ol">
+<li>动用现存的金融资产基础金融资产</li>
+<li>增加留存收益预计营业收入 &times; 计划营业净利润 &times; (1 - 股利支付率)</li>
+<li>增加金融负债</li>
+<li>增发股票</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org4472afb" class="outline-5">
+<h5 id="org4472afb">融资总需求</h5>
+<div class="outline-text-5" id="text-org4472afb">
+</div>
+<ul class="org-ul">
+<li><a id="org285c286"></a>总额法<br />
+<div class="outline-text-6" id="text-org285c286">
+<p>
+融资总需求 = 净经营资产的增加
+=预计净经营资产合计 - 基期净经营资产合计
+=(预计经营资产 - 预计经营负债) - (基期经营资产 - 基期经营负债)
+</p>
+</div>
+</li>
+<li><a id="orga337231"></a>增加额法<br />
+<div class="outline-text-6" id="text-orga337231">
+<p>
+融资总需求 = 净经营资产的增加
+= 增加的营业收入 &times; 净经营资产销售百分比
+</p>
+</div>
+</li>
+<li><a id="org2e192ad"></a>同比增长法<br />
+<div class="outline-text-6" id="text-org2e192ad">
+<p>
+融资总需求 = 净经营资产的增加
+= 基期净经营资产 &times; 营业收入增长率
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org997382d" class="outline-5">
+<h5 id="org997382d">需求外部融资</h5>
+<div class="outline-text-5" id="text-org997382d">
+</div>
+<ul class="org-ul">
+<li><a id="org6f95dee"></a>分步法<br />
+<div class="outline-text-6" id="text-org6f95dee">
+<p>
+预计需要外部融资 = 融资总需求 - 可动用金融资产 - 留存收益增加
+</p>
+</div>
+</li>
+<li><a id="org834c5aa"></a>公式法<br />
+<div class="outline-text-6" id="text-org834c5aa">
+<p>
+预计需要外部融资
+= 增加的经营资产 - 增加的经营负债 - 可动用金融资产 - 留存收益增加
+= 增加的营业收入 &times; 经营资产销售百分比 - 增加的营业收入 &times; 经营负债销售百分比 - 可动用金融资产 - 预计营业收入 &times; 预计营业净利率 &times; (1 - 预计股利支付率)
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8cf6be3" class="outline-4">
+<h4 id="org8cf6be3"><span class="section-number-4">2.3.2</span> 其他方法</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ol class="org-ol">
+<li>回归分析法</li>
+<li>运用信息技术预测
+<ol class="org-ol">
+<li>使用“电子表格软件”。</li>
+<li>利用人工智能技术。</li>
+</ol></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org1102c89" class="outline-3">
+<h3 id="org1102c89"><span class="section-number-3">2.4</span> <span class="priority">[A]</span> 增长率与资本需求的测算</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-orgad53a5b" class="outline-4">
+<h4 id="orgad53a5b"><span class="section-number-4">2.4.1</span> 内含增长率的测算</h4>
+<div class="outline-text-4" id="text-2-4-1">
+</div>
+<div id="outline-container-orgd10d967" class="outline-5">
+<h5 id="orgd10d967">外部融资销售增长比</h5>
+<div class="outline-text-5" id="text-orgd10d967">
+<p>
+当可动用金融资产为 0 时，每增加 1 元营业收入需要追加的外部融资额。外部融资销售需求增长比 = 经营资产销售百分比 - 经营负债销售百分比 - [(1 + 增长率)/增长率] &times; 预计营业净利率 &times; (1 - 预计股利支付率)
+</p>
+</div>
+</div>
+<div id="outline-container-org93dc79b" class="outline-5">
+<h5 id="org93dc79b">内含增长率</h5>
+<div class="outline-text-5" id="text-org93dc79b">
+<p>
+只靠内部积累(增加留存收益)实现的销售增长
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org4063719"></a>方法<br />
+<ul class="org-ul">
+<li><a id="org18ac84d"></a>外部融资销售增长比公式法<br />
+<div class="outline-text-7" id="text-org18ac84d">
+<p>
+0 = 经营资产销售百分比 - 经营负债销售百分比 - [(1 + 增长率)/增长率] &times; 预计营业净利率 &times; (1 - 预计股利支付率)
+</p>
+</div>
+</li>
+<li><a id="org87238f9"></a>公式法<br />
+<div class="outline-text-7" id="text-org87238f9">
+<p>
+\(内含增长率 = \frac{\frac{预计净利润}{预计净经营资产}\times 预计利润留存率}{1-\frac{预计净利润}{预计净经营资产}\times 预计利润留存率}\)
+扩展公式：\(内含增长率=\frac{营业净利率 \times 净经营资产周转率 \times 利润留存率}{1-营业净利率\times 净经营资产周转率\times 利润留存率}\)
+</p>
+<ul class="org-ul">
+<li>结论
+<ul class="org-ul">
+<li>预计销售增长率 = 内含增长率，外部融资额 = 0</li>
+<li>预计销售增长率 &gt; 内含增长率，外部融资额 &gt; 0</li>
+<li>预计销售增长率 &lt; 内含增长率，外部融资额 &lt; 0</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb03e60c" class="outline-4">
+<h4 id="orgb03e60c"><span class="section-number-4">2.4.2</span> 可持续增长率的测算</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<p>
+可持续增长率是指不增法新股或回购股票，不改变经营效率(不改变营业净利率和资产周转率)和财务政策(不改变权益乘数和利润留存率)时，其下期销售所能达到的增长率。
+</p>
+</div>
+<div id="outline-container-org11b10ba" class="outline-5">
+<h5 id="org11b10ba">假设条件</h5>
+<div class="outline-text-5" id="text-org11b10ba">
+<ol class="org-ol">
+<li>营业净利率不变</li>
+<li>总资产周转率不变</li>
+<li>权益乘数不变</li>
+<li>股利支付率不变</li>
+<li>增加的所有者权益 = 增加的留存收益</li>
+</ol>
+<blockquote>
+<p>
+上述假设条件成立时，销售的实际增长率与可持续增长率相等。
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org1206fc0" class="outline-5">
+<h5 id="org1206fc0">计算公式</h5>
+<div class="outline-text-5" id="text-org1206fc0">
+</div>
+<ul class="org-ul">
+<li><a id="orgc045433"></a>根据期初股东权益计算<br />
+<div class="outline-text-6" id="text-orgc045433">
+<p>
+可持续增长率 = 本期净利润/期初股东权益 &times; 本期利润留存率
+=营业净利率 &times; 期末总资产周转次数 &times; 利润留存率 &times; 期末总资产期初权益乘数
+</p>
+</div>
+</li>
+<li><a id="org3b10ea8"></a>根据期末股东权益计算<br />
+<div class="outline-text-6" id="text-org3b10ea8">
+<p>
+\(可持续增长率=\frac{营业净利润率\times 期末总资产周转次数 \times 期末总资产权益乘数 \times 本期利润留存率}{1-营业净利润率\times 期末总资产周转次数 \times 期末总资产权益乘数 \times 本期利润留存率}=\frac{期末权益净利率\times 本期利润留存率}{1-期末权益净利率\times 本期利润留存率}\)
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orga72fe0a" class="outline-5">
+<h5 id="orga72fe0a">可持续增长率与实际增长率的关系</h5>
+<div class="outline-text-5" id="text-orga72fe0a">
+</div>
+<ul class="org-ul">
+<li><a id="orgded898b"></a>平衡增长<br />
+<div class="outline-text-6" id="text-orgded898b">
+<p>
+如果某一年的经营效率和财务政策与上年相同，在不增发新股或回购股票的情况下，则本年实际增长率、上年的可持续增长率以及本年的可持续增长率<code>三者相等</code>。
+</p>
+</div>
+</li>
+<li><a id="orgf8561ea"></a>非平衡增长<br />
+<div class="outline-text-6" id="text-orgf8561ea">
+<ol class="org-ol">
+<li>如果某一年的公式中 4 个财务比率<code>有一个或多个比率提高</code> ，在不增法新股或回购股票的情况下，本年实际增长率就会超过上年的可持续增长率，本年的可持续增长率也会超过上年的可持续增长率。</li>
+<li>如果某一年的公式中 4 个财务比率<code>有一个或多个比率降低</code> ，在不增法新股或回购股票的情况下，本年实际增长率就会低于上年的可持续增长率，本年的可持续增长率也会低于上年的可持续增长率。</li>
+<li>如果公式中的 4 个财务比率<code>已经达到</code> 公司的 <code>极限</code> ，只有通过<code>增发新股</code>增加资金，才能提高销售增长率。</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org3d0dbb6" class="outline-5">
+<h5 id="org3d0dbb6">基于管理用财务报表的可持续增长率(雷同)</h5>
+</div>
+<div id="outline-container-org371142c" class="outline-5">
+<h5 id="org371142c">内含增长率与可持续增长率之间的区别与联系</h5>
+<div class="outline-text-5" id="text-org371142c">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">可持续增长率</th>
+<th scope="col" class="org-left">内含增长率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">联系</td>
+<td class="org-left">1. 都是销售增长率 2. 都不增发新股</td>
+<td class="org-left">1. 都是销售增长率 2. 都不增发新股</td>
+</tr>
+
+<tr>
+<td class="org-left">资本结构</td>
+<td class="org-left">资本结构不变</td>
+<td class="org-left">资本结构有可能改变</td>
+</tr>
+
+<tr>
+<td class="org-left">金融负债</td>
+<td class="org-left">可以从外部增加金融负债</td>
+<td class="org-left">外部融资为 0</td>
+</tr>
+
+<tr>
+<td class="org-left">假设条件</td>
+<td class="org-left">遵循<code>5个假设条件</code></td>
+<td class="org-left">隐含<code>3个假设条件</code></td>
+</tr>
+
+<tr>
+<td class="org-left">计算公式</td>
+<td class="org-left">\(\frac{(净利润)/所有者权\times 利润留存率 }{1-(净利润/所有者权益)\times 利润留存率}\)</td>
+<td class="org-left">\(\frac{(净利润/净经营资产)\times 利润留存率}{1-(净利润/净经营资产)\times 利润留存率}\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org3adad6e" class="outline-4">
+<h4 id="org3adad6e"><span class="section-number-4">2.4.3</span> 外部资本需求的测算</h4>
+<div class="outline-text-4" id="text-2-4-3">
+</div>
+<div id="outline-container-orge636f00" class="outline-5">
+<h5 id="orge636f00">外部融资销售增长比的应用</h5>
+<div class="outline-text-5" id="text-orge636f00">
+<p>
+外部融资额 = 外部融资销售增长比 &times; 销售增长额
+</p>
+</div>
+</div>
+<div id="outline-container-org265519c" class="outline-5">
+<h5 id="org265519c">外部融资需求的敏感分析</h5>
+<div class="outline-text-5" id="text-org265519c">
+<ol class="org-ol">
+<li>经营资产销售百分比<code>(同向)</code></li>
+<li>经营负债销售百分比<code>(反向)</code></li>
+<li>销售增长率(<code>取决于与内含增长率之间的关系</code> ，<code>同向变动关系</code>)</li>
+<li>营业净利率:在股利支付率小于 1 的情况下，营业净利率<code>越大</code> , 外部融资需求<code>越小</code>。</li>
+<li>股利支付率:在营业净利率大于 0 的情况下，股利支付率<code>越高</code> ， 外部融资需求<code>越大</code>。</li>
+<li>可动用金融资产<code>(反向)</code></li>
+</ol>
+<blockquote>
+<p>
+注意极端点：当股利支付率为 100%时，营业净利率对外部融资需求无影响；当营业净利率为 0 时，股利支付率对外部融资需求无影响。
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfae7eb5" class="outline-2">
+<h2 id="orgfae7eb5"><span class="section-number-2">3</span> 价值评估基础</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org2ea5992" class="outline-3">
+<h3 id="org2ea5992"><span class="section-number-3">3.1</span> 利率</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-org3df3afe" class="outline-4">
+<h4 id="org3df3afe"><span class="section-number-4">3.1.1</span> 基准利率及其特征</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+我国是央行对国家专业银行和其他金融机构规定的<code>存贷款利率</code>为基准利率
+</p>
+<ul class="org-ul">
+<li>特征
+<ol class="org-ol">
+<li>市场化</li>
+<li>基础性</li>
+<li>传递性</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org636a73c" class="outline-4">
+<h4 id="org636a73c"><span class="section-number-4">3.1.2</span> 利率的影响因素</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+\(r = r^{*} + RP = r^{*} +IP +DRP + LRP + MRP\)
+\(r^{*}\):纯粹利率(短期政府债券)
+IP(inflation premium):通货膨胀风险
+DRP(default risk premium):违约风险
+LRP(liquidity risk premium):流动性风险
+MRP(maturity risk premium):期限风险
+</p>
+</div>
+</div>
+<div id="outline-container-org91918ce" class="outline-4">
+<h4 id="org91918ce"><span class="section-number-4">3.1.3</span> 利率的期限结构</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<ol class="org-ol">
+<li>预期理论</li>
+<li>流动性溢价理论</li>
+<li>市场分割理论</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgecb5547" class="outline-3">
+<h3 id="orgecb5547"><span class="section-number-3">3.2</span> 货币时间价值</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-org362428c" class="outline-4">
+<h4 id="org362428c"><span class="section-number-4">3.2.1</span> 货币时间价值的基本计算</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">类别</th>
+<th scope="col" class="org-left">终值</th>
+<th scope="col" class="org-left">现值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">一次性款项</td>
+<td class="org-left">\(F=P\times (1+i)^{n}\)</td>
+<td class="org-left">\(P=F\times (1+i)^{-n}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">普通年金</td>
+<td class="org-left">\(F=A\times \frac{(1+i)^{n}-1}{i}\)</td>
+<td class="org-left">\(P=F\times \frac{1-(1+i)^{-n}}{i}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">预付年金</td>
+<td class="org-left">\(F=A\times[(F/A,i,n+1)-1]\)</td>
+<td class="org-left">\(P=A\times [(P/A,i,n-1)+1]\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">或:\(=A\times (F/A,i,n)\times (1+i)\)</td>
+<td class="org-left">或:\(=A\times (P/A,i,n)\times (1+i)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">递延年金</td>
+<td class="org-left">\(F=A\times (F/A,i,n)\)</td>
+<td class="org-left">\(P=A\times (P/A,i,n)\times (P/F,i,m)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">永续年金</td>
+<td class="org-left">没有终值</td>
+<td class="org-left">现值=年金额/折现率=A/i</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org486c5b0" class="outline-4">
+<h4 id="org486c5b0"><span class="section-number-4">3.2.2</span> 货币时间价值计算的灵活应用</h4>
+<div class="outline-text-4" id="text-3-2-2">
+</div>
+<div id="outline-container-orge2e9465" class="outline-5">
+<h5 id="orge2e9465">折现率的推算</h5>
+<div class="outline-text-5" id="text-orge2e9465">
+<p>
+内插法：\(\frac{i-i_{1}}{i_{2}-i_{1}}=\frac{a-a_{1}}{a_{2}-a_{1}}\)
+</p>
+</div>
+</div>
+<div id="outline-container-org5c0111c" class="outline-5">
+<h5 id="org5c0111c">报价利率与有现年利率</h5>
+<div class="outline-text-5" id="text-org5c0111c">
+<p>
+\(有效年利率=(1+\frac{报价利率}{m})^{m}-1\)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8a4070e" class="outline-3">
+<h3 id="org8a4070e"><span class="section-number-3">3.3</span> 风险与报酬</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-org5ce95d6" class="outline-4">
+<h4 id="org5ce95d6"><span class="section-number-4">3.3.1</span> 风险的衡量方法(方差、标准差、变异系数)</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<p>
+\(变异系数=\frac{标准差}{预期值}\)
+变异系数衡量风险不受预期值是否相同的影响
+</p>
+</div>
+</div>
+<div id="outline-container-org3018c07" class="outline-4">
+<h4 id="org3018c07"><span class="section-number-4">3.3.2</span> 投资组合的风险与报酬</h4>
+<div class="outline-text-4" id="text-3-3-2">
+</div>
+<div id="outline-container-org0b8af8f" class="outline-5">
+<h5 id="org0b8af8f">证券组合的期望报酬率</h5>
+<div class="outline-text-5" id="text-org0b8af8f">
+<p>
+\(r_{p}=\sum\limits_{j=1}^{m}r_{j}A_{j}\)
+</p>
+</div>
+</div>
+<div id="outline-container-orga198def" class="outline-5">
+<h5 id="orga198def">投资组合的风险计量</h5>
+<div class="outline-text-5" id="text-orga198def">
+<p>
+\(\sigma_{p}=\sqrt{\sum\limits_{j=1}^{m}\sum\limits_{k=1}^{m}A_{j}A_{k}\sigma_{jk}}\)
+\(\sigma_{jk}=r_{jk}\sigma_{j}\sigma_{k}\)
+</p>
+</div>
+</div>
+<div id="outline-container-orgd77758f" class="outline-5">
+<h5 id="orgd77758f">两种证券投资组合的风险衡量</h5>
+<div class="outline-text-5" id="text-orgd77758f">
+<p>
+\(\sigma_{p}=\sqrt{a^{2}+b^{2}+2ab\times r_{ab}}\)
+a,b 是个别资产的比重与标准差的乘积
+</p>
+
+<p>
+\(a=A_{1}\times \sigma_{1}\ ; \ b=A_{2}\times \sigma_{2}\)
+$r_{ab}表示亮相资产报酬之间的相关系数
+</p>
+</div>
+</div>
+<div id="outline-container-org5c28ac6" class="outline-5">
+<h5 id="org5c28ac6">相关系数的计算</h5>
+<div class="outline-text-5" id="text-org5c28ac6">
+<p>
+\(r=\frac{\sum\limits_{i=1}^{n}[(x_{i}-\bar{x})\times (y_{i}-\bar{y})]}{{\sqrt{\sum\limits_{i=1}^{n}(x_{i}-\bar{x})^{2}}}\times \sqrt{\sum\limits_{i=1}^{n}(y_{i}-\bar{y})^{2}}}}\)
+\(\sigma_{jk}=r_{jk}\sigma_{j}\sigma_{k}\)
+\(r_{jk}=\sigma_{jk}/(\sigma_{j}\sigma_{k})\)
+</p>
+</div>
+</div>
+<div id="outline-container-org38b188c" class="outline-5">
+<h5 id="org38b188c">资本市场线与证券市场线</h5>
+<div class="outline-text-5" id="text-org38b188c">
+</div>
+<ul class="org-ul">
+<li><a id="org5e85def"></a>资本市场线<br />
+<div class="outline-text-6" id="text-org5e85def">
+<p>
+联立方程:\(R_{i}=Q\times R_{m} +(1-Q)\times R_{f}\)
+        \(\sigma_{i}=Q\times \sigma_{m}\)
+单一方程:\(R_{i}=R_{f}+\frac{R_{m}-R_{f}}{\sigma_{m}}\times \sigma_{i}\)
+</p>
+</div>
+</li>
+<li><a id="orgc596171"></a>证券市场线<br />
+<div class="outline-text-6" id="text-orgc596171">
+<p>
+\(R_{i}=R_{f}+\beta_{i}(R_{m}-R_{f})\)
+\(\beta_{i}=\frac{COV(K_{i},K_{m})}{\sigma_{m}^{2}}=\frac{r_{im}\sigma_{i}\sigma_{m}}{\sigma_{m}^{2}}=r_{im}(\frac{\sigma_{i}}{\sigma_{m}})\)
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org435ea28" class="outline-2">
+<h2 id="org435ea28"><span class="section-number-2">4</span> 资本成本</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org70d813e" class="outline-3">
+<h3 id="org70d813e"><span class="section-number-3">4.1</span> 资本成本的影响因素</h3>
+<div class="outline-text-3" id="text-4-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">影响因素</th>
+<th scope="col" class="org-left">项目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">外部因素</td>
+<td class="org-left">无风险利率</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">市场风险溢价</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">税率</td>
+</tr>
+
+<tr>
+<td class="org-left">内部因素</td>
+<td class="org-left">资本结构</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">投资政策</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org15fbf09" class="outline-3">
+<h3 id="org15fbf09"><span class="section-number-3">4.2</span> 债务资本成本</h3>
+<div class="outline-text-3" id="text-4-2">
+</div>
+<div id="outline-container-orgf043bee" class="outline-4">
+<h4 id="orgf043bee"><span class="section-number-4">4.2.1</span> 债务成本的概念</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<p>
+<code>未来成本</code> 、 <code>期望收益</code> 、 <code>长期债务成本</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org6e78b08" class="outline-4">
+<h4 id="org6e78b08"><span class="section-number-4">4.2.2</span> 债务成本的方法</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<ol class="org-ol">
+<li>到期收益率法目标公司目前<b>上市交易</b>的<b>长期债券</b></li>
+<li>可比公司法可比上市公司的上市交易债券可比公司满足的条件
+<ol class="org-ol">
+<li>经营可比性: <code>同一行业</code>,类似的商业模式</li>
+<li>财务可比性: 两者的规模、负债比率和财务状况比较类似</li>
+<li>计算可行性: 有上市交易的长期债券</li>
+</ol></li>
+<li>风险调整法根据<code>评级资料,选取统一信用级别的公司</code>， <code>到期日相同或相近的公司债券和政府债券</code> (一般取平均值)
+税前债务成本 = 政府债券的市场回报率 + 企业的信用风险补偿</li>
+<li>财务比率法根据<code>关键财务比率</code> 大体上 <code>判断该公司的信用级别</code> ，再利用风险调整法。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga3057a1" class="outline-4">
+<h4 id="orga3057a1"><span class="section-number-4">4.2.3</span> 考虑发行费用</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<p>
+\(P_{0}\times (1-F)=\sum\limits_{t=1}^{n}\frac{I}{(1+r_{d})^{t}}+\frac{M}{(1+r_{d})^{n}}\)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3c6be6f" class="outline-3">
+<h3 id="org3c6be6f"><span class="section-number-3">4.3</span> 普通股资本成本的估计</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+<div id="outline-container-orgb7c6066" class="outline-4">
+<h4 id="orgb7c6066"><span class="section-number-4">4.3.1</span> 资本资产定价模型</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<p>
+\(r_{s} = r_{RF} + \beta \times(r_{m} - r_{RF})\)
+\(R_{RF}\):=长期政府债券的到期收益率
+</p>
+<ul class="org-ul">
+<li>使用实际利率和实际现金流量的情况
+<ul class="org-ul">
+<li>存在恶性的通货膨胀(通货膨胀率已经达到两位数)</li>
+<li>预测周期特别长，通货膨胀的累计影响巨大</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgf325e7c" class="outline-5">
+<h5 id="orgf325e7c">&beta; 的的估计</h5>
+<div class="outline-text-5" id="text-orgf325e7c">
+<p>
+\(\beta = \frac{Cov(r_{i},r_{m})}{\sigma_{m}^{2}}\)
+</p>
+<ol class="org-ol">
+<li>有关历史期间的长度
+<ol class="org-ol">
+<li>公司风险特征无重大变化时
+<code>5年或更长的</code>历史期长度</li>
+<li>如果公司风险特征发生重大变化应当<code>使用变化后的年份</code>作为历史期长度</li>
+</ol></li>
+<li>收益计量的时间间隔广泛使用<code>每周或每月</code>的报酬率</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org394188f" class="outline-5">
+<h5 id="org394188f">$r_{m}$的估计</h5>
+<div class="outline-text-5" id="text-org394188f">
+<ol class="org-ol">
+<li>选择时间跨度应选择<code>较长</code> 的时间跨度，既<code>包括经济繁荣时期，也包括经济衰退时期</code></li>
+<li>取平均的方法
+<ol class="org-ol">
+<li>算术平均法</li>
+<li>几何平均法</li>
+</ol></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org221a15a" class="outline-4">
+<h4 id="org221a15a"><span class="section-number-4">4.3.2</span> 股利增长模型</h4>
+<div class="outline-text-4" id="text-4-3-2">
+</div>
+<div id="outline-container-org968896d" class="outline-5">
+<h5 id="org968896d">基本公式</h5>
+<div class="outline-text-5" id="text-org968896d">
+<p>
+\(r_{s}=\frac{D_{1}}{P_{0}}+g\)
+</p>
+</div>
+</div>
+<div id="outline-container-org04068f0" class="outline-5">
+<h5 id="org04068f0">增长率(g)的估计</h5>
+<div class="outline-text-5" id="text-org04068f0">
+</div>
+<ul class="org-ul">
+<li><a id="org502a217"></a>历史增长率法<br />
+<div class="outline-text-6" id="text-org502a217">
+<ol class="org-ol">
+<li>算术平均法(<code>某一段时间</code>)</li>
+<li>几何平均法(<code>整个期间长期持有股票</code>)</li>
+</ol>
+</div>
+</li>
+<li><a id="org5d873c8"></a>可持续增长率法<br />
+<div class="outline-text-6" id="text-org5d873c8">
+<p>
+股利增长率 = 可持续增长率 = 预计利润留存率 &times; 期初权益预计净利率
+</p>
+</div>
+</li>
+<li><a id="orgeeb3961"></a>证券分析师预测法<br />
+<div class="outline-text-6" id="text-orgeeb3961">
+<ol class="org-ol">
+<li>将不稳定的增长率平均化</li>
+<li>根据不均匀的增长率直接计算</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfc95616" class="outline-4">
+<h4 id="orgfc95616"><span class="section-number-4">4.3.3</span> 债券收益率风险调整模型</h4>
+<div class="outline-text-4" id="text-4-3-3">
+<p>
+\(r_{s}=r_{dt} + RP_{c}\)
+$r_{dt}$&#x2014;税后债务成本
+$RP_{c}$&#x2014;股东比债权人承担更大风险所要求的风险溢价
+</p>
+</div>
+<div id="outline-container-org49b3fb4" class="outline-5">
+<h5 id="org49b3fb4">经验估计法</h5>
+<div class="outline-text-5" id="text-org49b3fb4">
+<p>
+一般认为，某企业普通股风险溢价对其自己发行的债券来讲，大约在<code>3%~5%</code>之间
+</p>
+</div>
+</div>
+<div id="outline-container-org99530b7" class="outline-5">
+<h5 id="org99530b7">历史数据分析法</h5>
+<div class="outline-text-5" id="text-org99530b7">
+<p>
+比叫过去不同年份的权益报酬率和债券收益率的差值
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org34a3a96" class="outline-4">
+<h4 id="org34a3a96"><span class="section-number-4">4.3.4</span> 考虑发行费用的股普通股资本成本的估计</h4>
+<div class="outline-text-4" id="text-4-3-4">
+</div>
+<div id="outline-container-org44c33ee" class="outline-5">
+<h5 id="org44c33ee">新发行普通股的资本成本</h5>
+<div class="outline-text-5" id="text-org44c33ee">
+<p>
+\(r_{s}=\frac{D_{1}}{P_{0}(1-F)}+g\)
+F&#x2014;发行费用率
+</p>
+</div>
+</div>
+<div id="outline-container-orgf8afab7" class="outline-5">
+<h5 id="orgf8afab7">留存收益</h5>
+<div class="outline-text-5" id="text-orgf8afab7">
+<p>
+<code>无须考虑筹资费用</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb1195a5" class="outline-3">
+<h3 id="orgb1195a5"><span class="section-number-3">4.4</span> 混合筹资资本成本的估计</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+<b>特征</b> : 兼具债券和股权筹资双重属性
+<b>内容</b> : 优先股筹资、永续债筹资、可转换债券筹资、附认股权证债券筹资等
+</p>
+</div>
+<div id="outline-container-orgc1f8e6a" class="outline-4">
+<h4 id="orgc1f8e6a"><span class="section-number-4">4.4.1</span> 优先股</h4>
+<div class="outline-text-4" id="text-4-4-1">
+<p>
+\(r_{p}=\frac{D_{P}}{P_{P}(1-F)}\)
+</p>
+</div>
+</div>
+<div id="outline-container-org5c49e94" class="outline-4">
+<h4 id="org5c49e94"><span class="section-number-4">4.4.2</span> 永续债</h4>
+<div class="outline-text-4" id="text-4-4-2">
+<p>
+\(r_{pd}=\frac{I_{pd}}{P_{pd}(1-F)}\)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">分类</th>
+<th scope="col" class="org-left">利息支出或股利分配的处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">金融负债</td>
+<td class="org-left">按照<code>借款费用</code> 处理，<code>可以税前抵扣</code> ,并可在此基础上计算税后资本成本</td>
+</tr>
+
+<tr>
+<td class="org-left">权益工具</td>
+<td class="org-left">应当作发行企业的<code>利润分配</code> ， <code>不可税前抵扣</code>，此为税后资本成本</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org35e1955" class="outline-3">
+<h3 id="org35e1955"><span class="section-number-3">4.5</span> 加权平均资本成本的计算</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+\(r_{w} = \limits\sum^{n}_{j=1}r_{j}W_{j}\)
+</p>
+</div>
+<div id="outline-container-org7e66f75" class="outline-4">
+<h4 id="org7e66f75"><span class="section-number-4">4.5.1</span> 账面价值权重</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ol class="org-ol">
+<li>反映的是历史的结构，不一定符合未来的状态。</li>
+<li>会扭曲资本成本。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc816968" class="outline-4">
+<h4 id="orgc816968"><span class="section-number-4">4.5.2</span> 实际市场价值权重</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<p>
+市场价值经常变动，计算出的加权平均资本成本也经常变化
+</p>
+</div>
+</div>
+<div id="outline-container-org6f34a15" class="outline-4">
+<h4 id="org6f34a15"><span class="section-number-4">4.5.3</span> 目标资本结构权重</h4>
+<div class="outline-text-4" id="text-4-5-3">
+<ol class="org-ol">
+<li>选用平均市场价格，回避证券市场价格变动频繁的不便。</li>
+<li>适用于公司评价未来的资本结构。</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb2ecf4a" class="outline-2">
+<h2 id="orgb2ecf4a"><span class="section-number-2">5</span> 投资项目资本预算</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgfd72af7" class="outline-3">
+<h3 id="orgfd72af7"><span class="section-number-3">5.1</span> 投资项目的评价方法</h3>
+<div class="outline-text-3" id="text-5-1">
+</div>
+<div id="outline-container-org04d53c2" class="outline-4">
+<h4 id="org04d53c2"><span class="section-number-4">5.1.1</span> 净现值(NPV)法</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+净现值(NPV) = 未来现金径流量现值 - 原始投资额现值
+A - B
+</p>
+</div>
+</div>
+<div id="outline-container-org0fe90ad" class="outline-4">
+<h4 id="org0fe90ad"><span class="section-number-4">5.1.2</span> 现值指数(PI)法</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<p>
+现值指数(PI) = 未来现金流量现值/原始投资额现值
+A/B
+</p>
+</div>
+</div>
+<div id="outline-container-org2b4067e" class="outline-4">
+<h4 id="org2b4067e"><span class="section-number-4">5.1.3</span> 内含报酬率(IRR)法</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<p>
+A = B 时的折现率
+</p>
+</div>
+</div>
+<div id="outline-container-orgfd163b9" class="outline-4">
+<h4 id="orgfd163b9"><span class="section-number-4">5.1.4</span> 回收期(PP)法</h4>
+<div class="outline-text-4" id="text-5-1-4">
+</div>
+<div id="outline-container-org3ecaa59" class="outline-5">
+<h5 id="org3ecaa59">静态回收期</h5>
+<div class="outline-text-5" id="text-org3ecaa59">
+<p>
+静态回收期 = M + 第 M 年的尚未回收额/第(M+1)年的现金净流量
+</p>
+</div>
+</div>
+<div id="outline-container-org2421b25" class="outline-5">
+<h5 id="org2421b25">动态回收期</h5>
+<div class="outline-text-5" id="text-org2421b25">
+<p>
+动态回收期 = M + 第 M 年的尚未回收额的现值/第(M+1)年的现金径流量现值
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9a16db7" class="outline-4">
+<h4 id="org9a16db7"><span class="section-number-4">5.1.5</span> 会计报酬率(ARR)法</h4>
+<div class="outline-text-4" id="text-5-1-5">
+<p>
+\(会计报酬率 = \frac{年平均净利润}{平均资本占用}\times 100\% = \frac{年平均净利润}{(原始投资额+投资净残值)/2}\times 100\%\)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0175414" class="outline-3">
+<h3 id="org0175414"><span class="section-number-3">5.2</span> 互斥项目的优选问题</h3>
+<div class="outline-text-3" id="text-5-2">
+</div>
+<div id="outline-container-org0e95200" class="outline-4">
+<h4 id="org0e95200"><span class="section-number-4">5.2.1</span> 项目寿命相同时</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<p>
+<b>净现值法</b>&#x2014;选择净现值大的方案
+</p>
+</div>
+</div>
+<div id="outline-container-org0ca4306" class="outline-4">
+<h4 id="org0ca4306"><span class="section-number-4">5.2.2</span> 项目寿命不相同时</h4>
+<div class="outline-text-4" id="text-5-2-2">
+<ol class="org-ol">
+<li>共同年限法</li>
+<li>等额年金法</li>
+
+<li>两种方法未考虑的因素
+<ol class="org-ol">
+<li>技术进步快，不可能原样复制</li>
+<li>通货膨胀那个比较严重时，重置成本将上升</li>
+<li>竞争会使项目收益下降，甚至被淘汰</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org4aa5660" class="outline-4">
+<h4 id="org4aa5660"><span class="section-number-4">5.2.3</span> 总量有限时的资本分配</h4>
+<div class="outline-text-4" id="text-5-2-3">
+<p>
+按现值指数排序，并寻找净现值最大的组合
+</p>
+<blockquote>
+<p>
+不适用于多期间，只适用<code>单一期间</code>的资本分配
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org6e75870" class="outline-4">
+<h4 id="org6e75870"><span class="section-number-4">5.2.4</span> 投资项目现金流量的估计</h4>
+<div class="outline-text-4" id="text-5-2-4">
+<ul class="org-ul">
+<li>投资项目现金流量的影响因素
+<ol class="org-ol">
+<li>区分相关成本和非相关成本</li>
+<li>不要忽视机会成本</li>
+<li>要考虑投资方案对公司其他项目的影响</li>
+<li>对营运资本的影响</li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-org0ca3443" class="outline-5">
+<h5 id="org0ca3443">新建项目现金流量的估计</h5>
+<div class="outline-text-5" id="text-org0ca3443">
+<p>
+建设期现金流量 = -原始投资额 = -长期资产投资(固定资产、无形资产、其他长期资产等) -垫支营运资本营业现金毛流量 = 营业收入 - 付现营业费用 = 税前经营利润 + 折旧终结期现金流量 = 回收额(回收垫支的营运资本、回收长期资产的净残值或变现价值)
+</p>
+</div>
+</div>
+<div id="outline-container-org8947c56" class="outline-5">
+<h5 id="org8947c56">固定资产更新 项目的现金流量(不考虑所得税时)</h5>
+<div class="outline-text-5" id="text-org8947c56">
+<p>
+<code>固定资产的平均年成本</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org9012a96" class="outline-5">
+<h5 id="org9012a96">税后后现金流量</h5>
+<div class="outline-text-5" id="text-org9012a96">
+<p>
+营业现金毛流量 = 营业收入 - 付现营业费用 - 所得税 = 税后经营净利润 + 折旧
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org79d7fce" class="outline-3">
+<h3 id="org79d7fce"><span class="section-number-3">5.3</span> 投资项目折现率的估计</h3>
+<div class="outline-text-3" id="text-5-3">
+</div>
+<div id="outline-container-orgf701948" class="outline-4">
+<h4 id="orgf701948"><span class="section-number-4">5.3.1</span> 新项目的经营风险与鲜有资产的平均经营风险显著不同</h4>
+</div>
+<div id="outline-container-orgf0c1bf4" class="outline-4">
+<h4 id="orgf0c1bf4"><span class="section-number-4">5.3.2</span> 新项目的经营风险与公司原有经营风险一致</h4>
+<div class="outline-text-4" id="text-5-3-2">
+<blockquote>
+<p>
+$&beta;_{资产}$不包含财务风险
+$&beta;_{权益}$及包含了项目的经营风险，也包含了目标企业的财务风险
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="outline-container-org34035fc" class="outline-3">
+<h3 id="org34035fc"><span class="section-number-3">5.4</span> 投资项目的敏感分析</h3>
+<div class="outline-text-3" id="text-5-4">
+</div>
+<div id="outline-container-org08b5f7e" class="outline-4">
+<h4 id="org08b5f7e"><span class="section-number-4">5.4.1</span> 最大最小法</h4>
+<div class="outline-text-4" id="text-5-4-1">
+<p>
+<b>*</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb880df1" class="outline-2">
+<h2 id="orgb880df1"><span class="section-number-2">6</span> 债券、股票价值评估</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgefa5eab" class="outline-3">
+<h3 id="orgefa5eab"><span class="section-number-3">6.1</span> 债券价值评估</h3>
+</div>
+<div id="outline-container-orga51578e" class="outline-3">
+<h3 id="orga51578e"><span class="section-number-3">6.2</span> 股票价值评估</h3>
+</div>
+</div>
+<div id="outline-container-org434fcb1" class="outline-2">
+<h2 id="org434fcb1"><span class="section-number-2">7</span> 期权价值评估</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-orgb40a668" class="outline-3">
+<h3 id="orgb40a668"><span class="section-number-3">7.1</span> 期权投资策略</h3>
+<div class="outline-text-3" id="text-7-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">投资策略</th>
+<th scope="col" class="org-left">含义</th>
+<th scope="col" class="org-left">到期净收入</th>
+<th scope="col" class="org-left">初始现金流</th>
+<th scope="col" class="org-left">到期净损益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">保护性看跌期权</td>
+<td class="org-left">买股票加买看跌</td>
+<td class="org-left">\(S_{T}\) 和 X 取高者</td>
+<td class="org-left">\(-S_{0}-P_{跌}\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">抛补性看涨期权</td>
+<td class="org-left">买股票加卖看跌</td>
+<td class="org-left">\(S_{T}\) 和 X 取低者</td>
+<td class="org-left">\(-S_{0}+C_{涨}\)</td>
+<td class="org-left">到期净收入+初始现金流量</td>
+</tr>
+
+<tr>
+<td class="org-left">多头对敲</td>
+<td class="org-left">买看涨加买看跌</td>
+<td class="org-left">\(｜S_{T}-X｜\)</td>
+<td class="org-left">\(-C_{涨}-P_{跌}\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">空头对敲</td>
+<td class="org-left">卖看涨加卖看跌</td>
+<td class="org-left">\(-｜S_{T}-X｜\)</td>
+<td class="org-left">\(C_{涨}+P_{跌}\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="outline-container-orge60933c" class="outline-4">
+<h4 id="orge60933c"><span class="section-number-4">7.1.1</span> 保护性看跌期权(S+P)</h4>
+</div>
+<div id="outline-container-org48b9069" class="outline-4">
+<h4 id="org48b9069"><span class="section-number-4">7.1.2</span> 抛补性看涨期权(S-C)</h4>
+</div>
+<div id="outline-container-org11c2622" class="outline-4">
+<h4 id="org11c2622"><span class="section-number-4">7.1.3</span> 多头对敲(C+P)</h4>
+</div>
+<div id="outline-container-orgc5e7f2f" class="outline-4">
+<h4 id="orgc5e7f2f"><span class="section-number-4">7.1.4</span> 空头对敲(-C-P)</h4>
+</div>
+</div>
+<div id="outline-container-org32dde13" class="outline-3">
+<h3 id="org32dde13"><span class="section-number-3">7.2</span> 影响期权价值的主要因素</h3>
+<div class="outline-text-3" id="text-7-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">变量</th>
+<th scope="col" class="org-left">美式看涨期权</th>
+<th scope="col" class="org-left">美式看跌期权</th>
+<th scope="col" class="org-left">欧式看涨期权</th>
+<th scope="col" class="org-left">欧式看跌期权</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">股票价格</td>
+<td class="org-left">+</td>
+<td class="org-left">-</td>
+<td class="org-left">+</td>
+<td class="org-left">-</td>
+</tr>
+
+<tr>
+<td class="org-left">执行价格</td>
+<td class="org-left">-</td>
+<td class="org-left">+</td>
+<td class="org-left">-</td>
+<td class="org-left">+</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>到期期限</b></td>
+<td class="org-left">+</td>
+<td class="org-left">+</td>
+<td class="org-left">不一定</td>
+<td class="org-left">不一定</td>
+</tr>
+
+<tr>
+<td class="org-left">股价波动率</td>
+<td class="org-left">+</td>
+<td class="org-left">+</td>
+<td class="org-left">+</td>
+<td class="org-left">+</td>
+</tr>
+
+<tr>
+<td class="org-left">无风险利率</td>
+<td class="org-left">+</td>
+<td class="org-left">-</td>
+<td class="org-left">+</td>
+<td class="org-left">-</td>
+</tr>
+
+<tr>
+<td class="org-left">预期红利</td>
+<td class="org-left">-</td>
+<td class="org-left">+</td>
+<td class="org-left">-</td>
+<td class="org-left">+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org7b7c558" class="outline-3">
+<h3 id="org7b7c558"><span class="section-number-3">7.3</span> 金融期权价值的评估方法</h3>
+<div class="outline-text-3" id="text-7-3">
+</div>
+<div id="outline-container-orgb5de74c" class="outline-4">
+<h4 id="orgb5de74c"><span class="section-number-4">7.3.1</span> 复制原理和套期保值原理</h4>
+<div class="outline-text-4" id="text-7-3-1">
+</div>
+<div id="outline-container-org9909b3c" class="outline-5">
+<h5 id="org9909b3c">基本公式</h5>
+<div class="outline-text-5" id="text-org9909b3c">
+<p>
+\(每份期权价值 C_{0} = 借款买若干股股票的投资组合成本 = 购买股票支出 - 借款数额 = H \times S_{0} - B\)
+</p>
+</div>
+</div>
+<div id="outline-container-orgdbe3502" class="outline-5">
+<h5 id="orgdbe3502">计算步骤</h5>
+<div class="outline-text-5" id="text-orgdbe3502">
+<ol class="org-ol">
+<li>确定可能的到期日股票价格$S_{u}$和\(S_{d}\)
+上行股价\(S_{u}\) = 股票价格\(S_{0}\) &times; 上行乘数 u
+下行股价\(S_{d}\) = 股票价格\(S_{0}\) &times; 下行乘数 d</li>
+<li>确定期权到期日价值$C_{u}$和\(C_{d}\)
+\(股价上行时期权到期日价值 C_{u}=max(上行股价-执行价格,0)\)
+\(股价下行时期权到期日价值 C_{d} = max(0,下行股价-执行价格)\)</li>
+<li>计算套期保值比率(购买股票的股数)
+\(套期保值比率 H = 期权价值变化/股价变化 = (C_{u}-C_{d})/(S_{u}-S_{d})\)</li>
+<li>计算投资组合的成本(期权价值) = 购买股票支出 - 借款数额
+\(购买股票支出 = 套期保值比率 \times 股票现价 = H \times S_{0}\)
+$借款数额 B=(到期日下行股价 &times; 套期保值比率 -  股价下行时期到期日价值)/(1+r)=\frac{}</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfc8c8b5" class="outline-4">
+<h4 id="orgfc8c8b5"><span class="section-number-4">7.3.2</span> 风险中性原理</h4>
+</div>
+<div id="outline-container-orgbf5c6b1" class="outline-4">
+<h4 id="orgbf5c6b1"><span class="section-number-4">7.3.3</span> 布莱克-斯科尔斯期权定价模型</h4>
+</div>
+<div id="outline-container-org9eb0afc" class="outline-4">
+<h4 id="org9eb0afc"><span class="section-number-4">7.3.4</span> 看涨期权&#x2013;看跌期权平价定理</h4>
+<div class="outline-text-4" id="text-7-3-4">
+<p>
+\(S+P=C+PV(X)\)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2fc32cd" class="outline-2">
+<h2 id="org2fc32cd"><span class="section-number-2">8</span> 企业价值评估</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org0cfd85a" class="outline-3">
+<h3 id="org0cfd85a"><span class="section-number-3">8.1</span> 企业价值的评估对象</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+<b>一般对象</b> <code>企业整体的经济价值</code>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">类别</th>
+<th scope="col" class="org-left">含义</th>
+<th scope="col" class="org-left">应注意的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">实体价值</td>
+<td class="org-left">企业全部资产的总体价值</td>
+<td class="org-left">企业实体价值=股权价值+净</td>
+</tr>
+
+<tr>
+<td class="org-left">股权价值</td>
+<td class="org-left">股权的公平市场价值</td>
+<td class="org-left">债务价值(都是市场价值)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">持续经营价值</td>
+<td class="org-left">简称续营价值，是指由营业所产生的未来现金流的现值</td>
+<td class="org-left">一个企业的公平市场价值，应</td>
+</tr>
+
+<tr>
+<td class="org-left">清算价值</td>
+<td class="org-left">指停止经营，出售资产产生的现金流</td>
+<td class="org-left">当是其续营价值与清算价值中</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">较高的一个</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">少数股权价值</td>
+<td class="org-left">是现有管理和战略条件下企业能够给股票投资人带来的</td>
+<td class="org-left">控股权溢价=V(新的)-V(当前)</td>
+</tr>
+
+<tr>
+<td class="org-left">(当前)</td>
+<td class="org-left">未来现金流量的现值</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">控股权价值 V</td>
+<td class="org-left">是企业进行重组，改进管理和经营战略后可以为投资人</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">(新的)</td>
+<td class="org-left">带来的未来现金流量的现值</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">价值</th>
+<th scope="col" class="org-left">区别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">会计价值</td>
+<td class="org-left">会计价值是指资产、负债和所有者权益的账面价值；而经济价值是未来现金流量的现值</td>
+</tr>
+
+<tr>
+<td class="org-left">现时市场价值</td>
+<td class="org-left">现时市场价值可能是公平的，也可能是不公平的；而经济价值是公平的市场价值</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org1f8c63e" class="outline-3">
+<h3 id="org1f8c63e"><span class="section-number-3">8.2</span> 企业价值评估方法</h3>
+<div class="outline-text-3" id="text-8-2">
+</div>
+<div id="outline-container-orgd899135" class="outline-4">
+<h4 id="orgd899135"><span class="section-number-4">8.2.1</span> 现金流折现模型</h4>
+<div class="outline-text-4" id="text-8-2-1">
+</div>
+<div id="outline-container-org8b166a6" class="outline-5">
+<h5 id="org8b166a6">股利现金流量折现模型</h5>
+<div class="outline-text-5" id="text-org8b166a6">
+<p>
+\(股权价值=\sum\limits_{t=1}^{\infty}股利现金流量_{t}/(1+股权资本成本)^{t}\)
+</p>
+</div>
+</div>
+<div id="outline-container-org5e36012" class="outline-5">
+<h5 id="org5e36012">股权现金流量折现模型</h5>
+<div class="outline-text-5" id="text-org5e36012">
+<p>
+\(股权价值=\sum\limits_{t=1}^{\infty}股权现金流量/(1+股权资本成本)^{t}\)
+</p>
+</div>
+</div>
+<div id="outline-container-orgee82252" class="outline-5">
+<h5 id="orgee82252">实体现金流量折现模型</h5>
+<div class="outline-text-5" id="text-orgee82252">
+<p>
+\(实体价值=\sum\limits_{t=1}^{\infty}实体自由现金流量_{t}/(1+加权平均资本成本)^{t}\)
+\(股权价值==实体价值-净债务价值\)
+\(净债务价值=\sum\limits_{t=1}^{\infty}偿还债务现金流量_{t}/(1+等风险债务成本)^{t}\)
+\(税后经营净利润 = 净利润 + 税后利息费用\)
+\(企业实体现金流量 = 税后经营净利润 + 折旧与摊销 - 经营营运资本增加 - (净经营性长期资产增加 + 折旧与摊销)\)
+\(企业实体现金流量 = 股权现金流量 + 债务现金流量\)
+\(企业实体现金流量 = 税后经营净利润 - 净经营资产的增加\)
+\(股权现金流量 = 净利润 - 所有者权益的增加\)
+\(债务现金流量 = 税后利息费用 - 净负债的增加\)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9a5dbc3" class="outline-4">
+<h4 id="org9a5dbc3"><span class="section-number-4">8.2.2</span> 相对价值评估模型</h4>
+<div class="outline-text-4" id="text-8-2-2">
+</div>
+<div id="outline-container-org3a4c023" class="outline-5">
+<h5 id="org3a4c023">市盈率模型</h5>
+<div class="outline-text-5" id="text-org3a4c023">
+</div>
+<ul class="org-ul">
+<li><a id="org54940e0"></a>驱动因素<br />
+<div class="outline-text-6" id="text-org54940e0">
+<p>
+<b>增长潜力</b>、股利支付率和风险
+</p>
+<ol class="org-ol">
+<li>本期市盈率 = 股利支付率 &times; (1+增长率)/(股权成本-增长率)</li>
+<li>内在市盈率(预期市盈率) = 股利支付率/(股权成本-增长率)</li>
+</ol>
+</div>
+</li>
+<li><a id="org14eaf91"></a>优缺点及模型的适用性<br />
+<div class="outline-text-6" id="text-org14eaf91">
+<ul class="org-ul">
+<li>优点
+<ol class="org-ol">
+<li>计算市盈率的数据容易获得，并且计算简单</li>
+<li>市盈率把价格和市盈率联系起来，直观地反映投入和产出的关系</li>
+<li>市盈率涵盖了风险、增长率、股利支付率的影响，具有很高的综合性</li>
+</ol></li>
+<li>缺点如果收益是 0 或负值，市盈率就失去了意义</li>
+<li>适用范围最适合连续盈利的企业</li>
+</ul>
+</div>
+</li>
+<li><a id="orge5205b5"></a>模型的修正<br />
+<div class="outline-text-6" id="text-orge5205b5">
+<ol class="org-ol">
+<li>修正平均市盈率法
+<code>先平均后修正</code></li>
+<li>股价平均法
+<code>先修正后平均</code></li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgd1daadb" class="outline-5">
+<h5 id="orgd1daadb">市净率模型</h5>
+<div class="outline-text-5" id="text-orgd1daadb">
+</div>
+<ul class="org-ul">
+<li><a id="org8059200"></a>驱动因素<br />
+<div class="outline-text-6" id="text-org8059200">
+<p>
+<b>权益净利率</b>、股利支付率、增长潜力和风险
+</p>
+<ol class="org-ol">
+<li>本期市盈率 = 权益净利率 &times; 股利支付率 &times; (1 + 增长率) / (股权成本 - 增长率)</li>
+<li>内在市盈率(预期市净率) = 权益净利率 &times; 股利支付率/(股权成本 - 增长率)</li>
+</ol>
+</div>
+</li>
+<li><a id="org2efe7cb"></a>优缺点及模型的使用性<br />
+<div class="outline-text-6" id="text-org2efe7cb">
+<ul class="org-ul">
+<li>优点
+<ol class="org-ol">
+<li>市盈率极少为负值，可用于大多数企业</li>
+<li>净资产账面价值的数据容易取得，并且容易理解</li>
+<li>净资产账面价值比净利稳定，也不想利润那样经常被人为操纵</li>
+<li>如果会计标准合理并且各企业会计政策一致，市净率的变化可以反映企业价值的变化</li>
+</ol></li>
+<li>缺点
+<ol class="org-ol">
+<li>账面价值受会计政策选择的影响，如果各企业执行不同的会计标准或会计政策，市净率会失去可比性</li>
+<li>固定资产很少的服务性企业和高科技企业，净资产与企业价值的关系不大，其市净率比较没有什么实际意义</li>
+<li>少数企业的净资产是 0 或负值，市净率没有意义，无法用于比较</li>
+</ol></li>
+<li>适用范围主要适用于拥有大量资产、净资产为正值的企业</li>
+</ul>
+</div>
+</li>
+<li><a id="org0a3b118"></a>模型的修正<br />
+<div class="outline-text-6" id="text-org0a3b118">
+<ol class="org-ol">
+<li>修正平均市净率法
+<code>先平均后修正</code></li>
+<li>股价平均法
+<code>先修正后平均</code></li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org455e5d9" class="outline-5">
+<h5 id="org455e5d9">市销率模型</h5>
+<div class="outline-text-5" id="text-org455e5d9">
+</div>
+<ul class="org-ul">
+<li><a id="orga988fc7"></a>驱动因素<br />
+<div class="outline-text-6" id="text-orga988fc7">
+<p>
+<b>营业净利率</b>、股利支付率、增长潜力和风险
+</p>
+<ol class="org-ol">
+<li>本期市销率 = 营业净利率 &times; 股利支付率 &times; (1 + 增长率) / (股权成本 - 增长率)</li>
+<li>内在市销率(预期市销率) = 营业净利率 &times; 股利支付率/(股权成本 - 增长率)</li>
+</ol>
+</div>
+</li>
+<li><a id="org6b1f112"></a>优缺点及模型的适用性<br />
+<div class="outline-text-6" id="text-org6b1f112">
+<ul class="org-ul">
+<li>优点
+<ol class="org-ol">
+<li>它不会出现负值，对于亏损企业和资不抵债的企业，也可以计算出一个有意义的市销率</li>
+<li>它比较稳定、可靠，不容易被操纵</li>
+<li>市销率对价格政策和企业战略变化敏感，可以反映这种变化的后果</li>
+</ol></li>
+<li>缺点不能反映成本的变化，而成本是影响企业现金流量和价值的重要因素之一</li>
+<li>适用范围主要适用于销售成本较低的服务类企业，或者销售成本率趋同的传统行业的企业</li>
+</ul>
+</div>
+</li>
+<li><a id="orgf3d6274"></a>模型的修正<br />
+<div class="outline-text-6" id="text-orgf3d6274">
+<ol class="org-ol">
+<li>修正平均市销率法</li>
+</ol>
+<p>
+<code>先平均后修正</code>
+</p>
+<ol class="org-ol">
+<li>股价平均法</li>
+</ol>
+<p>
+<code>先修正后平均</code>
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbbcb253" class="outline-2">
+<h2 id="orgbbcb253"><span class="section-number-2">9</span> 资本结构</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-orgb099f12" class="outline-3">
+<h3 id="orgb099f12"><span class="section-number-3">9.1</span> 资本结构的 MM 理论</h3>
+<div class="outline-text-3" id="text-9-1">
+</div>
+<div id="outline-container-org458c790" class="outline-4">
+<h4 id="org458c790"><span class="section-number-4">9.1.1</span> 无税 MM 理论</h4>
+<div class="outline-text-4" id="text-9-1-1">
+<p>
+\(V_{L}=\frac{EBIT}{r_{WACC}^{0}}=V_{U}=\frac{EBIT}{r_{S}^{u}}}\)
+\(r_{s}^{L}=r_{s}^{u}+风险溢价=r_{s}^{u}+\frac{D}{E}(r_{s}^{u}-r_{d})\)
+</p>
+</div>
+</div>
+<div id="outline-container-org10e7f9d" class="outline-4">
+<h4 id="org10e7f9d"><span class="section-number-4">9.1.2</span> 有税 MM 理论</h4>
+<div class="outline-text-4" id="text-9-1-2">
+<p>
+\(V_{L}=V_{U} + T \times D = V_{U} +PV(利息抵税)\)
+\(r_{s}^{L}=r_{s}^{u}++风险报酬=r_{s}^{u}+(r_{s}^{u}-r_{d})(1-T)\frac{D}{E}\)
+</p>
+</div>
+</div>
+<div id="outline-container-org0106f72" class="outline-4">
+<h4 id="org0106f72"><span class="section-number-4">9.1.3</span> 权衡理论</h4>
+<div class="outline-text-4" id="text-9-1-3">
+<p>
+\(V_{L}=V_{U}+PV(利息抵税)-PV(财务困境成本)\)
+</p>
+<ul class="org-ul">
+<li>财务困境成本
+<ul class="org-ul">
+<li>直接成本: 破产、清算或重组的法律费用、管理费用等</li>
+<li>间接成本: 企业资信状况恶化以及持续经营能力下降而导致的企业价值损失</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org27dfc79" class="outline-4">
+<h4 id="org27dfc79"><span class="section-number-4">9.1.4</span> 代理成本</h4>
+<div class="outline-text-4" id="text-9-1-4">
+<p>
+\(V_{L}=V_{U}+PV_{利息抵税}-PV(财务困境成本)-PV(债务代理成本)+PV(债务代理收益)\)
+</p>
+<ul class="org-ul">
+<li>债务代理成本
+<ul class="org-ul">
+<li>过度投资: 投资于净现值为负的项目</li>
+<li>投资不足: 放弃净现值为正的项目</li>
+</ul></li>
+<li>代理收益
+<ul class="org-ul">
+<li>约束: 债权人保护条款引入形成的对管理层的约束以及对经理随意支配自由现金流的约束</li>
+<li>激励: 还债压力带给经理提升企业业绩的激励</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf9a4f4c" class="outline-3">
+<h3 id="orgf9a4f4c"><span class="section-number-3">9.2</span> 资本结构决策的分析方法</h3>
+<div class="outline-text-3" id="text-9-2">
+<ol class="org-ol">
+<li>资本成本比较法
+<b>缺点</b>: 没有考虑各种融资方式在数量与比例上的约束以及财务风险差异</li>
+<li>每股收益无差别点法
+\(\frac{(EBIT-I_{1})(1-T)-PD_{1}}{N_{1}}=\frac{(EBIT-I_{2})(1-T)-PD_{2}}{N_{2}}\)
+<b>缺点</b>:没有考虑风险因素</li>
+<li>企业价值比较法
+\(V = S +B +P\)
+\(S=\frac{(EBIT-I)(1-T)-PD}{r_{s}}\)
+\(其中:r_{s}=r_{RF}+\beta \times (r_{m}-r_{RF})\)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1f9c57a" class="outline-3">
+<h3 id="org1f9c57a"><span class="section-number-3">9.3</span> 杠杆系数的衡量</h3>
+<div class="outline-text-3" id="text-9-3">
+</div>
+<div id="outline-container-orgdf2e8b8" class="outline-4">
+<h4 id="orgdf2e8b8"><span class="section-number-4">9.3.1</span> 经营杠杆</h4>
+<div class="outline-text-4" id="text-9-3-1">
+<ol class="org-ol">
+<li>用销量表示: \(DOL_{Q} = \frac{Q(P-V)}{Q(P-V)-F}\)</li>
+<li>用营业收入表示: \(DOL_{S}=\frac{S-VC}{S-VC-F}=\frac{EBIT+F}{EBIT}\)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6038ab8" class="outline-4">
+<h4 id="org6038ab8"><span class="section-number-4">9.3.2</span> 财务杠杆</h4>
+<div class="outline-text-4" id="text-9-3-2">
+<p>
+\(DFL=\frac{EBIT}{EBIT-I-PD/(1-T)}\)
+</p>
+</div>
+</div>
+<div id="outline-container-orgc658192" class="outline-4">
+<h4 id="orgc658192"><span class="section-number-4">9.3.3</span> 联合杠杆</h4>
+<div class="outline-text-4" id="text-9-3-3">
+<p>
+\(DTL=DOL\times DFL=经营杠杆系数\times 财务杠杆系数\)
+\(DTL=\frac{Q(P-V)}{Q(P-V)-F-I-PD/(1-T)}\)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfb44b77" class="outline-2">
+<h2 id="orgfb44b77"><span class="section-number-2">10</span> 长期筹资</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org5ef33f8" class="outline-3">
+<h3 id="org5ef33f8"><span class="section-number-3">10.1</span> 长期债务筹资</h3>
+<div class="outline-text-3" id="text-10-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-center">区别点</th>
+<th scope="col" class="org-center">银行借款</th>
+<th scope="col" class="org-center">债务筹资</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-center">资本成本</td>
+<td class="org-center">低(利息率低，筹资费低)</td>
+<td class="org-center">高</td>
+</tr>
+
+<tr>
+<td class="org-center">筹资速度</td>
+<td class="org-center">快(手续比发行债券简单)</td>
+<td class="org-center">慢</td>
+</tr>
+
+<tr>
+<td class="org-center">筹资弹性</td>
+<td class="org-center">大(可协商，可变更姓比债券好)</td>
+<td class="org-center">小</td>
+</tr>
+
+<tr>
+<td class="org-center">筹资对象及范围</td>
+<td class="org-center">对象窄，范围小</td>
+<td class="org-center">对象广，范围大</td>
+</tr>
+
+<tr>
+<td class="org-center">筹资规模</td>
+<td class="org-center">较小</td>
+<td class="org-center">较大</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="outline-container-orga3af326" class="outline-4">
+<h4 id="orga3af326"><span class="section-number-4">10.1.1</span> 长期债务保护条款  <a href="20210422164900-to_note.html">To-note</a></h4>
+<div class="outline-text-4" id="text-10-1-1">
+</div>
+<div id="outline-container-org0c5e76f" class="outline-5">
+<h5 id="org0c5e76f">一般性保护条款</h5>
+</div>
+<div id="outline-container-org1a82dff" class="outline-5">
+<h5 id="org1a82dff">特殊性保护条款</h5>
+</div>
+</div>
+</div>
+<div id="outline-container-org2860fa5" class="outline-3">
+<h3 id="org2860fa5"><span class="section-number-3">10.2</span> 普通股筹资</h3>
+<div class="outline-text-3" id="text-10-2">
+</div>
+<div id="outline-container-org7c469f9" class="outline-4">
+<h4 id="org7c469f9"><span class="section-number-4">10.2.1</span> 普通股筹资的特点</h4>
+<div class="outline-text-4" id="text-10-2-1">
+<ul class="org-ul">
+<li>优点
+<ol class="org-ol">
+<li>没有固定利息负担</li>
+<li>没有固定到期日</li>
+<li>财务风险小</li>
+<li>能增加公司的信誉</li>
+<li>筹资现值较少</li>
+<li>在通货膨胀时普通股筹资容易吸收资金</li>
+</ol></li>
+<li>缺点
+<ol class="org-ol">
+<li>普通股的资本成本较高</li>
+<li>可能会分散公司的控制权</li>
+<li>信息披露成本大，也增加了公司保护商业秘密的难度</li>
+<li>股票上市会增加公司被收购的风险</li>
+</ol></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">分类</th>
+<th scope="col" class="org-left">含义</th>
+<th scope="col" class="org-left">适用情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">有偿增资发行</td>
+<td class="org-left">指认购者必须按股票的某种发行价格支付现款，方能获得股票的一种发行方式</td>
+<td class="org-left">公开增发、配股和定向增发都采用有偿增资的方式</td>
+</tr>
+
+<tr>
+<td class="org-left">无偿增资发行</td>
+<td class="org-left">指认购者不必向公司缴纳现金就可获得股票的发行方式</td>
+<td class="org-left">发行对象只限于原股东。一般只在发配股票股利、资本攻击或盈余公积转增资本时采用</td>
+</tr>
+
+<tr>
+<td class="org-left">搭配增资发行</td>
+<td class="org-left">指发行公司向原股东发行新股时，仅让股东支付发行价格的一部分就可获得一定数额股票的发行方式</td>
+<td class="org-left">无偿发行部分，有资本公积或留存收益转增。这种发行发生通常是对原股东的一种优惠</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>配股条件
+<ol class="org-ol">
+<li>拟配售股份数量不超过本次配售股份前股本总额的 30%</li>
+<li>控股股东应当在股东大会召开前公开承诺认赔股份的数量</li>
+<li>采用证券法规定的代销方式发行</li>
+</ol></li>
+</ul>
+<p>
+<b>&ldquo;填权&rdquo;</b> :如果除权后股票交易市价高于该除权参考价
+\(每股股票配股权价值 = \frac{配股除权参考价 - 配股价格}{购买一股新股配股所需的原股数}=\frac{S_{T}-X}{N}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc68311" class="outline-4">
+<h4 id="orgdc68311"><span class="section-number-4">10.2.2</span> 增发新股<a href="20210422164900-to_note.html">To-note</a></h4>
+</div>
+</div>
+<div id="outline-container-org51ad52e" class="outline-3">
+<h3 id="org51ad52e"><span class="section-number-3">10.3</span> 混合筹资</h3>
+<div class="outline-text-3" id="text-10-3">
+</div>
+<div id="outline-container-org1ff903e" class="outline-4">
+<h4 id="org1ff903e"><span class="section-number-4">10.3.1</span> 附认股权证债券筹资</h4>
+<div class="outline-text-4" id="text-10-3-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">区别点</th>
+<th scope="col" class="org-left">股票看涨期权</th>
+<th scope="col" class="org-left">认股权证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">行权时股票来源</td>
+<td class="org-left">股票看涨期权执行时，其股票来自二级市场</td>
+<td class="org-left">当认股权执行时，股票是新发股票</td>
+</tr>
+
+<tr>
+<td class="org-left">对每股收益和股价的影响</td>
+<td class="org-left">不存在稀释问题</td>
+<td class="org-left">会引起股份数的增加，从而稀释每股收益和股价</td>
+</tr>
+
+<tr>
+<td class="org-left">期限</td>
+<td class="org-left">时间较短</td>
+<td class="org-left">时限长</td>
+</tr>
+
+<tr>
+<td class="org-left">布莱克-斯科尔斯模型的运用</td>
+<td class="org-left">可以适用</td>
+<td class="org-left">不能用</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org4cc56b7" class="outline-3">
+<h3 id="org4cc56b7"><span class="section-number-3">10.4</span> 租赁筹资</h3>
+</div>
+</div>
+
+<div id="outline-container-orgd41e14b" class="outline-2">
+<h2 id="orgd41e14b"><span class="section-number-2">11</span> 股利分配、股票分割与股票回购</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org9fec39f" class="outline-3">
+<h3 id="org9fec39f"><span class="section-number-3">11.1</span> 股利理论</h3>
+<div class="outline-text-3" id="text-11-1">
+</div>
+<div id="outline-container-org88d133d" class="outline-4">
+<h4 id="org88d133d"><span class="section-number-4">11.1.1</span> 股利无关伦&#x2013;股利的 MM 理论</h4>
+</div>
+<div id="outline-container-org4afc426" class="outline-4">
+<h4 id="org4afc426"><span class="section-number-4">11.1.2</span> 股利相关理论</h4>
+<div class="outline-text-4" id="text-11-1-2">
+</div>
+<div id="outline-container-org701a82f" class="outline-5">
+<h5 id="org701a82f">税差理论</h5>
+</div>
+<div id="outline-container-orga10696e" class="outline-5">
+<h5 id="orga10696e">客户效应理论</h5>
+</div>
+<div id="outline-container-org52ca757" class="outline-5">
+<h5 id="org52ca757">&ldquo;一鸟在手&rdquo;理论</h5>
+</div>
+<div id="outline-container-org2398030" class="outline-5">
+<h5 id="org2398030">代理理论</h5>
+</div>
+<div id="outline-container-orgd443026" class="outline-5">
+<h5 id="orgd443026">信号理论</h5>
+<div class="outline-text-5" id="text-orgd443026">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">可能的信号</th>
+<th scope="col" class="org-left">好信号</th>
+<th scope="col" class="org-left">差信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">高股利支付率</td>
+<td class="org-left">企业未来业绩大幅度增长</td>
+<td class="org-left">企业没有前景好的投资项目</td>
+</tr>
+
+<tr>
+<td class="org-left">低股利支付率</td>
+<td class="org-left">企业有前景好的投资项目</td>
+<td class="org-left">企业未来出现衰退</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd3afe1c" class="outline-4">
+<h4 id="orgd3afe1c"><span class="section-number-4">11.1.3</span> 股利政策类型</h4>
+<div class="outline-text-4" id="text-11-1-3">
+</div>
+<div id="outline-container-org11fddfb" class="outline-5">
+<h5 id="org11fddfb">剩余股利政策</h5>
+<div class="outline-text-5" id="text-org11fddfb">
+<ul class="org-ul">
+<li>优点保持理想的资本结构，使加权平均资本成本最低</li>
+<li>缺点股利发放额随投资机会和盈利水平的波动而波动，不利于投资者安排收入与支出</li>
+</ul>
+<blockquote>
+<p>
+资本结构时长期有息负债和所有者权益的比率
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgd1c60d2" class="outline-5">
+<h5 id="orgd1c60d2">固定股利或稳定增长股利政策</h5>
+</div>
+<div id="outline-container-org991bd9b" class="outline-5">
+<h5 id="org991bd9b">固定股利支付率政策</h5>
+</div>
+<div id="outline-container-orge3a65a8" class="outline-5">
+<h5 id="orge3a65a8">低正常股利加额外股利政策</h5>
+</div>
+</div>
+<div id="outline-container-org7a4677f" class="outline-4">
+<h4 id="org7a4677f"><span class="section-number-4">11.1.4</span> 股利政策的影响因素</h4>
+<div class="outline-text-4" id="text-11-1-4">
+<ul class="org-ul">
+<li>法律因素
+<ol class="org-ol">
+<li>资本保全的限制</li>
+<li>企业积累的限制</li>
+<li>净利润的限制</li>
+<li>超额累计利润的限制</li>
+<li>无力偿付的限制</li>
+</ol></li>
+<li>股东因素
+<ol class="org-ol">
+<li>稳定的收入</li>
+<li>避税</li>
+<li>控制权的稀释</li>
+</ol></li>
+<li>公司因素
+<ol class="org-ol">
+<li>盈余的稳定性</li>
+<li>公司的流动性</li>
+<li>举债能力</li>
+<li>投资机会</li>
+<li>资本成本</li>
+<li>债务需要</li>
+</ol></li>
+</ul>
+<blockquote>
+<p>
+资本公积转增股本与股票股利一样都会使股东具有相同的股份增持效果，但并未增加股东持有股份的价值。
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgc610c10" class="outline-4">
+<h4 id="orgc610c10"><span class="section-number-4">11.1.5</span> 股票分割</h4>
+<div class="outline-text-4" id="text-11-1-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">内容</th>
+<th scope="col" class="org-left">股票股利</th>
+<th scope="col" class="org-left">股票分割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">不同点</td>
+<td class="org-left">1. 每股面值不变</td>
+<td class="org-left">1. 每股面值变小</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">2. 股东权益内部结构变化</td>
+<td class="org-left">2. 股东权益内部结构不变</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">3. 属于股利支付方式</td>
+<td class="org-left">3. 不属于股利支付方式</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org3d32a3c" class="outline-4">
+<h4 id="org3d32a3c"><span class="section-number-4">11.1.6</span> 股票回购</h4>
+<div class="outline-text-4" id="text-11-1-6">
+<ul class="org-ul">
+<li>对公司的作用
+<ol class="org-ol">
+<li>向市场传达积极信号，提升股价</li>
+<li>避免股利波动的负面影响，稳定股价</li>
+<li>减少自由现金流，降低管理层代理成本</li>
+<li>反收购策略，减少流通股，抬高股价</li>
+<li>改变资产就够，提高财务杠杆</li>
+<li>调节所有权结构，用于认股权证行权、可转换债券行权、股权激励、交换被收购或兼并公司的股票。</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga470f21" class="outline-2">
+<h2 id="orga470f21"><span class="section-number-2">12</span> 营运资本管理</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-orgcd1f2ee" class="outline-3">
+<h3 id="orgcd1f2ee"><span class="section-number-3">12.1</span> 营运资本管理策略</h3>
+<div class="outline-text-3" id="text-12-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">种类</th>
+<th scope="col" class="org-left">流动资产占收入的比</th>
+<th scope="col" class="org-left">持有成本</th>
+<th scope="col" class="org-left">短缺成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">激进型投资策略</td>
+<td class="org-left">低</td>
+<td class="org-left">低</td>
+<td class="org-left">高</td>
+</tr>
+
+<tr>
+<td class="org-left">保守型投资策略</td>
+<td class="org-left">高</td>
+<td class="org-left">高</td>
+<td class="org-left">低</td>
+</tr>
+
+<tr>
+<td class="org-left">适中型投资策略</td>
+<td class="org-left">适中</td>
+<td class="org-left">(1)持有成本+短缺成本最小</td>
+<td class="org-left">(2)短缺成本 = 持有成本</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org10760c0" class="outline-3">
+<h3 id="org10760c0"><span class="section-number-3">12.2</span> 营运资本筹资策略</h3>
+<div class="outline-text-3" id="text-12-2">
+<p>
+\(易变现率 = \frac{股东权益 + 长期债务 + 经营性流动负债 - 长期资产}{经营性流动资产} = \frac{长期资金来源-长期资产}{经营性流动资产}\)
+</p>
+<ol class="org-ol">
+<li>波动性流动资产 = 短期金融负债</li>
+<li>长期资产 + 稳定性流动资产 = 股东权益 + 长期债务 + 经营性流动负债</li>
+<li>营运资本筹资策略
+<ol class="org-ol">
+<li>适中型筹资策略易变现率 = 1</li>
+<li>激进型筹资策略易变现率 &lt; 1</li>
+<li>保守型筹资策略易变现率 &gt; 1</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc385f49" class="outline-3">
+<h3 id="orgc385f49"><span class="section-number-3">12.3</span> 最佳现金持有量分析</h3>
+<div class="outline-text-3" id="text-12-3">
+</div>
+<div id="outline-container-org0d403e7" class="outline-4">
+<h4 id="org0d403e7"><span class="section-number-4">12.3.1</span> 成本分析模式</h4>
+<div class="outline-text-4" id="text-12-3-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">成本</th>
+<th scope="col" class="org-left">机会成本</th>
+<th scope="col" class="org-left">管理成本</th>
+<th scope="col" class="org-left">短缺成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">与现金持有量关系</td>
+<td class="org-left">正比例变动</td>
+<td class="org-left">固定</td>
+<td class="org-left">反向变动</td>
+</tr>
+</tbody>
+</table>
+<p>
+总成本 = 机会成本 + 管理成本 + 短缺成本当 机会成本 = 短缺成本 时，总成本是最小的。
+</p>
+</div>
+</div>
+<div id="outline-container-org6f30085" class="outline-4">
+<h4 id="org6f30085"><span class="section-number-4">12.3.2</span> 存货模式</h4>
+<div class="outline-text-4" id="text-12-3-2">
+<p>
+\(机会成本 = 平均现金持有量 \times 持有现金的机会成本率 = \frac{C}{2}\times K\)
+\(交易成本 = 交易次数 \times 每次交易成本 = \frac{T}{C}\timesF\)
+当机会成本 =  交易成本 时
+\(最佳现金持有量:C^{*}=\sqrt{\frac{2\times T \times K}{K}}\)
+</p>
+</div>
+</div>
+<div id="outline-container-orgba28e64" class="outline-4">
+<h4 id="orgba28e64"><span class="section-number-4">12.3.3</span> 随机模式</h4>
+<div class="outline-text-4" id="text-12-3-3">
+<ol class="org-ol">
+<li>H = 3R -2L</li>
+<li>L 的影响因素: 每日最低现金需要；管理人员的风险承受倾向等</li>
+<li>现金返回线: \(R=\sqrt[3]{\frac{3b\delta^{2}}{4i}}+L\)</li>
+</ol>
+<p>
+b: 每次有价证券的固定转换成本
+i: 有价证券的日利息率
+&delta;: 预期每日现金余额波动的标准差
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb050b09" class="outline-3">
+<h3 id="orgb050b09"><span class="section-number-3">12.4</span> 应收款项管理</h3>
+<div class="outline-text-3" id="text-12-4">
+<ul class="org-ul">
+<li>信用政策的构成
+<ul class="org-ul">
+<li>信用期间</li>
+<li>信用标准</li>
+<li>现金折扣政策</li>
+</ul></li>
+<li>确定信用标准应考虑的因素&#x2014;&ldquo;5C&rdquo;
+<ul class="org-ul">
+<li>品质</li>
+<li>能力</li>
+<li>资本</li>
+<li>抵押</li>
+<li>条件</li>
+</ul></li>
+<li>改变信用政策的决策税前收益 = 收益 - 成本费用收益 = 营业收入 - 变动成本 - 固定成本成本费用 = 占用资金的应计利息 + 收账费用和坏账损失 + 折扣成本收账费用 = 应收账款占有资金的应计利息 + 存货占有资金的应计利息 -应付账款占用资金的抵减的应计利息
+\(折扣成本 = \sum(赊销额\times 折扣率 \times 销售折扣的客户比率)\)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org995fc47" class="outline-3">
+<h3 id="org995fc47"><span class="section-number-3">12.5</span> 存货管理</h3>
+<div class="outline-text-3" id="text-12-5">
+</div>
+<div id="outline-container-orge666b51" class="outline-4">
+<h4 id="orge666b51"><span class="section-number-4">12.5.1</span> 存户经济批量分析</h4>
+<div class="outline-text-4" id="text-12-5-1">
+</div>
+<div id="outline-container-org6b21b51" class="outline-5">
+<h5 id="org6b21b51">基本模型</h5>
+<div class="outline-text-5" id="text-org6b21b51">
+<ol class="org-ol">
+<li>\(TC(Q^{*}) = \frac{D}{Q^{*}}K +\frac{Q^{*}}{2}K_{e}=\sqrt{2KDK_{e}}\)</li>
+<li>\(Q^{*}=\sqrt{\frac{2KD}{K_{e}}}\)</li>
+<li>\(N^{*}=\frac{D}{Q^{*}}\)</li>
+<li>\(t^{*}=\frac{1}{N^{*}}\)</li>
+<li>\(I^{*}=\frac{Q^{*}}{2}\times U\)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org561d533" class="outline-5">
+<h5 id="org561d533">基本模型的扩展</h5>
+<div class="outline-text-5" id="text-org561d533">
+</div>
+<ul class="org-ul">
+<li><a id="org9ba1dc5"></a>存在数量折扣<br />
+<div class="outline-text-6" id="text-org9ba1dc5">
+<p>
+购置成本 = 年需要量 &times; 单价
+</p>
+</div>
+</li>
+<li><a id="org7e92eb6"></a>存在订货提前期<br />
+<div class="outline-text-6" id="text-org7e92eb6">
+<p>
+在不存在保险储备的情况下
+R(再订货点) = L &times; d = 平均交货时间 &times; 每日平均需求量提前订货对经济订货量并无影响，相关公式与基本模型完全一样
+</p>
+</div>
+</li>
+<li><a id="org03bd149"></a>存货陆续供应和使用<br />
+<div class="outline-text-6" id="text-org03bd149">
+<ol class="org-ol">
+<li>\(Q^{*}=\sqrt{\frac{2KD}{K_{e}}}\times \frac{P}{P-d}\)</li>
+<li>\(TC(Q^{*})=\sqrt{2KDK_{e}\times (1-\frac{d}{P})}\)</li>
+<li>\(N^{*}=D/Q^{*}\)</li>
+<li>\(t^{*}=1/N^{*}\)</li>
+<li>\(I^{*}=\frac{Q^{*}}{2}\times (1-\frac{d}{P})\times U\)</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org87524d6" class="outline-5">
+<h5 id="org87524d6">保险储备</h5>
+<div class="outline-text-5" id="text-org87524d6">
+<p>
+\(R=平均交货时间\times 平均日需求 + 保险储备=L\times d +B\)
+\(TC(S、B)=K_{U}\times S\times N+B\times K_{e}\)
+$K_{U}$&#x2014;单位缺货成本
+N&#x2014;年订货次数
+B&#x2014;保险储备量
+S&#x2014;一次订货缺货量
+$K_{e}$&#x2014;单位储备变动成本
+</p>
+<blockquote>
+<p>
+告知延迟时，交货按照没有延迟的天数作为正常交货期。
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org6eecc47" class="outline-3">
+<h3 id="org6eecc47"><span class="section-number-3">12.6</span> 短期债务管理</h3>
+<div class="outline-text-3" id="text-12-6">
+</div>
+<div id="outline-container-org5342af0" class="outline-4">
+<h4 id="org5342af0"><span class="section-number-4">12.6.1</span> 商业信用筹资</h4>
+<div class="outline-text-4" id="text-12-6-1">
+<p>
+\(放弃现金折扣成本=\frac{折扣百分比}{1-折扣百分比}\times\frac{360}{信用期-折扣期}\)
+\(放弃现金折扣成本=(1+\frac{折扣百分比}{1-折扣百分比})^{\frac{360}{信用期-折扣期}}-1\)
+延展期决策时 信用期用 <b>付款期</b> 代替。
+</p>
+</div>
+</div>
+<div id="outline-container-org9e82a1c" class="outline-4">
+<h4 id="org9e82a1c"><span class="section-number-4">12.6.2</span> 短期借款筹资</h4>
+<div class="outline-text-4" id="text-12-6-2">
+<ol class="org-ol">
+<li>\(补偿性余额 = \frac{贷款额\times 报价利率}{贷款额\times (1-补偿性余额比率)}=报价利率/(1-补偿性余额)\)</li>
+<li>\(收款法付息(到期一次还本付息)=\frac{贷款额\times 报价利率}{贷款额}=报价利率\)</li>
+<li>\(贴现息付息(预扣利息)=\frac{贷款额\times 报价利率}{贷款额-贷款额\times 报价利率}=\frac{报价利率}{1-报价利率}\)</li>
+<li>\(加息法付息(分期等额偿还本息)\approx\frac{贷款额\times 报价利率}{贷款额/2}\approx2\times 报价利率\)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb291b19" class="outline-2">
+<h2 id="orgb291b19"><span class="section-number-2">13</span> 产品成本计算</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-org2fba222" class="outline-3">
+<h3 id="org2fba222"><span class="section-number-3">13.1</span> 产品成本与期间成本</h3>
+<div class="outline-text-3" id="text-13-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">种类</th>
+<th scope="col" class="org-left">制造成本法</th>
+<th scope="col" class="org-left">变动成本法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">产品成本</td>
+<td class="org-left">直接材料成本、直接人工成本和制造费用</td>
+<td class="org-left">直接材料成本、直接人工成本和变动制造费用</td>
+</tr>
+
+<tr>
+<td class="org-left">期间成本</td>
+<td class="org-left">管理费用、销售费用、财务费用等</td>
+<td class="org-left">固定制造费用、管理费用、销售费用、财务费用等</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgc7db0bc" class="outline-3">
+<h3 id="orgc7db0bc"><span class="section-number-3">13.2</span> 间接费用的归集和分配</h3>
+<div class="outline-text-3" id="text-13-2">
+</div>
+<div id="outline-container-orgcd25adb" class="outline-4">
+<h4 id="orgcd25adb"><span class="section-number-4">13.2.1</span> 辅助生产费用的归集和分配</h4>
+<div class="outline-text-4" id="text-13-2-1">
+</div>
+<div id="outline-container-org6473a56" class="outline-5">
+<h5 id="org6473a56">直接分配法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ATTACH">ATTACH</span></span></h5>
+<div class="outline-text-5" id="text-org6473a56">
+<ol class="org-ol">
+<li>辅助生产的单位成本=辅助生产费用总额/[辅助生产的产品（劳务)总量-对其他辅助部门提供的产品（劳务）量]</li>
+<li>各受益车间、产品或各部门应分配的费用 = 辅助生产的单位成本 x 该车间、产品或部门的耗用量</li>
+</ol>
+
+<div id="orgdd0738f" class="figure">
+<p><img src="file:///home/samon/Think/Org/.attach/81/bc6a14-eebb-4615-aaf1-5ee21e567f2d/_20210717_101127screenshot.png" alt="_20210717_101127screenshot.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org661866d" class="outline-5">
+<h5 id="org661866d">交叉分配法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ATTACH">ATTACH</span></span></h5>
+<div class="outline-text-5" id="text-org661866d">
+<ol class="org-ol">
+<li>对内交互分配率=辅助生产费用总额/辅助生产提供的总产品或劳务总量</li>
+<li>对外分配率=（交互分配前的的成本費用+交互分配转入的成本费用一交互分配转出的成本费用）/对辅助生产车间以外的其他部门提供的产品或劳务总量</li>
+</ol>
+
+<div id="orgb66678f" class="figure">
+<p><img src="file:///home/samon/Think/Org/.attach/a0/874d54-b813-410a-b9ea-c16a38c69ee9/_20210717_103303screenshot.png" alt="_20210717_103303screenshot.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga444711" class="outline-4">
+<h4 id="orga444711"><span class="section-number-4">13.2.2</span> 制造费用归集和分配</h4>
+<div class="outline-text-4" id="text-13-2-2">
+<ol class="org-ol">
+<li>制造费用分配率=制造费用总额/各种产品生产实用（定额）人工工时（机器加工工时）之和</li>
+<li>某产品应负担的制造费用 =该种产品工时数 x 制造费用分配率</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org759b0a2" class="outline-3">
+<h3 id="org759b0a2"><span class="section-number-3">13.3</span> 完工产品在产品的成本分配</h3>
+<div class="outline-text-3" id="text-13-3">
+</div>
+<div id="outline-container-org3d8f166" class="outline-4">
+<h4 id="org3d8f166"><span class="section-number-4">13.3.1</span> 分配原理</h4>
+<div class="outline-text-4" id="text-13-3-1">
+<p>
+<b>基本公式：</b> 月初在产品成本 + 本月发生生产费用 = 本月完工产品成本 + 月末在产品成本
+</p>
+</div>
+</div>
+<div id="outline-container-org5c7364c" class="outline-4">
+<h4 id="org5c7364c"><span class="section-number-4">13.3.2</span> 分配方法</h4>
+<div class="outline-text-4" id="text-13-3-2">
+</div>
+<div id="outline-container-orge652b41" class="outline-5">
+<h5 id="orge652b41">倒挤法</h5>
+<div class="outline-text-5" id="text-orge652b41">
+<p>
+本月完工产品成本 = 月初在产品成本 + 本月发生生产费用 -月末在产品成本
+</p>
+</div>
+</div>
+<div id="outline-container-org10b93a2" class="outline-5">
+<h5 id="org10b93a2">分配法</h5>
+<div class="outline-text-5" id="text-org10b93a2">
+<ol class="org-ol">
+<li>\(分配率 = \frac{待分配的费用}{完工产品分配标准+月末在产品分配标准}\)</li>
+<li>\(本月完工产品成本 = 分配率\times 完工产品分配标准\)</li>
+<li>\(月末在产品成本 = 分配率 \times 月末在产品分配标准\)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgb201603" class="outline-5">
+<h5 id="orgb201603">联合产品加工成本的分配</h5>
+<div class="outline-text-5" id="text-orgb201603">
+<ol class="org-ol">
+<li>\(联合成本分配率 = \frac{待分配联合成本}{各联产品分配标准合计}\)</li>
+<li>\(某联产品应分配联合成本 = 分配率 \times 该产品分配标准\)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org526c61d" class="outline-3">
+<h3 id="org526c61d"><span class="section-number-3">13.4</span> 产品成本计算的基本方法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ATTACH">ATTACH</span></span></h3>
+<div class="outline-text-3" id="text-13-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">基本方法</th>
+<th scope="col" class="org-left">成本计算对象</th>
+<th scope="col" class="org-left">成本计算期</th>
+<th scope="col" class="org-left">完工、在产划分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">品种法</td>
+<td class="org-left">产品种类</td>
+<td class="org-left">与会计核算报告期一致</td>
+<td class="org-left">如果月末有在产品，要将生产费用在完工产品和在产品之间进行分配</td>
+</tr>
+
+<tr>
+<td class="org-left">分批法</td>
+<td class="org-left">产品的批别</td>
+<td class="org-left">与产品生产周期基本一致</td>
+<td class="org-left"><code>一般不存在</code> 完工产品与在产品之间分配费用的问题</td>
+</tr>
+
+<tr>
+<td class="org-left">分步法</td>
+<td class="org-left">产品生产步骤</td>
+<td class="org-left">与会计核算报告期一致</td>
+<td class="org-left">月末许将生产费用在完工产品和在产品之间进行分配；除了按产品品种计算和结转产品成本外，还需要按生产步骤计算和结转产品的成本</td>
+</tr>
+</tbody>
+</table>
+
+
+<div id="org04b94c4" class="figure">
+<p><img src="file:///home/samon/Think/Org/.attach/82/d63506-f603-4d9c-b45d-b54b549db244/_20210717_110217screenshot.png" alt="_20210717_110217screenshot.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcd187c4" class="outline-2">
+<h2 id="orgcd187c4"><span class="section-number-2">14</span> 标准成本法</h2>
+<div class="outline-text-2" id="text-14">
+</div>
+<div id="outline-container-org720ef98" class="outline-3">
+<h3 id="org720ef98"><span class="section-number-3">14.1</span> 标准成本及其制定</h3>
+<div class="outline-text-3" id="text-14-1">
+</div>
+<div id="outline-container-orgbfd39ce" class="outline-4">
+<h4 id="orgbfd39ce"><span class="section-number-4">14.1.1</span> 标准成本的概念及其分类</h4>
+<div class="outline-text-4" id="text-14-1-1">
+</div>
+<div id="outline-container-orge7d0f94" class="outline-5">
+<h5 id="orge7d0f94">标准成本的两种含义</h5>
+<div class="outline-text-5" id="text-orge7d0f94">
+<ol class="org-ol">
+<li>“成本标准”: 成本标准 = 单位产品标准成本 = 单位产品标准消耗量 &times; 标准单价</li>
+<li>“标准成本”: 标准成本(总额) = 实际产量 &times; 单位产品标准成本</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc89a454" class="outline-5">
+<h5 id="orgc89a454">标准成本的分类</h5>
+<div class="outline-text-5" id="text-orgc89a454">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">分类</th>
+<th scope="col" class="org-left">理想标准成本</th>
+<th scope="col" class="org-left">正常标准成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">条件</td>
+<td class="org-left">最优生产条件</td>
+<td class="org-left">效率良好的条件</td>
+</tr>
+
+<tr>
+<td class="org-left">损耗</td>
+<td class="org-left">理论上的业绩标准</td>
+<td class="org-left">根据下期一般应该发生的生产要素下消耗量</td>
+</tr>
+
+<tr>
+<td class="org-left">价格</td>
+<td class="org-left">生产要素的理想价格</td>
+<td class="org-left">生产要素的预计价格</td>
+</tr>
+
+<tr>
+<td class="org-left">产能</td>
+<td class="org-left">可能实现的最高生产经营能力利用水平</td>
+<td class="org-left">预计生产经营能力利用程度</td>
+</tr>
+
+<tr>
+<td class="org-left">用途</td>
+<td class="org-left">提供一个完美无缺的目标，揭示实际成本下降的潜力，不宜作为考核的依据</td>
+<td class="org-left">实际工作中广泛使用正常标准成本</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>正常标准成本的特点
+<ul class="org-ul">
+<li>科学性</li>
+<li>客观性</li>
+<li>现实性</li>
+<li>激励性</li>
+<li>稳定性</li>
+</ul></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">分类</th>
+<th scope="col" class="org-left">现行标准成本</th>
+<th scope="col" class="org-left">基本标准成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">含义</td>
+<td class="org-left">指根据其适用期间应该发生的价格、效率和生产经营能力利用程度等预计的标准成本</td>
+<td class="org-left">指一经制定，只要生产的<code>基本条件无重大变化</code>，就不予变动的一种标准成本</td>
+</tr>
+
+<tr>
+<td class="org-left">用途</td>
+<td class="org-left">可以成为评价实际成本的依据，也可以用来对存货和销货成本计价</td>
+<td class="org-left">与各期实际成本对比，可以反映成本变动的趋势；但不以用来直接评价工作效率和成本控制的有效性</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">变化性质</th>
+<th scope="col" class="org-left">变化内容</th>
+<th scope="col" class="org-left">现行标准成本</th>
+<th scope="col" class="org-left">基本标准成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">属于生产基本条件重大变化</td>
+<td class="org-left">产品的物理结构变化</td>
+<td class="org-left">需要修订</td>
+<td class="org-left">需要修订</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">重要原材料和劳动力价格的重要变化</td>
+<td class="org-left">需要修订</td>
+<td class="org-left">需要修订</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">生产技术和工艺的根本变化</td>
+<td class="org-left">需要修订</td>
+<td class="org-left">需要修订</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">不属于生产基本条件重大变化</td>
+<td class="org-left">市场供求变化导致的售价变化</td>
+<td class="org-left">需要修订</td>
+<td class="org-left">不需要修订</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">市场供求变化导致的生产经营能力利用程度的变化</td>
+<td class="org-left">需要修订</td>
+<td class="org-left">不需要修订</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">工作方法改变导致的效率变化</td>
+<td class="org-left">需要修订</td>
+<td class="org-left">不需要修订</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org7aaf9a9" class="outline-4">
+<h4 id="org7aaf9a9"><span class="section-number-4">14.1.2</span> 标准成本的制定</h4>
+<div class="outline-text-4" id="text-14-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">成本项目</th>
+<th scope="col" class="org-left">用量标准</th>
+<th scope="col" class="org-left">价格标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">直接材料</td>
+<td class="org-left">单位产品材料消耗量</td>
+<td class="org-left">原材料单价</td>
+</tr>
+
+<tr>
+<td class="org-left">直接人工</td>
+<td class="org-left">单位产品直接人工工时</td>
+<td class="org-left">小时工资率</td>
+</tr>
+
+<tr>
+<td class="org-left">制造费用</td>
+<td class="org-left">单位产品直接人工工时</td>
+<td class="org-left">小时制造费用分配率</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">价格标准</th>
+<th scope="col" class="org-left">用量标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">直接材料</td>
+<td class="org-left">预计下一年度<code>取得</code>每单位材料需要支付的</td>
+<td class="org-left">直接材料的标准消耗量，是现有技术条件生产单位产品所需的材料数量</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">完全成本</td>
+<td class="org-left">包括：必不可少的消耗、难以避免的损失</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">包括：发票价格、运费、检验和正常损耗</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">等成本</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">直接人工</td>
+<td class="org-left">指标准工资率。它可能是预定的工资率，</td>
+<td class="org-left">标准工时是指现有生产技术条件下，生产单位产品所需要的时间</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">也可能是正常的工资率</td>
+<td class="org-left">包括：直接加工操作必不可少的时间、必要的间歇和停工(如工间</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">休息、设备调整准备时间)、不可避免的废物耗用工时等</td>
+</tr>
+</tbody>
+</table>
+<p>
+标准成本 = 不考虑损耗的标准成本/(1-正常损耗率)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3af40f6" class="outline-3">
+<h3 id="org3af40f6"><span class="section-number-3">14.2</span> 标准成本的差异分析</h3>
+<div class="outline-text-3" id="text-14-2">
+</div>
+<div id="outline-container-org2ea78d9" class="outline-4">
+<h4 id="org2ea78d9"><span class="section-number-4">14.2.1</span> 变动成本差异的分析</h4>
+<div class="outline-text-4" id="text-14-2-1">
+</div>
+<div id="outline-container-orgc95976b" class="outline-5">
+<h5 id="orgc95976b">通用公式</h5>
+<div class="outline-text-5" id="text-orgc95976b">
+<p>
+价差 = 实际数量 &times; (实际价格 - 标准价格)
+量差 = (实际数量 - 标准数量) &times; 标准价格
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">差异</th>
+<th scope="col" class="org-left">用量差异</th>
+<th scope="col" class="org-left">直接材料价格差异</th>
+<th scope="col" class="org-left">直接人工工资率差异</th>
+<th scope="col" class="org-left">变动制造费用耗费差异</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">主要责任部门</td>
+<td class="org-left">主要是生产部门的责任</td>
+<td class="org-left">有采购部门负责</td>
+<td class="org-left">一般由人力资源部门负责</td>
+<td class="org-left">由部门经理负责</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org21a3b60" class="outline-4">
+<h4 id="org21a3b60"><span class="section-number-4">14.2.2</span> 固定制造费用差异分析&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ATTACH">ATTACH</span></span></h4>
+<div class="outline-text-4" id="text-14-2-2">
+
+<div id="orga5f5726" class="figure">
+<p><img src="file:///home/samon/Think/Org/.attach/7f/dafc45-1a96-48ed-a779-1c3ca1bc791e/_20210717_153852screenshot.png" alt="_20210717_153852screenshot.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org71bf2fb" class="outline-2">
+<h2 id="org71bf2fb"><span class="section-number-2">15</span> 作业成本法</h2>
+<div class="outline-text-2" id="text-15">
+</div>
+<div id="outline-container-orgc6f1e36" class="outline-3">
+<h3 id="orgc6f1e36"><span class="section-number-3">15.1</span> 作业成本法的概念和特点</h3>
+<div class="outline-text-3" id="text-15-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">相关概念</th>
+<th scope="col" class="org-left">要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">作业</td>
+<td class="org-left">作业是指企业中特点组织(成本中心、部门或产品线)重复执行的任务或活动</td>
+</tr>
+
+<tr>
+<td class="org-left">资源</td>
+<td class="org-left">资源是指作业消耗的人工、能源和实物资产</td>
+</tr>
+
+<tr>
+<td class="org-left">成本动因</td>
+<td class="org-left">资源成本动因、作业成本动因</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">传统成本法</th>
+<th scope="col" class="org-left">作业成本法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">间接成本分配</td>
+<td class="org-left">&ldquo;资源&#x2013;&gt;部门&#x2013;&gt;产品&rdquo;</td>
+<td class="org-left">&ldquo;资源&#x2013;&gt;作业&#x2013;&gt;产品&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left">适用范围</td>
+<td class="org-left">传统加工业</td>
+<td class="org-left">新兴的高科技领域</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">产量是成本的主要驱动因素的企业</td>
+<td class="org-left">直接材料与直接人工站成本比重很小，且与间接成本没有直接因果关系的企业</td>
+</tr>
+
+<tr>
+<td class="org-left">成本信息</td>
+<td class="org-left">产生误导性的成本信息: <code>夸大高产量</code> 产品的成本，<code>缩小低产量</code> 产品的成本</td>
+<td class="org-left">成本信息更准确</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org5dd6f91" class="outline-3">
+<h3 id="org5dd6f91"><span class="section-number-3">15.2</span> 作业成本计算</h3>
+<div class="outline-text-3" id="text-15-2">
+<ul class="org-ul">
+<li>作业库的设计
+<ol class="org-ol">
+<li>单位级别作业库</li>
+<li>批次级别作业库</li>
+<li>品种级别作业库</li>
+<li>生产级别作业库</li>
+</ol></li>
+<li>作业成本动因的种类
+<ol class="org-ol">
+<li>业务动因</li>
+<li>持续动因</li>
+<li>强度动因</li>
+</ol></li>
+<li>作业成本的计算方法
+<ol class="org-ol">
+<li>\(实际作业成本分配率 = \frac{当期实际发生的作业成本}{当期实际作业产出}\)</li>
+<li>\(某产品耗用的作业成本 = \sum(该产品耗用的作业量 \times 实际作业成本分配率)\)</li>
+<li>某产品当期发生总产品 = 当期投入该产品的直接成本 + 该产品当期耗用的各项作业成本</li>
+</ol></li>
+<li>优点
+<ol class="org-ol">
+<li>成本计算更准确</li>
+<li>成本控制与成本管理更有效</li>
+<li>为战略管理提供信息支持</li>
+</ol></li>
+<li>缺点
+<ol class="org-ol">
+<li>开发和维护费用较高</li>
+<li>不符合对外财务报告的需要</li>
+<li>确定成本动因比较困难</li>
+<li>不利于通过组织控制进行管理控制</li>
+</ol></li>
+<li>适用条件
+<ol class="org-ol">
+<li>成本结构</li>
+<li>产品品种</li>
+<li>外部环境</li>
+<li>公司规模</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org817b6a7" class="outline-3">
+<h3 id="org817b6a7"><span class="section-number-3">15.3</span> 作业成本管理</h3>
+<div class="outline-text-3" id="text-15-3">
+<p>
+<code>增值作业</code> 与 <code>非增值作业</code> 的区分标准： 这个作业是否有利于 <b>增加顾客的价值</b> 或者说 <b>增加顾客的效用</b>.
+</p>
+</div>
+<div id="outline-container-org9501420" class="outline-4">
+<h4 id="org9501420"><span class="section-number-4">15.3.1</span> 基于作业进行成本管理</h4>
+<div class="outline-text-4" id="text-15-3-1">
+<p>
+目标： 努力找到非增值作业成本并努力消除它、转化它或将之降到最低。
+</p>
+<ul class="org-ul">
+<li>内容
+<ol class="org-ol">
+<li>确定和分析作业</li>
+<li>作业链&#x2013;价值链分析</li>
+<li>成本动因分析</li>
+<li>业绩评价以及报告非增值作业成本</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd251987" class="outline-2">
+<h2 id="orgd251987"><span class="section-number-2">16</span> 本量利分析</h2>
+<div class="outline-text-2" id="text-16">
+</div>
+<div id="outline-container-orgb6878f7" class="outline-3">
+<h3 id="orgb6878f7"><span class="section-number-3">16.1</span> 本量利的一般关系</h3>
+<div class="outline-text-3" id="text-16-1">
+</div>
+<div id="outline-container-orgdb15e76" class="outline-4">
+<h4 id="orgdb15e76"><span class="section-number-4">16.1.1</span> 成本分类</h4>
+<div class="outline-text-4" id="text-16-1-1">
+<ol class="org-ol">
+<li>固定成本
+<ol class="org-ol">
+<li>约束性固定成本提供和维持生产经营所需设施、机构而发生的成本</li>
+<li>酌量性固定成本可以 <code>通过管理决策行动而改变</code> 数额的固定成本
+eg. 科研开发费、广告费、职工培训费等</li>
+</ol></li>
+<li>变动成本
+<ol class="org-ol">
+<li>技术性变动成本(约束性变动成本)
+与产量有明确的生产技术或产品结构设计关系的变动成本</li>
+<li>酌量性变动成本可以 <code>通过管理决策行动改变</code> 的变动成本</li>
+</ol></li>
+<li>混合成本
+<ol class="org-ol">
+<li>半变动成本</li>
+<li>阶梯式变动成本</li>
+<li>延期变动成本</li>
+<li>非线性成本</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org114f8b7" class="outline-4">
+<h4 id="org114f8b7"><span class="section-number-4">16.1.2</span> 混合成本的分解</h4>
+<div class="outline-text-4" id="text-16-1-2">
+<ol class="org-ol">
+<li>回归直线法</li>
+<li>工业工程法</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org01be828" class="outline-4">
+<h4 id="org01be828"><span class="section-number-4">16.1.3</span> 变动成本法</h4>
+<div class="outline-text-4" id="text-16-1-3">
+<ul class="org-ul">
+<li><b>优点</b>
+<ol class="org-ol">
+<li><code>消除</code> 了在完全成本法下，销售不变但可 <code>通过增加生产、调节库存来调节利润</code> 的问题。</li>
+<li>能够揭示利润和业务量之间的正常关系</li>
+<li>为企业内部管理提供有用的管理信息</li>
+<li>可以简化成本计算</li>
+</ol></li>
+<li>缺点不利于财务会计报告(财务会计要求存货成本按全部制造成本报告)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4949501" class="outline-4">
+<h4 id="org4949501"><span class="section-number-4">16.1.4</span> 本量利分析基本模型的相关假设</h4>
+<div class="outline-text-4" id="text-16-1-4">
+<ol class="org-ol">
+<li>相关范围假设</li>
+<li>模型线性假设</li>
+<li>产销平衡假设</li>
+<li>品种结构不变假设</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc942fc2" class="outline-4">
+<h4 id="orgc942fc2"><span class="section-number-4">16.1.5</span> 本量利分析基本模型</h4>
+<div class="outline-text-4" id="text-16-1-5">
+</div>
+<div id="outline-container-orgec5681f" class="outline-5">
+<h5 id="orgec5681f">基本损益方程</h5>
+<div class="outline-text-5" id="text-orgec5681f">
+<p>
+\(EBIT=P \times Q - V \times Q - F =(P - V) \times Q -F\)
+</p>
+</div>
+</div>
+<div id="outline-container-orgb3b49f5" class="outline-5">
+<h5 id="orgb3b49f5">包含期间成本的损益方程式</h5>
+<div class="outline-text-5" id="text-orgb3b49f5">
+<p>
+息税前利润 = 单价 &times; 销量 - (单位变动生产成本 + 单位变动销售和管理费用) &times; 销量 - (固定生产成本 + 固定销售和管理费用)
+</p>
+<blockquote>
+<p>
+<code>成本是广义的</code> ：既包括付现成本也包括非付现成本，既包括生产成本也包括期间费用。
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgb70547d" class="outline-5">
+<h5 id="orgb70547d">概念</h5>
+<div class="outline-text-5" id="text-orgb70547d">
+<p>
+制造边际贡献 = 销售收入 - 变动生产成本产品边际共线 = 制造边际成本 - 变动销售和管理费用
+\(加权平均边际贡献率 = \frac{\sum 各产品边际贡献}{\sum 各产品销售收入} \times 100\% =\sum(各产品边际贡献率 \times 各产品销售收入占总销售收入比重)\times 100\%\)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org31130e6" class="outline-3">
+<h3 id="org31130e6"><span class="section-number-3">16.2</span> 保本分析</h3>
+<div class="outline-text-3" id="text-16-2">
+</div>
+<div id="outline-container-org200e9bd" class="outline-4">
+<h4 id="org200e9bd"><span class="section-number-4">16.2.1</span> 保本点与安全边际的确定</h4>
+<div class="outline-text-4" id="text-16-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">表示方法</th>
+<th scope="col" class="org-left">保本点</th>
+<th scope="col" class="org-left">安全边际</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">实物量</td>
+<td class="org-left">\(保本量(Q_{0})=\frac{F}{P-V}\)</td>
+<td class="org-left">\(安全边际量=Q-Q_{0}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">金额</td>
+<td class="org-left">\(保本额(S_{0})=\frac{固定成本}{边际贡献率}\)</td>
+<td class="org-left">\(安全边际(额)=S-S_{0}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">相对数(率)</td>
+<td class="org-left">\(盈亏临界点作业率=\frac{Q_{0}}{Q}或\frac{S_{0}}{S}\)</td>
+<td class="org-left">\(安全边际率=\frac{Q-Q_{0}}{Q}或\frac{S-S_{0}}{S}\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgb2d0a08" class="outline-4">
+<h4 id="orgb2d0a08"><span class="section-number-4">16.2.2</span> 安全边际与利润的关系</h4>
+<div class="outline-text-4" id="text-16-2-2">
+<ol class="org-ol">
+<li>息税前利润 = 安全边际额 &times; 边际贡献率</li>
+<li>息税前利润 = 安全边际率 &times; 边际贡献</li>
+<li>销售息税前利润率 = 安全边际率 &times; 边际贡献率</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org2894450" class="outline-3">
+<h3 id="org2894450"><span class="section-number-3">16.3</span> 保利分析</h3>
+<div class="outline-text-3" id="text-16-3">
+<ol class="org-ol">
+<li>\(保利量 = \frac{固定成本 + 目标利润}{单价-单位变动成本}\)</li>
+<li>\(保利额 = \frac{固定成本 + 目标利润}{边际贡献率}\)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7ad5eeb" class="outline-3">
+<h3 id="org7ad5eeb"><span class="section-number-3">16.4</span> 利润敏感分析</h3>
+<div class="outline-text-3" id="text-16-4">
+<p>
+\(敏感系数 = \frac{目标值变动百分比}{参考值变动百分比}\)
+敏感系数 <code>绝对值大于1</code>，则属于 <code>敏感因素</code>；敏感系数绝对值小于 1，则属于非敏感因素。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd9d2c43" class="outline-2">
+<h2 id="orgd9d2c43"><span class="section-number-2">17</span> 短期经营决策</h2>
+<div class="outline-text-2" id="text-17">
+</div>
+<div id="outline-container-org2ad33ed" class="outline-3">
+<h3 id="org2ad33ed"><span class="section-number-3">17.1</span> 短期经营决策的概述</h3>
+<div class="outline-text-3" id="text-17-1">
+<p>
+<b>含义</b>: 短期经营诀策是指对企业一年以内或者维持当前的经哲规楼的系件下，有效地进行贷源配置的决策。
+</p>
+<ul class="org-ul">
+<li>特点
+<ol class="org-ol">
+<li><code>通常不涉及固定资产投资和经营规模的改变</code></li>
+<li>通常在成本形态分析的相关范围内决策</li>
+<li>通常不需要考虑货币时间价值</li>
+</ol></li>
+<li>相关成本的特点
+<ol class="org-ol">
+<li>相关信息是<code>面向未来</code>的</li>
+<li>相关信息在各个备选方案之间因该有所<code>差异</code></li>
+</ol></li>
+<li>相关成本的分类
+<ul class="org-ul">
+<li>边际成本</li>
+<li>机会成本</li>
+<li>重置成本</li>
+<li>付现成本</li>
+<li>可避免成本</li>
+<li>可延缓成本</li>
+<li>专属成本</li>
+<li>差额成本</li>
+</ul></li>
+<li>不相关成本
+<ul class="org-ul">
+<li>沉没成本</li>
+<li>不可避免成本</li>
+<li>不可延缓成本</li>
+<li>共同成本</li>
+<li>无差别成本</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdd44d26" class="outline-3">
+<h3 id="orgdd44d26"><span class="section-number-3">17.2</span> 生产决策</h3>
+<div class="outline-text-3" id="text-17-2">
+</div>
+<div id="outline-container-orgb704010" class="outline-4">
+<h4 id="orgb704010"><span class="section-number-4">17.2.1</span> 生产决策的主要方法</h4>
+<div class="outline-text-4" id="text-17-2-1">
+</div>
+<div id="outline-container-org6be2fcf" class="outline-5">
+<h5 id="org6be2fcf">差额分析法</h5>
+<div class="outline-text-5" id="text-org6be2fcf">
+<p>
+差额利润 = 差额收入 - 差额成本
+</p>
+</div>
+</div>
+<div id="outline-container-org518223a" class="outline-5">
+<h5 id="org518223a">边际贡献分析法</h5>
+<div class="outline-text-5" id="text-org518223a">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">决策原则</td>
+<td class="org-left">选择<code>边际贡献总额最大</code>的方案为优</td>
+</tr>
+
+<tr>
+<td class="org-left">适用条件</td>
+<td class="org-left">生产能力不变、固定成本总额稳定不变</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">相关损益 = 相关收入 - 相关成本 =  相关收入-(变动成本 + 专属成本)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org7f04c53" class="outline-5">
+<h5 id="org7f04c53">本量利分析法</h5>
+<div class="outline-text-5" id="text-org7f04c53">
+<p>
+息税前利润 = 销售收入 - 变动成本 - 固定成本
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org37dcfec" class="outline-4">
+<h4 id="org37dcfec"><span class="section-number-4">17.2.2</span> 亏损产品是否停产</h4>
+<div class="outline-text-4" id="text-17-2-2">
+<p>
+在短期内，如果企业的亏损产品能够<code>提供正的边际贡献</code> ，就 <code>不应该</code> 立即停产。
+</p>
+</div>
+</div>
+<div id="outline-container-org540bc86" class="outline-4">
+<h4 id="org540bc86"><span class="section-number-4">17.2.3</span> 零部件自制与外购的决策</h4>
+<div class="outline-text-4" id="text-17-2-3">
+<p>
+<code>相关成本最小</code> 的方案外购：外购成本自制：自制的变动成本、转产的机会成本、专属成本以及租金。
+</p>
+</div>
+</div>
+<div id="outline-container-orga59d8bb" class="outline-4">
+<h4 id="orga59d8bb"><span class="section-number-4">17.2.4</span> 特殊订单是否接受的决策</h4>
+<div class="outline-text-4" id="text-17-2-4">
+<p>
+相关损益 = 订单所提供的边际贡献 - 该订单所引起的相关成本
+</p>
+</div>
+</div>
+<div id="outline-container-org956384a" class="outline-4">
+<h4 id="org956384a"><span class="section-number-4">17.2.5</span> 约束资源最优利用决策</h4>
+<div class="outline-text-4" id="text-17-2-5">
+<p>
+单位约束资源的边际贡献 = 单位产品边际贡献/该单位产品耗用的约束资源量
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga31cfa9" class="outline-3">
+<h3 id="orga31cfa9"><span class="section-number-3">17.3</span> 定价决策</h3>
+<div class="outline-text-3" id="text-17-3">
+</div>
+<div id="outline-container-org8774b73" class="outline-4">
+<h4 id="org8774b73"><span class="section-number-4">17.3.1</span> 产品销售定价的方法</h4>
+<div class="outline-text-4" id="text-17-3-1">
+</div>
+<div id="outline-container-org0a164c4" class="outline-5">
+<h5 id="org0a164c4">成本加成定价法</h5>
+<div class="outline-text-5" id="text-org0a164c4">
+<p>
+<b>基本思路</b> 产品的目标价格 = 成本基数 + 成数
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">种类</th>
+<th scope="col" class="org-left">成本基数</th>
+<th scope="col" class="org-left">成数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">完全成本加成法</td>
+<td class="org-left">单位产品的制造成本</td>
+<td class="org-left">非制造成本及合理利润</td>
+</tr>
+
+<tr>
+<td class="org-left">变动成本加成法</td>
+<td class="org-left">单位变动成本</td>
+<td class="org-left">固定成本和预期利润</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgd331242" class="outline-5">
+<h5 id="orgd331242">市场定价法</h5>
+<div class="outline-text-5" id="text-orgd331242">
+<p>
+根据市场价格来定价
+</p>
+</div>
+</div>
+<div id="outline-container-org5399994" class="outline-5">
+<h5 id="org5399994">新产品的销售定价策略</h5>
+<div class="outline-text-5" id="text-org5399994">
+</div>
+<ul class="org-ul">
+<li><a id="org63a1c05"></a>撇脂性定价<br />
+<div class="outline-text-6" id="text-org63a1c05">
+<p>
+价格<code>由高到低</code> ，短期性策略，适用于 <code>产品的生命周期较短的产品</code>
+</p>
+</div>
+</li>
+<li><a id="orgd3498f7"></a>渗透性定价<br />
+<div class="outline-text-6" id="text-orgd3498f7">
+<p>
+价格 <code>由低到高</code> ，<code>长期的市场定价策略</code>
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org311c0ab" class="outline-5">
+<h5 id="org311c0ab">有闲置能力条件下的定价方法</h5>
+<div class="outline-text-5" id="text-org311c0ab">
+<p>
+价格在 <code>变动成本</code> 与 <code>目标价格</code> 之间进行选择。
+</p>
+<ol class="org-ol">
+<li>变动成本 = 直接材料 + 直接人工 + 变动制造费用 + 变动销售和行政管理费用</li>
+<li>成本加成 = 固定成本 + 预期利润</li>
+<li>目标价格 = 变动成本 + 成本加成</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4ada976" class="outline-2">
+<h2 id="org4ada976"><span class="section-number-2">18</span> 全面预算</h2>
+<div class="outline-text-2" id="text-18">
+</div>
+<div id="outline-container-org9375838" class="outline-3">
+<h3 id="org9375838"><span class="section-number-3">18.1</span> 全面预算的概述</h3>
+<div class="outline-text-3" id="text-18-1">
+</div>
+<div id="outline-container-orgd910cf0" class="outline-4">
+<h4 id="orgd910cf0"><span class="section-number-4">18.1.1</span> 全面预算体系的分类</h4>
+<div class="outline-text-4" id="text-18-1-1">
+<ul class="org-ul">
+<li>按其涉及的预算期
+<ol class="org-ol">
+<li>长期预算: 长期销售预算和资本预算</li>
+<li>短期预算: 年度预算或季度、月度预算</li>
+</ol></li>
+<li>按其涉及的内容
+<ol class="org-ol">
+<li>专门预算: 某一方面经济活动的预算</li>
+<li>综合预算: 利润表预算和资本负债表预算</li>
+</ol></li>
+<li>按其涉及的业务活动领域
+<ol class="org-ol">
+<li>投资预算: 资本预算</li>
+<li>营业预算: 销售预算、生产预算、成本预算</li>
+<li>财务预算: 利润表预算、现金预算和资产负债表预算</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf54301" class="outline-4">
+<h4 id="orgdf54301"><span class="section-number-4">18.1.2</span> 全面预算的作用</h4>
+<div class="outline-text-4" id="text-18-1-2">
+<p>
+各级各部门工作的具体 <code>奋斗目标</code> 、 <code>协调工具</code> 、 <code>控制标准</code> 、 <code>考核依据</code>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org02efa46" class="outline-3">
+<h3 id="org02efa46"><span class="section-number-3">18.2</span> 全面预算的编制方法</h3>
+<div class="outline-text-3" id="text-18-2">
+</div>
+<div id="outline-container-orgc7a1283" class="outline-4">
+<h4 id="orgc7a1283"><span class="section-number-4">18.2.1</span> 增量预算法与零基预算法</h4>
+<div class="outline-text-4" id="text-18-2-1">
+</div>
+<div id="outline-container-org6c50704" class="outline-5">
+<h5 id="org6c50704">增量预算法</h5>
+<div class="outline-text-5" id="text-org6c50704">
+<p>
+缺点:当预算期的情况发生变化时，预算数额可能会受到基期不合理因素的干扰，可能导致预算的不准确，不利于调动各部门达成预算目标的积极性
+</p>
+<ul class="org-ul">
+<li>假设前提
+<ol class="org-ol">
+<li>现有业务活动是企业所必需的</li>
+<li>企业现有各项业务的开支水平是合理的，在预算期予以保持。</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdfc8bbf" class="outline-5">
+<h5 id="orgdfc8bbf">零基预算法</h5>
+<div class="outline-text-5" id="text-orgdfc8bbf">
+<p>
+优点：不受前期费用项目和费用水平的制约，能够调动各部门降低费用的积极性缺点：编制工作量大
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7ba9e19" class="outline-4">
+<h4 id="org7ba9e19"><span class="section-number-4">18.2.2</span> 固定预算法与弹性预算法</h4>
+<div class="outline-text-4" id="text-18-2-2">
+</div>
+<div id="outline-container-org67f8d0d" class="outline-5">
+<h5 id="org67f8d0d">固定预算法(静态预算法)</h5>
+<div class="outline-text-5" id="text-org67f8d0d">
+<p>
+<code>某一固定的业务量</code> (如生产量、销售量等)
+</p>
+<ul class="org-ul">
+<li>特点
+<ol class="org-ol">
+<li>适应性差</li>
+<li>可比性差</li>
+</ol></li>
+<li>适用范围
+<ol class="org-ol">
+<li><code>业务稳定</code> ，产销量稳定，能 <code>准确预测</code> 产品需求及成本</li>
+<li>编制 <code>固定费用</code> 预算</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4bc4a69" class="outline-5">
+<h5 id="org4bc4a69">弹性预算法(动态预算法)</h5>
+<div class="outline-text-5" id="text-org4bc4a69">
+<p>
+在 <code>成本性态分析的基础上</code> ，依据业务量、成本和利润之间的联动关系
+</p>
+<ul class="org-ul">
+<li>特点
+<ol class="org-ol">
+<li>预算范围宽</li>
+<li>可比性强</li>
+</ol></li>
+<li>适用范围
+<ol class="org-ol">
+<li>理论上适用于所有与业务量有关的预算</li>
+<li>实物中主要用于编制成本费用预算和利润费用，尤其是成本费用预算</li>
+</ol></li>
+</ul>
+<p>
+正常生产能力的<code>70%~110%</code>
+</p>
+<ul class="org-ul">
+<li>方法
+<ol class="org-ol">
+<li>公式法</li>
+<li>列表法</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org09985be" class="outline-4">
+<h4 id="org09985be"><span class="section-number-4">18.2.3</span> 定期预算法与滚动预算法</h4>
+<div class="outline-text-4" id="text-18-2-3">
+</div>
+<div id="outline-container-orge178453" class="outline-5">
+<h5 id="orge178453">定期预算法</h5>
+<div class="outline-text-5" id="text-orge178453">
+<p>
+<code>以固定不变的会计期间</code>
+优点：保证预算期间与会计期间在时期上配比，便于依据会计报告的数据与预算的比较，考核和评价预算的执行结果缺点：不利于前后各个期间的预算街接，不能适应连续不断的业务活动过程的预算管理
+</p>
+</div>
+</div>
+<div id="outline-container-orgbe484d4" class="outline-5">
+<h5 id="orgbe484d4">滚动预算法</h5>
+<div class="outline-text-5" id="text-orgbe484d4">
+<p>
+使<code>预算期间保持一定的时间跨度</code>
+优点：能够保持预算的持续性，有利于考虑未来业务活动，结合企业近期目标和长期目标；使预算随时间的推进不断加以调整和修订，能使预算与实际情况更相适应，有利于充分发挥预算的指导和控制作用缺点：编制工作量大
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org99933a4" class="outline-3">
+<h3 id="org99933a4"><span class="section-number-3">18.3</span> 营业预算的编制</h3>
+<div class="outline-text-3" id="text-18-3">
+</div>
+<div id="outline-container-org394e96f" class="outline-4">
+<h4 id="org394e96f"><span class="section-number-4">18.3.1</span> 销售预算</h4>
+<div class="outline-text-4" id="text-18-3-1">
+<p>
+关于预算期销售数量、销售单价和销售收入的预算，通常还包括预计现金收入的计算
+<code>整个预算的编制起点</code>
+现金收入 = 当期现销收入 + 收回前期的应收账款
+</p>
+</div>
+</div>
+<div id="outline-container-orgde1d8a1" class="outline-4">
+<h4 id="orgde1d8a1"><span class="section-number-4">18.3.2</span> 生产预算</h4>
+<div class="outline-text-4" id="text-18-3-2">
+<p>
+预计生产量 = 预计销售量 + 预计期末产成本存货 - 预计期初产成品存货
+</p>
+</div>
+</div>
+<div id="outline-container-org2c44392" class="outline-4">
+<h4 id="org2c44392"><span class="section-number-4">18.3.3</span> 直接材料预算</h4>
+<div class="outline-text-4" id="text-18-3-3">
+<p>
+预计材料采购量 = 预计生产需用量 + 预计期末材料存量 - 预计期初材料存量
+</p>
+</div>
+</div>
+<div id="outline-container-orgccf32fe" class="outline-4">
+<h4 id="orgccf32fe"><span class="section-number-4">18.3.4</span> 直接人工预算</h4>
+<div class="outline-text-4" id="text-18-3-4">
+<p>
+关于预算期生产直接耗用人工工时及费用的预算
+</p>
+</div>
+</div>
+<div id="outline-container-org76a5ea7" class="outline-4">
+<h4 id="org76a5ea7"><span class="section-number-4">18.3.5</span> 制造费用预算</h4>
+<div class="outline-text-4" id="text-18-3-5">
+<ol class="org-ol">
+<li>变动制造费用以<code>生产预算</code>为基础来编制的。</li>
+<li>固定制造费用，<code>需要逐项进行预计</code> ，通常<code>与本期产量无关</code> ，可按各期实际需要的支付额预计，然后求出全年数</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org307d225" class="outline-4">
+<h4 id="org307d225"><span class="section-number-4">18.3.6</span> 产品成本预算</h4>
+<div class="outline-text-4" id="text-18-3-6">
+<p>
+产品的单位成本和总成本是销售预算、生产预算、直接材料预算、直接人工预算和制造费用预算的<code>汇总</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgc7ac59c" class="outline-4">
+<h4 id="orgc7ac59c"><span class="section-number-4">18.3.7</span> 销售费用和管理费用预算</h4>
+<div class="outline-text-4" id="text-18-3-7">
+<ul class="org-ul">
+<li>销售费用预算以 <code>销售预算</code> 为基础</li>
+<li>管理费用多属于固定成本，一般是以 <code>过去的实际开支</code> 为基础，按预算期的可预见变化予以调整</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfd06eb4" class="outline-3">
+<h3 id="orgfd06eb4"><span class="section-number-3">18.4</span> 财务预算的编制</h3>
+<div class="outline-text-3" id="text-18-4">
+</div>
+<div id="outline-container-orgf3d3ce4" class="outline-4">
+<h4 id="orgf3d3ce4"><span class="section-number-4">18.4.1</span> 现金预算的编制&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ATTACH">ATTACH</span></span></h4>
+<div class="outline-text-4" id="text-18-4-1">
+
+<div id="org27174fc" class="figure">
+<p><img src="file:///home/samon/Think/Org/.attach/bf/aa17f1-5139-4ab0-a19e-7a8858208498/_20210719_155730webwxgetmsgimg.jpg" alt="_20210719_155730webwxgetmsgimg.jpg" />
+</p>
+</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">不直接涉及现金支出的营业预算</th>
+<th scope="col" class="org-left">1. 生产预算</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">2. 产品成本预算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">现金预算的两个公式</td>
+<td class="org-left">1. 期初余额 + 现金收入 - 现金支出 = 现金余缺额</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">2. 现金余缺额 + 现金筹措 - 现金运用 = 现金期余额</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">短期借款利息的确定</td>
+<td class="org-left">1. 若规定还款时支付的利息: 利息=还款额 &times; 利息率 &times; 还款期限</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">2. 若规定每期定期支付利息: 利息 = (上期期末借款余额 + 本期期末新借款额)&times; 期利息率</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org99efbb0" class="outline-4">
+<h4 id="org99efbb0"><span class="section-number-4">18.4.2</span> 财务报表预算的编制</h4>
+<div class="outline-text-4" id="text-18-4-2">
+</div>
+<div id="outline-container-org4fa828e" class="outline-5">
+<h5 id="org4fa828e">利润表预算的编制</h5>
+<div class="outline-text-5" id="text-org4fa828e">
+<ol class="org-ol">
+<li>按照 <code>权责发生制编制</code></li>
+<li><code>销售成本</code> 取自 <code>产品成本预算</code></li>
+<li><code>所得税费用</code> 通常 <code>不是根局利润总额诚意所得税税率计算</code> 出来的，而是 <code>预先</code> 在利润预测时 <code>估计</code> 的数据。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org5e76dc8" class="outline-5">
+<h5 id="org5e76dc8">资产负债表预算的编制</h5>
+<div class="outline-text-5" id="text-org5e76dc8">
+<p>
+利用本期 <code>期初会计的资产负债表</code> ， 根据 <code>营业和财务等预算</code> 的有关数据加以调整编制的
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga46df66" class="outline-2">
+<h2 id="orga46df66"><span class="section-number-2">19</span> 责任会计</h2>
+<div class="outline-text-2" id="text-19">
+</div>
+<div id="outline-container-org81bb3fc" class="outline-3">
+<h3 id="org81bb3fc"><span class="section-number-3">19.1</span> 企业组织结构与责任中心划分</h3>
+<div class="outline-text-3" id="text-19-1">
+<p>
+根据内部单位职责范围和权利大小，可以将其分为 <code>成本中心</code> 、<code>收入中心</code> 、 <code>利润中心</code> 和 <code>投资中心</code>。
+</p>
+</div>
+<div id="outline-container-org5d723e5" class="outline-4">
+<h4 id="org5d723e5"><span class="section-number-4">19.1.1</span> 企业的集权与分权</h4>
+</div>
+<div id="outline-container-org0b2ec5b" class="outline-4">
+<h4 id="org0b2ec5b"><span class="section-number-4">19.1.2</span> 科层组织结构</h4>
+</div>
+<div id="outline-container-org85c41f7" class="outline-4">
+<h4 id="org85c41f7"><span class="section-number-4">19.1.3</span> 事业部组织结构</h4>
+</div>
+<div id="outline-container-org0183501" class="outline-4">
+<h4 id="org0183501"><span class="section-number-4">19.1.4</span> 网格组织结构</h4>
+</div>
+</div>
+<div id="outline-container-org3fbd452" class="outline-3">
+<h3 id="org3fbd452"><span class="section-number-3">19.2</span> 成本中心</h3>
+<div class="outline-text-3" id="text-19-2">
+</div>
+<div id="outline-container-orgbbe1e0d" class="outline-4">
+<h4 id="orgbbe1e0d"><span class="section-number-4">19.2.1</span> 成本中心的类型和考核指标</h4>
+<div class="outline-text-4" id="text-19-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">标准成本中心</th>
+<th scope="col" class="org-left">费用中心</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">产出物的特点</td>
+<td class="org-left">所生产的产品稳定而明确，产出物能用财务指标来衡量</td>
+<td class="org-left">产出不能用财务指标来衡量</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">投入和产出之间的关系</td>
+<td class="org-left">投入和产出之间有密切关系</td>
+<td class="org-left">投入和产出之间没有密切关系</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">适用情况</td>
+<td class="org-left">各行业都可能建立标准成本中心。只要所生产的产品而</td>
+<td class="org-left">费用中心包括财务、人事、劳资、</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">明确，并且已经直到单位产品所需要的投入量</td>
+<td class="org-left">计划等行政管理部门、研究开发部</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">门、销售部门等</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">考核指标</td>
+<td class="org-left">是<code>既定产品质量和数量条件下</code>的标准成本</td>
+<td class="org-left">通常使用费用预算来评价</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgc6924ec" class="outline-4">
+<h4 id="orgc6924ec"><span class="section-number-4">19.2.2</span> 责任成本</h4>
+<div class="outline-text-4" id="text-19-2-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">责任成本计算</th>
+<th scope="col" class="org-left">制造成本计算</th>
+<th scope="col" class="org-left">变动成本计算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">核算目的</td>
+<td class="org-left">评价成本控制业绩</td>
+<td class="org-left">确定产品存货成本和销货成本</td>
+<td class="org-left">进行经营决策</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">成本计算对象</td>
+<td class="org-left">责任中心</td>
+<td class="org-left">产品</td>
+<td class="org-left">产品</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">成本的范围</td>
+<td class="org-left">各责任中心的可控成本</td>
+<td class="org-left">直接材料、直接人工和全部制造费用</td>
+<td class="org-left">直接材料、直接人工和变动</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">制造费用，还包括变动的管</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">费用和销售费用</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">共同费用的分摊原则</td>
+<td class="org-left">按可控原则分摊，谁控制谁负责，</td>
+<td class="org-left">接受益原则分摊，谁受益谁分担，分摊全部</td>
+<td class="org-left">按受益原则分摊，谁受益谁分</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">将可控的变动间接费用和可控的固定</td>
+<td class="org-left">制造费用(既分摊变动制造费用，也分摊固定制造费用)</td>
+<td class="org-left">担，只分摊变动制造费用，不分</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">间接费用部分分配给责任中心</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">摊固定制造费用</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>可控成本可控成本是指在 <code>特定时期内、特点责任中心</code> 能够直接控制其发生的成本
+<ul class="org-ul">
+<li>确定条件
+<ol class="org-ol">
+<li>成本中心有办法直到将发生什么样性质的耗费(<code>可预知</code>)</li>
+<li>成本中心有办法计量它的耗费(<code>可计量</code>)</li>
+<li>成本中心有办法控制并调节它的耗费(<code>可控制、可调节</code>)</li>
+</ol></li>
+</ul></li>
+<li>确定成本费用支出责任归属的三原则
+<ol class="org-ol">
+<li>有效影响原则责任中心能通过自己的行动有效地影响成本数额。</li>
+<li>有权决定原则责任中心有权决定是否使用某种资产或劳务，它就应对这些资产或劳务的成本负责。</li>
+<li>参与原则某管理人员虽然不直接决定，但是上级要求他参与决策，从而对该项成本的支出施加了重要影响。</li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-orga33993d" class="outline-5">
+<h5 id="orga33993d">制造费用的归属和分摊方法</h5>
+<div class="outline-text-5" id="text-orga33993d">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">步骤</th>
+<th scope="col" class="org-left">处理范围</th>
+<th scope="col" class="org-left">举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">(1) 直接计入责任中心</td>
+<td class="org-left">可直接判定责任归属</td>
+<td class="org-left">机物料的消耗、低值易消耗品的领用</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">(2) 按责任基础分配(优先)</td>
+<td class="org-left">不满足第一步骤，优先按责任基础</td>
+<td class="org-left">动力费、维修费</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">分配(看起因)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">(3) 按受益基础分配</td>
+<td class="org-left">前两步不满足，则按受益多少分配</td>
+<td class="org-left">按装机功率分配的电费</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">(看结果)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">(4) 归入某个专门设立的特定责任中心</td>
+<td class="org-left">前三个步骤均不满足时采用</td>
+<td class="org-left">车间运输费、试验检验费</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">(5) 不进行分摊</td>
+<td class="org-left">不可控成本</td>
+<td class="org-left">车间厂房折旧、分配的公司管理费用</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3b72b60" class="outline-3">
+<h3 id="org3b72b60"><span class="section-number-3">19.3</span> 利润中心</h3>
+<div class="outline-text-3" id="text-19-3">
+</div>
+<div id="outline-container-orgd44f68f" class="outline-4">
+<h4 id="orgd44f68f"><span class="section-number-4">19.3.1</span> 利润中心定义和类型</h4>
+<div class="outline-text-4" id="text-19-3-1">
+<p>
+管理人员有权对其供货的来源和市场的选择进行决策的单位。
+</p>
+<ul class="org-ul">
+<li>类型
+<ol class="org-ol">
+<li>自然的利润中心可以直接向企业外部出售产品，在市场上进行购销业务</li>
+<li>人为的利润中心在企业内部按内部转移价格出售产品</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org428a780" class="outline-4">
+<h4 id="org428a780"><span class="section-number-4">19.3.2</span> 利润中心的考核指标</h4>
+<div class="outline-text-4" id="text-19-3-2">
+<ol class="org-ol">
+<li>部门边际贡献 = 部门销售收入 - 部门变动成本总额
+<code>不够全面</code></li>
+<li>部门可控边际贡献 = 部门边际贡献 - 部门可控固定成本
+<code>最佳选择</code> ，它反映了 <code>部门经理</code> 在其权限和控制范围内有效使用资源的能力</li>
+<li>部门税前经营利润 = 部门可控边际贡献 - 部门不可控固定成本最适合<code>评价该部门对公司利润和管理费用的贡献</code></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgd62c49e" class="outline-4">
+<h4 id="orgd62c49e"><span class="section-number-4">19.3.3</span> 内部转移价格</h4>
+<div class="outline-text-4" id="text-19-3-3">
+<ul class="org-ul">
+<li>目的
+<ol class="org-ol">
+<li>防止成本转移带来的部门间责任转嫁，使每个利润中心都能作为单独的组织单位进行业绩评价。</li>
+<li>作为一种价格机制引导下级部门采用明智的决策。</li>
+</ol></li>
+<li>种类
+<ol class="org-ol">
+<li>市场型内部转移价格指以市场价格为基础、由成本和毛利构成的内部转移价格一般适用于利润中心</li>
+<li>成本型内部转移价格指以企业制造产品的完全成本或变动成本等相对稳定的成本数据为基础制定的内部转移价格一般适用于成本中心</li>
+<li>协商型内部转移价格指企业内部供求双方通过协商机制制定的内部转移价格主要适用于分权程度较高的企业</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1a70ba4" class="outline-3">
+<h3 id="org1a70ba4"><span class="section-number-3">19.4</span> 投资中心</h3>
+<div class="outline-text-3" id="text-19-4">
+<p>
+投资中心是最高层次的责任中心，它拥有最大的决策权，也承担最大的责任
+</p>
+</div>
+<div id="outline-container-orgd1b826e" class="outline-4">
+<h4 id="orgd1b826e"><span class="section-number-4">19.4.1</span> 投资中心的考核指标</h4>
+<div class="outline-text-4" id="text-19-4-1">
+</div>
+<div id="outline-container-org998f8c3" class="outline-5">
+<h5 id="org998f8c3">部门投资报酬率</h5>
+<div class="outline-text-5" id="text-org998f8c3">
+<p>
+部门投资报酬率 = 部门税前经营利润 / 部门平均净经营资产
+</p>
+</div>
+</div>
+<div id="outline-container-org789a730" class="outline-5">
+<h5 id="org789a730">部门剩余利润</h5>
+<div class="outline-text-5" id="text-org789a730">
+<p>
+部门剩余利益 = 部门税前经营利润 - 部门平均净经营资产应计报酬 = 部门税前经营利润 - 部门平均净经营资产 &times; 要求的税前投资报酬率
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org007e21e" class="outline-3">
+<h3 id="org007e21e"><span class="section-number-3">19.5</span> 责任中心业绩报告</h3>
+<div class="outline-text-3" id="text-19-5">
+</div>
+<div id="outline-container-orgb17f401" class="outline-4">
+<h4 id="orgb17f401"><span class="section-number-4">19.5.1</span> 业绩报告反映的信息</h4>
+<div class="outline-text-4" id="text-19-5-1">
+<ol class="org-ol">
+<li>实际数: 关于<code>实际业绩</code>的信息</li>
+<li>预算数: 关于<code>预期业绩</code>的信息</li>
+<li>差异数: 关于实际业绩与预期业绩之间<code>差异</code>的信息</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4373d22" class="outline-2">
+<h2 id="org4373d22"><span class="section-number-2">20</span> 业绩评价</h2>
+<div class="outline-text-2" id="text-20">
+</div>
+<div id="outline-container-org3bad1b2" class="outline-3">
+<h3 id="org3bad1b2"><span class="section-number-3">20.1</span> 财务业绩评价与非财务业绩评价</h3>
+<div class="outline-text-3" id="text-20-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">反映面</th>
+<th scope="col" class="org-left">评价结果</th>
+<th scope="col" class="org-left">评价方法</th>
+<th scope="col" class="org-left">数据来源</th>
+<th scope="col" class="org-left">评价可靠性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">财务业绩评价</td>
+<td class="org-left">综合性</td>
+<td class="org-left">侧重过去、短期业绩</td>
+<td class="org-left">结果导向</td>
+<td class="org-left">数据容易取得</td>
+<td class="org-left">收到稳健性原则有偏估计的影响</td>
+</tr>
+
+<tr>
+<td class="org-left">非财务业绩评价</td>
+<td class="org-left">专业性</td>
+<td class="org-left">体现未来、长期业绩</td>
+<td class="org-left">关注过程</td>
+<td class="org-left">数据的收集比较困难</td>
+<td class="org-left">比较主管，可靠性难以保证</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgfe4060a" class="outline-3">
+<h3 id="orgfe4060a"><span class="section-number-3">20.2</span> 关键业绩指标法</h3>
+<div class="outline-text-3" id="text-20-2">
+<p>
+<b>关键业绩指标的选择</b> : 通过对企业战略目标、关键成果领域的绩效特征分析，识别和提炼出的<code>最能有效驱动企业价值创造的指标</code>。
+</p>
+</div>
+<div id="outline-container-org4b9df9b" class="outline-4">
+<h4 id="org4b9df9b"><span class="section-number-4">20.2.1</span> 关键绩效指标法的应用</h4>
+<div class="outline-text-4" id="text-20-2-1">
+</div>
+<div id="outline-container-org16d48e3" class="outline-5">
+<h5 id="org16d48e3">关键绩效指标法的应用程序&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ATTACH">ATTACH</span></span></h5>
+<div class="outline-text-5" id="text-org16d48e3">
+
+<div id="orgef82416" class="figure">
+<p><img src="file:///home/samon/Think/Org/.attach/00/ad292e-5d99-441f-bed7-56a086c49ab0/_20210720_123725webwxgetmsgimg.jpg" alt="_20210720_123725webwxgetmsgimg.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org511df26" class="outline-5">
+<h5 id="org511df26">构建关键绩效指标体系</h5>
+<div class="outline-text-5" id="text-org511df26">
+</div>
+<ul class="org-ul">
+<li><a id="org63d9d75"></a>体系的构建<br />
+<div class="outline-text-6" id="text-org63d9d75">
+<ol class="org-ol">
+<li>企业级关键绩效指标</li>
+<li>所属单位(部门)级关键绩效指标</li>
+<li>岗位(员工)级关键绩效指标</li>
+</ol>
+</div>
+</li>
+<li><a id="org6a2341b"></a>关键绩效指标的分类<br />
+<div class="outline-text-6" id="text-org6a2341b">
+<ol class="org-ol">
+<li>结果类投资报酬率、权益净利率、经济增加值、息税前利润、自由现金流量等综合指标</li>
+<li>动因类资本性支出、单位生产成本、产量、销量、客户满意度、员工满意度等</li>
+</ol>
+</div>
+</li>
+<li><a id="org70ab5eb"></a>关键绩效指标设置的要求<br />
+<div class="outline-text-6" id="text-org70ab5eb">
+<p>
+基本要求：含义明确、可度量、与战略目标高度相关数量要求：指标的数量不宜过多，每一层级关键绩效指标一般<code>不超过10个</code>
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org21263ea" class="outline-5">
+<h5 id="org21263ea">设定关键绩效指标权重</h5>
+<div class="outline-text-5" id="text-org21263ea">
+<ol class="org-ol">
+<li>一般设定在<code>5%~30%</code></li>
+<li>对特别关键、影响企业整体价值的指标可设立“一票否决”制度。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgbaa3d85" class="outline-5">
+<h5 id="orgbaa3d85">设定关键绩效指标目标值</h5>
+<div class="outline-text-5" id="text-orgbaa3d85">
+<ol class="org-ol">
+<li>行业标准或竞争对手标准</li>
+<li>企业内部标准</li>
+<li>企业历史经验值</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org2aa7adc" class="outline-4">
+<h4 id="org2aa7adc"><span class="section-number-4">20.2.2</span> 关键绩效指标法的优点和缺点</h4>
+<div class="outline-text-4" id="text-20-2-2">
+<ul class="org-ul">
+<li>优点
+<ol class="org-ol">
+<li>使企业业领评价与企业战路目标密切相关，有利于企业战略目标的实现</li>
+<li>通过识别价值创造模式地握关键价值驱动因素，能够更有效地实现企业价值增值目标</li>
+<li>评价指标数量相对较少，易于理解和使用，实施成本相对较低，有利于推广实施</li>
+</ol></li>
+<li>缺点
+<ol class="org-ol">
+<li>指标的选取须需要透彻理解企业价值创造模式和战略目标，有效识别企业核心业务流程和关键价值驱动(指标选取要求高)</li>
+<li>指标体系 <code>设计不当</code> 将导致 <code>错误的价值导向和管理缺失</code> (体系设计不当后果很严重)</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge7c6b6c" class="outline-3">
+<h3 id="orge7c6b6c"><span class="section-number-3">20.3</span> 经济增加值</h3>
+<div class="outline-text-3" id="text-20-3">
+</div>
+<div id="outline-container-orgf6cfdcb" class="outline-4">
+<h4 id="orgf6cfdcb"><span class="section-number-4">20.3.1</span> 经济增加值的概念</h4>
+<div class="outline-text-4" id="text-20-3-1">
+</div>
+<div id="outline-container-org41ad7d1" class="outline-5">
+<h5 id="org41ad7d1">基本公式</h5>
+<div class="outline-text-5" id="text-org41ad7d1">
+<p>
+\(经济增加值 = 调整后税后净营业利润 - 加权平均资本成本 \times 调整后平均资本占用\)
+</p>
+</div>
+</div>
+<div id="outline-container-orgef88aa5" class="outline-5">
+<h5 id="orgef88aa5">不同含义的经济增加值&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ATTACH">ATTACH</span></span></h5>
+<div class="outline-text-5" id="text-orgef88aa5">
+
+<div id="org813ea13" class="figure">
+<p><img src="file:///home/samon/Think/Org/.attach/13/fec5ca-f89e-4623-b3cd-810f09fe6f2f/_20210720_161531webwxgetmsgimg.jpg" alt="_20210720_161531webwxgetmsgimg.jpg" />
+</p>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">种类</th>
+<th scope="col" class="org-left">基本公式</th>
+<th scope="col" class="org-left">经营利润的调整范围</th>
+<th scope="col" class="org-left">资本占用的调整范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">基本的经济增加值</td>
+<td class="org-left">基本的经济增加值 ＝ 税后净营业利润 － 加权平均资本成本 &times; 报表平均总资产</td>
+<td class="org-left">未经调整</td>
+<td class="org-left">不做调整</td>
+</tr>
+
+<tr>
+<td class="org-left">披露的经济增加值</td>
+<td class="org-left">披露的经济增加值 = <code>调整后</code> 税后净营业利润 - 加权平均资本成本 &times; <code>调整后</code> 的平均资本占用</td>
+<td class="org-left">利用 <code>公开</code> 会计数据进行调整</td>
+<td class="org-left">需要调整</td>
+</tr>
+
+<tr>
+<td class="org-left">特殊的经济增加值</td>
+<td class="org-left">1. 特定公司根据自身情况 <code>“量身定做”</code> 的经济增加值 2. 调整项目都是<code>“可控制”的项目</code></td>
+<td class="org-left">公司的<code>内部</code>的有关数据进行调整</td>
+<td class="org-left">需要调整</td>
+</tr>
+
+<tr>
+<td class="org-left">真实的经济增加值</td>
+<td class="org-left">对会计数据作出<code>所有必要的调整</code></td>
+<td class="org-left">公司的<code>内部</code>的有关数据进行调整</td>
+<td class="org-left">需要调整</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="org-ul">
+<li><a id="org60276d0"></a>披露的经济增加值的调整<br />
+<div class="outline-text-6" id="text-org60276d0">
+<ol class="org-ol">
+<li>将会计上费用化、经济增加值人为应该资本化的项目进行调整。
+<ol class="org-ol">
+<li>研究与开发费用在一个合理的期限内摊销</li>
+<li>战略投资将其在一个专门账户中资本化并在开始生产时逐步摊销</li>
+<li>对于建立品牌、进入新市场或扩大市场份额发生的费用把争取客户的营销费用资本化并在适当的期限内摊销</li>
+</ol></li>
+<li>折旧费用的处理按照更接近经济现实的<code>“沉淀资金折旧法”</code>处理，即前期少折旧，后期折旧多。</li>
+<li>上述调整，不仅涉及利润表而且涉及资产负债表的有关项目，需要<code>复式记账原理同时调整</code>。</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca361c8" class="outline-4">
+<h4 id="orgca361c8"><span class="section-number-4">20.3.2</span> 简化的经济增加值的计算</h4>
+<div class="outline-text-4" id="text-20-3-2">
+<p>
+经济增加值 = 税后净营业利润 - 资本成本 = 税后净营业利润 - 调整后资本 &times; 平均资本成本率
+</p>
+<ol class="org-ol">
+<li>税后净营业利润 = 净利润 + (利息支出 + 研究费用开发费用调整项) &times; (1-25%)</li>
+<li>调整后资本 = 平均所有者权益 + 平均带息负债 - 平均在建工程</li>
+<li>\(平均资本成本率 = 债券(税前)资本成本率 \times 平均带息负债/(平均带息负债 + 平均所有者权益) \times (1-25\%) + 股权资本成本率 \times 平均所有者权益/(平均带息负债 + 平均所有者权益)\)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org06117e0" class="outline-4">
+<h4 id="org06117e0"><span class="section-number-4">20.3.3</span> 经济增加值评价的优点和缺点</h4>
+<div class="outline-text-4" id="text-20-3-3">
+<ul class="org-ul">
+<li>优点
+<ol class="org-ol">
+<li>经济增加值考患了 所有资本的成本，重真实地反映了企业的价值创造能力</li>
+<li>交现了企业利益、经哲者利益和民工利益的统一，政励经营者和所有民工为企业创造更至价值</li>
+<li>能有效遏制企业盲目扩 张规模以追求利润总最和增长率的倾向，引导企业注重价值创造</li>
+<li>把资本项算、业绩评价和激励报酬结合起来，是一种全面财务售理和薪酬激励框架</li>
+<li>便于投资人、公司和股票分析师之间的价值沟通</li>
+</ol></li>
+<li>缺点
+<ol class="org-ol">
+<li>短期 1～3 年价值创造评价，无法长期评价</li>
+<li>基于财务指标，无法评价营运效率与效果</li>
+<li>不同行业、不同发生阶段、不同规模调整不一样，计算复杂</li>
+<li>经济增加值是绝对数指标，不同规模公司无法比较</li>
+<li>不便于不同阶段的公司进行业绩比较</li>
+<li>经济增加值的计算尚存在许多争议，不利于建立一个统一的规范</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaf1cda3" class="outline-3">
+<h3 id="orgaf1cda3"><span class="section-number-3">20.4</span> 平衡计分卡</h3>
+<div class="outline-text-3" id="text-20-4">
+</div>
+<div id="outline-container-org75f4b1d" class="outline-4">
+<h4 id="org75f4b1d"><span class="section-number-4">20.4.1</span> 平衡计分卡的框架</h4>
+<div class="outline-text-4" id="text-20-4-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">维度</th>
+<th scope="col" class="org-left">目标</th>
+<th scope="col" class="org-left">常用指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">财务维度</td>
+<td class="org-left">解决<code>“股东</code>如何看带我们”这一类问题</td>
+<td class="org-left">投资报酬率、权益净利率、经济增加值、息税前利润等</td>
+</tr>
+
+<tr>
+<td class="org-left">顾客维度</td>
+<td class="org-left">回答“<code>顾客</code>如何看待我们”的问题</td>
+<td class="org-left">市场份额、客户满意度、客户获得度等</td>
+</tr>
+
+<tr>
+<td class="org-left">内部业务流程维度</td>
+<td class="org-left">着眼于企业的<code>核心竞争力</code>，解决“我们的优势是什么”的问题</td>
+<td class="org-left">交货及时率、生产负荷率、产品合格率等</td>
+</tr>
+
+<tr>
+<td class="org-left">学习和成长维度</td>
+<td class="org-left">解决“我们是否能<code>继续提高并创造价值</code>”的问题</td>
+<td class="org-left">新产品开发周期、员工满意度、员工保持率、员工生产率、培训计划完成率等</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>四个平衡
+<ol class="org-ol">
+<li>外部和内部平衡</li>
+<li>成果和导致成果出现的驱动因素的平衡</li>
+<li>财务和非财务的平衡</li>
+<li>短期和长期的平衡</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga36b5b2" class="outline-4">
+<h4 id="orga36b5b2"><span class="section-number-4">20.4.2</span> 评分计分卡与企业战略管理</h4>
+<div class="outline-text-4" id="text-20-4-2">
+<ul class="org-ul">
+<li>四个程序
+<ol class="org-ol">
+<li>说明愿景</li>
+<li>沟通与联系</li>
+<li>业务规划</li>
+<li>反馈与学习</li>
+</ol></li>
+<li>平衡计分卡的要求
+<ol class="org-ol">
+<li>平衡计分卡的四个方面应互为因果，<code>最终结果是实现企业的战略</code>。</li>
+<li>平衡计分卡中即要有业绩 <code>平衡指标</code> ，也要有具体衡量指标的 <code>驱动因素</code>。</li>
+<li>平衡计分卡应该 <code>最终和财务指标联系起来</code>，因为企业的最终目标是实现良好的经济利润。</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Bolun Liu</p>
+<p class="date">Created: 2021-08-02 一 21:15</p>
+</div>
+</body>
+</html>

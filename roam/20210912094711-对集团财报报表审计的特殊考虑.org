@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       227a73d9-3663-4c33-8427-f9eb5aa166ad
+:END:
+#+title: 对集团财报报表审计的特殊考虑
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }

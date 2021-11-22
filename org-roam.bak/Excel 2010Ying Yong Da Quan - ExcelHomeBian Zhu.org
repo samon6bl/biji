@@ -1,0 +1,13 @@
+* Excel 2010Ying Yong Da Quan - ExcelHomeBian Zhu
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../Calibre_Library/ExcelHomeBian Zhu/Excel 2010Ying Yong Da Quan (12)/Excel 2010Ying Yong Da Quan - ExcelHomeBian Zhu.pdf
+:NOTER_PAGE: 13
+:END:
+** 梳理
+*** 第一篇 Excel 基本功能
+*** 第二篇 使用公式和函数
+*** 第三篇 创造图表和图形
+*** 第四篇 使用 Excel 进行数据分析
+*** 第五篇 使用 Excel 的高级功能
+*** 第六篇 使用 Excel 进行协同
+*** 第七篇 Excel 自动化

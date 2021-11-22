@@ -1,0 +1,257 @@
+:PROPERTIES:
+:ID:       9397b317-3196-4f74-aa7d-4172ee832922
+:END:
+#+title: 多因子模型构建
+* 多因子模型相关论文
+[[https://pic3.zhimg.com/80/v2-037c317a5bc6c4d30140b548e0451bd2_720w.jpg]]
+* 多因子模型构建流程
+[[file:../pic/2021-02-17_17-31-33_screenshot.png]]
+** 基础数据采集
+*** 因子的选取
+[[https://cdn.bigquant.com/community/uploads/default/original/3X/0/a/0aa93e8185a432a535fa3327c1c26cee8e835c61.png]]
+[[https://cdn.bigquant.com/community/uploads/default/original/3X/f/a/fa0ee4de1ab5a4ac2073e13af0ce936d4b416db8.png]]
+[[https://cdn.bigquant.com/community/uploads/default/original/3X/8/c/8c7f47696b4e0004ba8e65feb1559ecda39f92f5.png]]
+[[https://cdn.bigquant.com/community/uploads/default/original/3X/6/a/6a65eb2af39d0a180acaadea6b11daa55afab537.png]]
+| 大类因子       | 具体因子                     |
+|----------------+------------------------------|
+| 估值因子       | EP                           |
+|                | EPcut                        |
+|                | BP                           |
+|                | OCFP                         |
+|----------------+------------------------------|
+| 成长           | sales_growth_ttm             |
+|                | profit_growth_ttm            |
+|                | operationcashflow_growth_ttm |
+|----------------+------------------------------|
+| 财务质量因子   | roe_ttm                      |
+|                | roa_ttm                      |
+|                | grossprofitmargin_ttm        |
+|                | profitmargin_ttm             |
+|                | assetturnover_ttm            |
+|                | operationcashflowratio_ttm   |
+|----------------+------------------------------|
+| 杠杆因子       | financial_leverage           |
+|                | debtequityratio              |
+|                | cashration                   |
+|                | currentratio                 |
+|----------------+------------------------------|
+| 规模因子       | ln_capital                   |
+|----------------+------------------------------|
+| 动量因子       | HAlpha                       |
+|                | relative_strength_1m         |
+|                | relative_strength_2m         |
+|                | relative_strenth_3m          |
+|----------------+------------------------------|
+| 波动率因子     | high_low_1m                  |
+|                | high_low_2m                  |
+|                | high_low_3m                  |
+|                | std_1m                       |
+|                | std_2m                       |
+|                | std_3m                       |
+|                | std_6m                       |
+|----------------+------------------------------|
+| 分析师情绪因子 | rating_average               |
+|                | rating_targetprice           |
+|----------------+------------------------------|
+| 股东因子       | holder_avgpct                |
+|                | holder_avgpctchange          |
+|----------------+------------------------------|
+| 技术因子       | macd                         |
+|                | dif                          |
+|                | dea                          |
+|----------------+------------------------------|
+| 转债因子       | cpr                          |
+|                | ndr                          |
+
+*** 将因子文件整合到总表
+#+begin_src python
+def ombination_factors(code_tag):
+    for factor in factors:
+        indicator = pd.read_excel('./Wind/'+factor+'.xlsx')
+        s =[]
+        for cd in code:
+            try:
+                year = indicator['Date'].values
+                factors = indicator[cd].values
+                dict_factor = dict(zip(year,factors))
+                jy.loc[jy[code_tag]==cd,factor]=jy.loc[jy[code_tag]==cd,'Trdmnt'].map(dict_factor)
+            except:
+                s.append(cd)
+        print(len(s))
+#+end_src
+** 数据标准化
+#+begin_src python
+# 调用的包
+from atrader import *
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import math
+import statsmodels.api as sm
+import datetime as dt
+import scipy.stats as stats
+import seaborn as sns
+#+end_src
+*** 去极值
+**** MAD(Median Absolute Deviation, 绝对值差中位数法)
+#+begin_src python
+def mad(series,n):
+    median = series.quantile(0.5)
+    diff_median = ((series - median).abs()).quantile(0.5)
+    max_range = median + n * diff_median
+    min_range = median - n * diff_median
+    return np.clip(series, min_range, max_range)
+#+end_src
+**** $3\sigma$法
+#+begin_src python
+def three_sigma(series,n):
+    mean = series.mean()
+    std = series.std()
+    max_range = mean + n * std
+    min_range = mean - n * std
+    return np.clip(series, min_range, max_range)
+#+end_src
+**** 百分位法
+#+begin_src python
+def percentile(series, min= 0.025, max= 0.975):
+    series = series.sort_values()
+    q = series.quantile([min, max])
+    return np.clip(series, q.iloc[0], q.iloc[-1])
+#+end_src
+*** 缺失值处理
+处理为行业(申银万国)平均值
+#+begin_src python
+jy.fillna()
+#+end_src
+*** 标准化
+**** Z-score 标准化
+#+begin_src python
+def standard_z_score(series):
+    std = series.std()
+    mean = series.mean()
+    return (series-mean)/std
+#+end_src
+*** 中性化(中和行业和市值因子)
+*申银万国分类* 比较适合投资使用
+[[https://pic2.zhimg.com/80/v2-e7dee6788b0d76c5c99a755837286fb9_720w.jpg]]
+#+begin_src python
+if_neutral_industry = True
+if_neutral_mktcap = True
+    # 是否行业中性
+if if_neutral_industry:
+    indname = industry.unique()      # 获取行业名
+    class_var = pd.get_dummies(industry,columns=['industry'],prefix=['industry'],
+                               prefix_sep="_", dummy_na=False, drop_first=False)
+    class_var[indname[-1]] = 0
+
+# 是否市值中性
+if if_neutral_mktcap:
+
+    # 提取总市值
+
+    class_var['logmktcap'] = dfs['ln_cap']
+
+data = pd.concat([data,class_var], axis=1)
+if if_neutral_industry | if_neutral_mktcap:
+    for j in data.columns:
+        x = np.hstack((np.ones((len(data),1)),class_var.values))
+        y = data.loc[:,j].values
+        model = sml.OLS(y,x)
+        result=model.fit()
+        data.loc[:,j] = y -result.fittedvalues
+#+end_src
+** 有效因子识别
+*** Fama_Macbeth 检验
+[[https://bashtage.github.io/linearmodels/panel/panel/linearmodels.panel.model.FamaMacBeth.html#linearmodels.panel.model.FamaMacBeth][Linearmodels里的Fama_Macbeth 方法]]
+*** 界面回归法
+[[https://cdn.bigquant.com/community/uploads/default/original/3X/2/e/2ef70b9d589e499a17e6504f7c11ea2248c92b3d.png]]
+1. t 值绝对值序列的均值：对于每一期的截面回归，都可以得到一个因子收益率 t 的值。对于值序列，首先取绝对值，然后计算|t|的均值，|t|是判断因子是否为有效因子的重要指标。之所以要取绝对值，是因为只要𝑡值显著不等于 0 即可以认为在当期，因子和收益率存在明显的相关性。但是这种相关性有的时候为正，有的时候为负，如果不取绝对值，则很多正负抵消，会低估因子的有效性；
+2. 𝑡值绝对值序列大于 2 的比例：检验|t| > 2 的比例主要是为了保证|t|平均值的稳定性，避免出现少数数值特别大的样本值拉高均值；
+3. 因子收益率𝑓𝑘̃𝑡序列的𝑡值检验：对于每一期的截面回归，都可以得到一个因子收益率𝑓𝑘̃𝑡，对于𝑓𝑘̃𝑡序列同样需要进行𝑡检验，以观察因子收益率序列的方向一致性。
+#+begin_src python
+from scipy import stats
+import numpy as np
+#+end_src
+*** IC 法
+信息系数（Information Coefficient，简称 IC），表示所选股票的因子值与股票下期收益率的截面相关系数，通过 IC 值可以判断因子值对下期收益率的预测能力。
+通常 IC 大于 3%或者小于-3%，则认为因子比较有效.常见的 IC 有两种，一是 Normal IC（类比皮尔森相关系数概念），另一个是 Rank IC（类比斯皮尔曼相关系数），如下图所示.
+鉴于 IC 的重要性，在多因子的因子加权中常采用因子最近 N 个月（默认为 12）的 IC 均值进行加权，通常结果会优于等权法。
+**** Normal IC
+[[https://pic1.zhimg.com/80/v2-c643a7d4d75fccfb191d56d87f336304_720w.jpg]]
+#+begin_src python
+pccs = np.corrcoef(x, y)
+#+end_src
+**** Rank IC
+[[https://pic2.zhimg.com/80/v2-d91f466cb41ea8f30dcf71e353a991bd_720w.png]]
+1. IC 值序列的均值及绝对值均值：判断因子有效性；
+2. IC 值序列的标准差：判断因子稳定性；
+3. IC 值序列大于零（或小于零）的占比：判断因子效果的一致性。
+#+begin_src python
+pd.rank()
+#+end_src
+** 大类因子合成
+*** 线性相关性检验
+#+begin_src python
+# 计算因子的相关系数矩阵函数
+def factor_corr(factors):
+    factors = factors.set_index('code')
+    factors_process = standardize_z(extreme_MAD(factors.fillna(0)))
+    result = factors_process.fillna(0).corr()
+    return result
+
+# 获取相关系数矩阵
+factors_corr1 = factor_corr(factors1)
+factors_corr2 = factor_corr(factors2)
+factors_corr3 = factor_corr(factors3)
+factors_corr4 = factor_corr(factors4)
+factors_corr = (factors_corr1+factors_corr2+factors_corr3+factors_corr4).div(4)  # 矩阵均值检验
+
+# 相关系数检验
+abs(factors_corr).mean()
+abs(factors_corr).median()
+#+end_src
+
+*corr hot map plot*
+#+begin_src python
+# 画图二
+fig = plt.figure()
+plt.subplots(figsize=(8, 6.4))  # 设置画面大小
+sns.heatmap(factors_corr, annot=True, vmax=1, vmin=-1, square=True, cmap="CMRmap_r",)
+plt.show()
+#+end_src
+*** 因子合成
+#+begin_src python
+# 等权法
+# 要合成的因子名称
+corrnames = []
+collinear_factors = factors4.loc[:,corrnames]         # 共线的因子矩阵
+composite_factor = collinear_factors.mul(1/len(corrnames)).sum(axis=1)
+print(composite_factor)
+#+end_src
+** SVM 算法代码
+#+begin_src python
+ from sklearn.svm import SVC
+ from sklearn.model_selection import GridSearchCV
+ pipe_svc = Pipeline([('scl', StandardScaler()),
+             ('clf', SVC(random_state=1))])
+ param_range = [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
+ param_grid = [{'clf__C': param_range,
+                'clf__kernel': ['linear']},
+                  {'clf__C': param_range,
+                   'clf__gamma': param_range,
+                  'clf__kernel': ['rbf']}]
+ gs = GridSearchCV(estimator=pipe_svc,
+                  param_grid=param_grid,
+                  scoring='accuracy',
+                  cv=10,
+                  n_jobs=-1)
+ gs = gs.fit(X_train, y_train)
+ print(gs.best_score_)
+ print(gs.best_params_)
+ clf = gs.best_estimator_
+ clf.fit(X_train, y_train)
+ print ('Test accuracy: %.3f' % clf.score(X_test, y_test))
+#+end_src
+** 回测学习
+* 相似因子
+'TECH_REVS10','TECH_REVS20','TECH_REVS60','TECH_REVS120','TECH_DIFF','TECH_DEA'

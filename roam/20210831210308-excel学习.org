@@ -1,0 +1,52 @@
+:PROPERTIES:
+:ID:       7495f961-bca7-4307-aa85-420863cf2e25
+:END:
+#+title: excel学习
+#+tags: "Excel"
+* 基本操作技巧
+** 剪贴板的用处
+*** 多表合并
+全部放入剪贴板，然后全部粘贴。
+*** 自动填充
+选择好填充的格式，例如：A-B,然后快捷键<Ctrl+E>。
+*** 四舍五入取整
+缩进小数位数，复制到剪切板，然后粘贴
+*** 假值变真值
+** 填充技法
+*** 同时在一个区域填入同样的数
+Ctrl+ enter
+*** 内容重排
+将所有数放入一个单元格
+** 斜向上对齐
+[[https://i.imgur.com/oesvC3U.png]]
+可以用来调整表头至：
+[[https://i.imgur.com/Lh2WT1N.png]]
+** 连接文本
+用"&"
+** 引用运算符 使用以下运算符
+- =:= (冒号)区域运算符,产生对包括在两个引用之间的所有单元格的引用(A1:B10)
+- =,= (逗号)联合运算符,将多个引用合并为一个引用(SUM(A1:B10,D1:D6)
+-  (空格)交叉运算符产生对两个引用共有的单元格的引用。
+
+* 函数及应用
+** 创建工作表目录的公式
+把所有的工作表名称列出来，然后自动添加超链接，管理工作表就非常方便了。
+
+使用方法：
+
+第 1 步：在定义名称中输入公式：
+
+=MID(GET.WORKBOOK(1),FIND("]",GET.WORKBOOK(1))+1,99)&T(NOW())
+
+[[http://img.mp.itc.cn/upload/20170516/f40754b58f634fb29e9d6d8fea5af67b_th.jpg]]
+
+第 2 步、在工作表中输入公式并拖动，工作表列表和超链接已自动添加
+
+=IFERROR(HYPERLINK("#'"&INDEX(Shname,ROW(A1))&"'!A1",INDEX(Shname,ROW(A1))),"")
+
+[[http://img.mp.itc.cn/upload/20170516/c867deef0c8b47dcba10f1cfc60f86e2_th.jpg]]
+
+** 中英文互译公式
+#+begin_quote
+=FILTERXML(WEBSERVICE("http://fanyi.youdao.com/translate?&i="&A2&"&doctype=xml&version"),"//translation")
+#+end_quote

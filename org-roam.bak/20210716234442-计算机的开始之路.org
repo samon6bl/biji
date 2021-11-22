@@ -1,0 +1,5 @@
+#+title: 计算机的开始之路
+#+roam_tags: "学习"
+* 从这两个网站开始
+** [[https://github.com/labuladong/fucking-algorithm][fucking-algorithm github高分项目]]
+** [[https://github.com/justjavac/free-programming-books-zh_CN#python][free-programming-books-zh_CN github 高分项目]]

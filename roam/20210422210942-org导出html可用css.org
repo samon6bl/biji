@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       dc181ca3-332b-43e7-a7aa-917d44756988
+:END:
+#+title: org导出html可用css
+#+SETUPFILE: ~/模板/theme-readtheorg.setup
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>

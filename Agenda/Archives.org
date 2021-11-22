@@ -1,0 +1,131 @@
+#+TITLE: Archives
+* Finished Tasks
+** DONE 完成论文的三个模型                                                      :毕业论文:
+DEADLINE: <2021-03-13 Sat 21:00> SCHEDULED: <2021-03-13 Sat 20:00>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-03-13 六 23:39
+:ARCHIVE_FILE: ~/Think/Org/Archives
+:ARCHIVE_OLPATH: Finished Tasks
+:ARCHIVE_CATEGORY: Archives
+:ARCHIVE_TODO: DONE
+:END:
+** DONE 将因子数据滞后一期完成数据转换                                                :毕业论文:
+DEADLINE: <2021-03-14 日 12:00> SCHEDULED: <2021-03-14 日 08:00>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-03-14 日 14:49
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+** DONE 完成论文第二章和第三章的写作 [2/2]
+DEADLINE: <2021-03-15 一 12:00> SCHEDULED: <2021-03-15 一 09:30>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-03-16 二 13:34
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+- [X] 多因子模型的时间滞后还是不滞后问题
+- [X] 加大因子选择和考虑清楚因子的适用性
+** DONE 论文修改 [3/3]
+DEADLINE: <2021-04-01 四>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-04-03 六 16:49
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+- [X] 新版回测完成（市值加权）
+- [X] 论文修改
+- [X] PPT 写作
+** DONE 论文大改 [7/8]                                                     :毕业论文:
+DEADLINE: <2021-03-24 三 20:00>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-04-03 六 16:49
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+- [X] 摘要: 参考老师的给论文
+- [X] 参考文献
+- [X] 第二章的图表的问题
+- [X] 第三章理论部分删减传统多因子模型
+- [X] 第四章现将传统多因子模型的劣势写出
+- [X] 第五章删除传统多因子模型
+- [ ] 第六章回测补充多月
+- [X] 结论
+[[file:~/Think/Org/roam/20210312154246-论文2改.org::*随机森林的理论][随机森林的理论]]
+** DONE 六级报名
+SCHEDULED: <2021-04-03 六 18:00>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-04-03 六 23:06
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+[[file:~/Think/Org/roam/20210323090541-behavioral_finance.org::*Reading 9: Behavioral Finance and Investment Processes][Reading 9: Behavioral Finance and Investment Processes]]
+** DONE CFA---Behavior Fianace And investment Processes
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2021-04-07 三 15:40
+   :ARCHIVE_FILE: ~/Think/Org/todo.org
+   :ARCHIVE_OLPATH: Inbox
+   :ARCHIVE_CATEGORY: todo
+   :ARCHIVE_TODO: DONE
+   :END:
+** DONE 毕业论文修改思路整理                                                     :毕业论文:
+SCHEDULED: <2021-04-06 二 14:00>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-04-08 四 16:17
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+- [ ] 阅读文献
+** DONE 轻一会计---总论                                                       :CPA:
+SCHEDULED: <2021-04-04 日 14:00>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-04-13 二 00:09
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+** DONE CPA 考试报名                                                        :CPA:
+SCHEDULED: <2021-04-06 二>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-04-13 二 00:09
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+- [X] CPA 书籍购买
+** DONE 完善论文第二章的图片                                                     :毕业论文:
+SCHEDULED: <2021-03-22 一 08:00>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-04-13 二 00:09
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+** DONE 论文内容修改 [4/4]                                                   :毕业论文:
+DEADLINE: <2021-04-14 三 00:00>
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-04-15 四 20:37
+:ARCHIVE_FILE: ~/Think/Org/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+- [X] 第二章
+- [X] 第五章
+- [X] 第六章
+- [X] 第四章

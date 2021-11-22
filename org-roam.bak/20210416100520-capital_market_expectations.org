@@ -1,0 +1,68 @@
+#+title: Capital Market Expectations
+#+roam_tags: CFA
++ Tips:
+  + *性价比很高*
+  + 主观题的高频考点
+  + =计算题是拿分点，定性分析题是成败关键=
+  + *以理解为主*
+*  Reading 1: Framework and Macro Considerations
+** Framework and Challenges for Developing CME :TO-DO:
++ Capital market expectations:
+  - =long-term expectations= IPS
+  - =short-term expectations= make active investment decisions
++ Good forecast:
+  - Unbiased, objective, and well researched
+  - Efficient
+  - *cross-sectional consistent* and *intertemporal consistent*
++ Steps
+  1.
++ Challenges in Forecasting
+  1. Limitations to using economic data
+  2. Data measurement errors and biases
+     - *Transcription errors*
+     - *Survivorship bias*
+     - *Appraisal data* *downward the standard deviation*
+  3. Limitations of historical estimates
+  4. Ex-post risk as a biased risk measure of ex-ante risk
+     =underestimate ex-ante risk= =overestimate ex-ante anticipated returns=
+  5. Biases in analysts' methods
+     - Data-minning bias
+     - Time-period bias
+  6. Failure to account for conditioning information
+  7. Misinterpretation of correlations
+  8. Psychological biases
+  9. Model uncertainty
+** [#B] Macroeconomic Analysis
+*** [#A] Analysis of Economic Growth
+$Growth = trends +cycles$
++ *Exogenous shocks*
+  - Changes in government policies
+  - New products and technologies
+  - Geopolitics
+  - Natural disasters
+  - Natural resources inputs
+  - Financial crises
++ Decomposition of GDP
+  - Growth from labor inputs
+    + Growth in potential labor force size
+    + Growth in actual labor force participation
+  - Growth from labor productivity
+    + Growth from increasing capital inputs("capital deepening")
+    + Growth in total factor productivity(TFP)
++ Anchoring Bond Returns to Trend Growth
+  - Bond yields will be pulled toward this level over time
+  - $V_{t}^{e}=GDP \times S_{t}^{k}\times PE_{t}$
+*** Approaches to Economic Forecasting
+**** Econometric modeling
+- Structural models
+- Reduced-form models
+**** Economic indicators
+- leading indicators
+- diffusion index
+- lagging indicators
+**** checklist approach
+*** [#B] Business Cycle Analysis
+*** [#B] Analysis of Monetary and Fiscal
+*** International Interactions
+
+*  Reading 2: Forecasting Asset Class Returns

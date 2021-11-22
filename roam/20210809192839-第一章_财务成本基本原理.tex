@@ -1,0 +1,180 @@
+% Created 2021-08-11 三 15:24
+% Intended LaTeX compiler: pdflatex
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{nopageno}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{etoolbox}
+\usepackage[margin=2cm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[cache=false]{minted}
+\tolerance=1000
+\setsansfont{Source Han Sans SC}
+\setromanfont{Source Han Serif SC}
+\setmonofont[Scale=0.9]{Inziu Iosevka Slab SC}
+\newfontfamily\quotefont{Source Han Serif SC}
+\newfontfamily\headfootfont{Source Han Sans SC}
+\AtBeginEnvironment{quote}{\quotefont\small}
+\XeTeXlinebreaklocale ``zh''
+\XeTeXlinebreakskip = 0pt plus 1pt
+\linespread{1.0}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=[rgb]{0,0.37,0.53},
+  citecolor=[rgb]{0,0.47,0.68},
+  filecolor=[rgb]{0,0.37,0.53},
+  urlcolor=[rgb]{0,0.37,0.53},
+  pagebackref=true,
+  linktoc=all,}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyfoot[C]{} % Clear page number
+\fancyhead[RE]{\headfootfont\small\leftmark} % 在偶数页的右侧显示章名
+\fancyhead[LO]{\headfootfont\small\rightmark} % 在奇数页的左侧显示小节名
+\fancyhead[LE,RO]{\headfootfont\small~\thepage~} % 在偶数页的左侧，奇数页的右侧显示页码
+\usepackage{fontspec}
+\setmainfont{Noto Serif CJK SC}
+\usepackage{xeCJK}
+\setCJKmainfont{WenQuanYi Micro Hei }
+\setcounter{secnumdepth}{3}
+\author{Bolun Liu}
+\date{\today}
+\title{第一章 财务成本基本原理}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\section{企业的组织形式}
+\label{sec:orgf77c801}
+\begin{center}
+\begin{tabular}{llll}
+比较项目 & 个人独资企业 & 合伙企业 & 公司制企业\\
+\hline
+投资人承担的责任 & 无限债务责任 & 1. (1)普通合伙企业：无线、连带责任 & 有限债务责任\\
+ &  & (2)有限合伙企业：无限+有限 & \\
+ &  & (3)特殊普通合伙企业：1.故意或者重大过失人：无限+其他有限； & \\
+ &  & 2. 非故意或重大过失，全体合伙人：无限连带责任 & \\
+\hline
+组建成本 & 低 & 居中 & 高\\
+\end{tabular}
+\end{center}
+\section{财务管理的主要内容}
+\label{sec:org2140f5c}
+财务管理所谈的长期投资的特征投资的对象为\textbf{经营性长期资产} 。包括对\textbf{子公司}、\textbf{合营企业}、\textbf{联营企业}的长期股权投资。
+
+\uline{净现值原则}
+\section{财务管理的目标}
+\label{sec:orgfcae984}
+本书观点---\textbf{股东财富最大化目标}
+\begin{center}
+\begin{tabular}{ll}
+财务管理的目标 & 未考虑因素\\
+\hline
+利润最大化 & 风险、利润取得的时间、投入资本与利润的关系\\
+每股收益最大化 & 风险、利润取得的时间\\
+股东财富最大化 & 股东投资资本不变，股价最大化 = 股东财富最大化\\
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item 经营者的利益要求与协调
+\begin{itemize}
+\item 表现
+\begin{itemize}
+\item 道德风险
+\item 逆向选择-措施
+\end{itemize}
+\item 措施
+\begin{itemize}
+\item 监督
+\item 激励
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\emph{监督成本}、\emph{激励成本}、\emph{偏离股东目标}的损失\_三者之和最小
+\begin{itemize}
+\item 债权人的利益相关要求
+\begin{itemize}
+\item 与股东冲突的表现
+\begin{itemize}
+\item 投资于比债权人预期\textbf{风险更高}的新项目
+\item 发行新债
+\end{itemize}
+\item 协调办法
+\begin{itemize}
+\item 限制性条款
+\item 如有损害利益意图，不再提供新的贷款或提前收回贷款。
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\begin{center}
+\begin{tabular}{ll}
+类型 & 协调\\
+\hline
+合同利益相关者 & (1) \textbf{遵守合同}就可以\textbf{基本满足}合同利益相关者的要求\\
+ & (2) \textbf{遵守到的规范的约束}\\
+\hline
+非合同利益相关者 & 享受的法律保护低于合同利益相关者，受公司的社会责任政策的影响很大\\
+\end{tabular}
+\end{center}
+\begin{quote}
+主张股东财富最大化并非忽略其他相关者利益。
+股东权益是\textbf{剩余权益}，只有在满足了其他方面的利益之后才会有股东的利益。公司必须交税、给员工发工资等，才能获得税后收益。
+\end{quote}
+\section{金融工具与金融市场}
+\label{sec:org6ec551b}
+固定收益证券：固定利率债券、浮动利率债券、\textbf{优先股}、\textbf{永续债}。
+\textbf{可转换债券}属于\textbf{衍生证券}
+\begin{itemize}
+\item 有效资本市场的含义
+\begin{center}
+\begin{tabular}{ll}
+市场有效的含义 & \textbf{价格}能够\textbf{同步地（迅速性）}、\textbf{完全地（完整性）}反映全部可用的\textbf{信息}\\
+外部标志 & (1) \textbf{信息充分、均匀披露}: 信息能够充分披露和均匀分布，每个投资者在同一时间内得到\textbf{等量等质}的信息\\
+ & (2) \textbf{价格迅速反映}：价格能迅速地根据有关信息变动，不会出现没有反应或反应迟钝\\
+\end{tabular}
+\end{center}
+\item 资本市场有效的基础条件
+\begin{itemize}
+\item 理性的投资人
+\item 独立的理性偏差
+\item 套利
+\end{itemize}
+\end{itemize}
+\begin{quote}
+注：三个条件只要有一个存在，资本市场就会是有效的。
+\end{quote}
+\begin{itemize}
+\item 有效资本市场对财务管理的意义
+\begin{itemize}
+\item 管理者\texttt{改变会计方法不会}提升企业的股票价值。
+\item 金融投机不能使企业获利。
+\item 关注自身股价对企业是有益的。
+\end{itemize}
+\item 资本市场有效性的检验
+\end{itemize}
+\begin{center}
+\begin{tabular}{llll}
+市场 & 检验方法 & 检验规则 & 理解\\
+\hline
+弱式有效资本市场 & 过滤检验 & 使用过滤规则交易的收益率，\textbf{不能持续超过}``简单购买/持有''策略的收益率 & 过滤原则无用\\
+\hline
+半强势有效资本市场 & 投资基金表现研究 & 投资基金的平均业绩，\textbf{不可能持续超过}是市场整体的收益率 & 基金经理人无用\\
+\end{tabular}
+\end{center}
+\end{document}

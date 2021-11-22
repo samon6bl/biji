@@ -1,0 +1,81 @@
+% Created 2021-08-20 五 15:07
+% Intended LaTeX compiler: pdflatex
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{nopageno}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{etoolbox}
+\usepackage[margin=2cm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[cache=false]{minted}
+\tolerance=1000
+\setsansfont{Source Han Sans SC}
+\setromanfont{Source Han Serif SC}
+\setmonofont[Scale=0.9]{Inziu Iosevka Slab SC}
+\newfontfamily\quotefont{Source Han Serif SC}
+\newfontfamily\headfootfont{Source Han Sans SC}
+\AtBeginEnvironment{quote}{\quotefont\small}
+\XeTeXlinebreaklocale ``zh''
+\XeTeXlinebreakskip = 0pt plus 1pt
+\linespread{1.0}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=[rgb]{0,0.37,0.53},
+  citecolor=[rgb]{0,0.47,0.68},
+  filecolor=[rgb]{0,0.37,0.53},
+  urlcolor=[rgb]{0,0.37,0.53},
+  pagebackref=true,
+  linktoc=all,}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyfoot[C]{} % Clear page number
+\fancyhead[RE]{\headfootfont\small\leftmark} % 在偶数页的右侧显示章名
+\fancyhead[LO]{\headfootfont\small\rightmark} % 在奇数页的左侧显示小节名
+\fancyhead[LE,RO]{\headfootfont\small~\thepage~} % 在偶数页的左侧，奇数页的右侧显示页码
+\usepackage{fontspec}
+\setmainfont{Noto Serif CJK SC}
+\usepackage{xeCJK}
+\setCJKmainfont{WenQuanYi Micro Hei }
+\author{Bolun Liu}
+\date{\today}
+\title{latex}
+\hypersetup{
+ pdfauthor={Bolun Liu},
+ pdftitle={latex},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{表格配置}
+\label{sec:orgf999586}
+\resizebox{\textwidth}{!}{
+
+\begin{center}
+\begin{tabular}{ccclr}
+姓名 & 身高 & 颜值 & 爱好 & 交往系数\\
+\hline
+213 & 213 & 324 & 第三方 & 第三方\\
+\hline
+\end{tabular}
+\end{center}
+}
+\end{document}

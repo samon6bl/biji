@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       0f1bf37d-90c8-4c6d-9b3b-1fd8ac6598e6
+:END:
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+#+title: latex
+* org 表格导出配置
+#+LaTeX: \resizebox{\textwidth}{!}{
+| 姓名 | 身高 | 颜值 | 爱好   | 交往系数 |
+| <c>  | <c>  | <c>  | <l>    |      <r> |
+|------+------+------+--------+----------|
+| 213  | 213  | 324  | 第三方 |   第三方 |
+#+LaTeX: }

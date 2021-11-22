@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       6fe167a9-a3a0-45f3-b4d0-dd76ceaaa322
+:END:
+#+title: English Program
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }

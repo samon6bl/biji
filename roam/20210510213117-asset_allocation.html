@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-09-07 二 19:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Asset Allocation</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Bolun Liu" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Asset Allocation</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgecb1da3">1. Overview of Asset Allocations</a>
+<ul>
+<li><a href="#orgcb77ad3">1.1. Investment Governance(投资规划)</a></li>
+<li><a href="#org9787159">1.2. A Quick Glance of Asset Allocation</a>
+<ul>
+<li><a href="#org3eb4e1a">1.2.1. <b>Stratefic asset allocation(SAA)</b> <code>长期</code></a></li>
+<li><a href="#orga92d0d1">1.2.2. Tactical Asset Allocation(TAA)(战术) <code>短期</code></a></li>
+<li><a href="#org9d45717">1.2.3. Economic Balance Sheet</a></li>
+</ul>
+</li>
+<li><a href="#org43904ce">1.3. Asset Allocation Approaches</a>
+<ul>
+<li><a href="#orgf6d0fbb">1.3.1. Three Categories</a></li>
+<li><a href="#org25cc574">1.3.2. Two Categories</a></li>
+<li><a href="#org880ec97">1.3.3. Factor-based approach</a></li>
+</ul>
+</li>
+<li><a href="#orgb4ad8d3">1.4. Implementation of Asset Allocation</a></li>
+<li><a href="#org2c0b13a">1.5. Reblancing Asset Allocation</a>
+<ul>
+<li><a href="#orgbdefc16">1.5.1. Approaches to Rebalancing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org330dcd0">2. Principles of Asset Allocation</a>
+<ul>
+<li><a href="#org6332a76">2.1. Asset-Only Allocation</a>
+<ul>
+<li><a href="#org25b75df">2.1.1. Mean-Variance Optimiztion</a></li>
+<li><a href="#orgeb5c60a">2.1.2. Other Models</a></li>
+</ul>
+</li>
+<li><a href="#org76656cc">2.2. Liability-Relative Allocation</a>
+<ul>
+<li><a href="#orgb426b76">2.2.1. Introduction of Liability-Relative Allocation</a></li>
+<li><a href="#org0ea0a8e">2.2.2. Approaches of liability-Relative Allocation</a></li>
+</ul>
+</li>
+<li><a href="#orgaaf4b59">2.3. Goals-Based Allocation</a></li>
+<li><a href="#org7fe8eb8">2.4. Other Allocation Approaches</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<b>上午主观题</b> 中比较容易拿分的科目
+</p>
+<div id="outline-container-orgecb1da3" class="outline-2">
+<h2 id="orgecb1da3"><span class="section-number-2">1</span> Overview of Asset Allocations</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgcb77ad3" class="outline-3">
+<h3 id="orgcb77ad3"><span class="section-number-3">1.1</span> Investment Governance(投资规划)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+achieve the asset owner&rsquo;s <code>investment objectives</code> within the asset owner&rsquo;s <code>tisk tolerance and constraints</code>.
+</p>
+<ol class="org-ol">
+<li>Articulating investment objectives
+<ul class="org-ul">
+<li>Defined benefit pension fund</li>
+<li>Endowment fund</li>
+<li>individual investor</li>
+</ul></li>
+<li>Allocation of rights and responsibilities</li>
+<li>investment policy statement</li>
+<li>Asset allocation and rebalancing policy</li>
+<li>Reporting framework</li>
+<li>The governance audit</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9787159" class="outline-3">
+<h3 id="org9787159"><span class="section-number-3">1.2</span> A Quick Glance of Asset Allocation</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org3eb4e1a" class="outline-4">
+<h4 id="org3eb4e1a"><span class="section-number-4">1.2.1</span> <b>Stratefic asset allocation(SAA)</b> <code>长期</code></h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+SAA is an asset allocation that arises in <code>long-term</code> investment planning
+</p>
+<ul class="org-ul">
+<li>9 steps of SAA
+<ul class="org-ul">
+<li>return objectives</li>
+<li>risk tolerance</li>
+<li>investment horizon</li>
+<li>constraints</li>
+<li>approach to asset allocation</li>
+<li><a href="20210416100520-capital_market_expectations.html#ID-75caf407-369f-41bb-b2ab-e98b58015bbd">Capital Market Expectations</a></li>
+<li>asset allocation choices for consideration</li>
+<li>Test the robustness of the potential choices</li>
+<li>back to step</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga92d0d1" class="outline-4">
+<h4 id="orga92d0d1"><span class="section-number-4">1.2.2</span> Tactical Asset Allocation(TAA)(战术) <code>短期</code></h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li><b>short-term deviations</b> from strategic asset allocation</li>
+<li>TAA is <b>active management</b> at the asset class level</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9d45717" class="outline-4">
+<h4 id="org9d45717"><span class="section-number-4">1.2.3</span> Economic Balance Sheet</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+accounting balance sheet + <b>extended protfolio assets and liabilities</b>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org43904ce" class="outline-3">
+<h3 id="org43904ce"><span class="section-number-3">1.3</span> Asset Allocation Approaches</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgf6d0fbb" class="outline-4">
+<h4 id="orgf6d0fbb"><span class="section-number-4">1.3.1</span> Three Categories</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+<code>investment problem</code>
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org61f4df1"></a>Asset-only approach<br />
+<div class="outline-text-5" id="text-1-3-1-1">
+<p>
+maximize <code>Sharpe raitio</code>
+eg. <span class="underline">mean-variance optimiztion(MVO)</span>
+</p>
+<ul class="org-ul">
+<li>Risk measures
+<ul class="org-ul">
+<li>Volatiliity(standard deviation)</li>
+<li>Tracking risk(tracking error, risk relative to benchmark)</li>
+<li>Downside risk(semi-variance, maximum drawdown, VaR)</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org90a0b98"></a>Liability-relative approach<br />
+<div class="outline-text-5" id="text-1-3-1-2">
+<p>
+objective of <code>funding liabilities</code>
+eg. <b>surplus(A-L) optimization</b>
+</p>
+<ul class="org-ul">
+<li>risk measures:
+<ul class="org-ul">
+<li>Volatility of surplus(A-L)</li>
+<li>Volatility of fund(A/L)</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org36691a6"></a>Goals-based approach<br />
+<div class="outline-text-5" id="text-1-3-1-3">
+<p>
+<code>sub-portfolios</code> for each specified goals
+risk limits can be quatified as the <code>maximum acceptable probability</code> of not achieving a goal
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org25cc574" class="outline-4">
+<h4 id="org25cc574"><span class="section-number-4">1.3.2</span> Two Categories</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+<code>exposures</code> 具体、抽象
+<b>*</b> Asset class-based approach
+each asset class has its own <code>systematic risk exposure</code>.
+</p>
+<ul class="org-ul">
+<li>Five criteria to effectively specify asset class for the purpose of asset allocation:</li>
+<li>Assets within an asset class should be relatively <code>homogeneous</code></li>
+<li>Asset classes should be <code>diversifying</code>.</li>
+<li>Asset classes should be <code>mutually exclusive</code>.</li>
+<li>The asset classes as a group should make up a preponderance of <code>world investable wealth</code>.</li>
+<li>Asset classes selected for investment should have the capacity to absorb a meaningful prportion of <code>an investor's portfolio</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org880ec97" class="outline-4">
+<h4 id="org880ec97"><span class="section-number-4">1.3.3</span> Factor-based approach</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+desired exposures to <code>specified risk factors</code>.
+<span class="underline">Multifactor risk models</span>
+</p>
+<ul class="org-ul">
+<li>Steps
+<ul class="org-ul">
+<li>Specify risk factors and the desired exposure to each risk factor</li>
+<li>Construct <code>factor portfolios</code> that isolate exposure to each risk factor.</li>
+<li>Map the exposure in <b>factor space</b> back to <b>asset class space</b>.</li>
+</ul></li>
+</ul>
+<p>
+<code>zero dollar investment</code>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb4ad8d3" class="outline-3">
+<h3 id="orgb4ad8d3"><span class="section-number-3">1.4</span> Implementation of Asset Allocation</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<span class="underline">passive/active choice</span>
+</p>
+<ul class="org-ul">
+<li>passive : follow benchmark(Index, liability)</li>
+<li>active : beat benchmark</li>
+
+<li>Factors on Passive/Active Choices
+<ul class="org-ul">
+<li>Available investments</li>
+<li>Scalability of active strategies</li>
+<li>Trade-off benefits and risks</li>
+<li>Feasibility of investing passively while incorporating client-specific constraints</li>
+<li>Beliefs concerning market informational efficiency</li>
+<li>Tax status</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2c0b13a" class="outline-3">
+<h3 id="org2c0b13a"><span class="section-number-3">1.5</span> Reblancing Asset Allocation</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+<b>Rebalancing</b> is the discipline of adjusting portfolio weights to mre closely align with <code>SAA</code>.
+</p>
+</div>
+<div id="outline-container-orgbdefc16" class="outline-4">
+<h4 id="orgbdefc16"><span class="section-number-4">1.5.1</span> Approaches to Rebalancing</h4>
+<div class="outline-text-4" id="text-1-5-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgc7b0a92"></a>Calendar rebalancing<br />
+<div class="outline-text-5" id="text-1-5-1-1">
+<p>
+<code>on a periodic basis</code>
+eg. monthly, quarterly, semiannually
+</p>
+</div>
+</li>
+<li><a id="org4ef5366"></a>Percent-range rebalancing<br /></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org330dcd0" class="outline-2">
+<h2 id="org330dcd0"><span class="section-number-2">2</span> Principles of Asset Allocation</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org6332a76" class="outline-3">
+<h3 id="org6332a76"><span class="section-number-3">2.1</span> Asset-Only Allocation</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org25b75df" class="outline-4">
+<h4 id="org25b75df"><span class="section-number-4">2.1.1</span> Mean-Variance Optimiztion</h4>
+<div class="outline-text-4" id="text-2-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org413ecf7"></a>Introduction of MVO<br />
+<div class="outline-text-5" id="text-2-1-1-1">
+<p>
+<code>efficient portfolio</code> use MVO to determine
+inputs:returns,risks(Std.Dev.),and pair-wise correlations
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org5f07ee5"></a>Utility Function<br />
+<div class="outline-text-6" id="text-2-1-1-1-1">
+<p>
+\(U_{m}=E(R_{m})-0.005\lambda \sigma^{2}_{m}\)
+\(\lambda=1\dots10\)
+</p>
+</div>
+</li>
+<li><a id="org59d6859"></a>Safety-first ratio<br />
+<div class="outline-text-6" id="text-2-1-1-1-2">
+<p>
+\(SFR=\frac{r_{p}-MAR}{\sigma^{2}}\)
+</p>
+<blockquote>
+<p>
+Typically, this single set weights is <code>relatively extreme</code> with very large long and short positions in each asset class
+</p>
+</blockquote>
+</div>
+</li>
+<li><a id="org8a44606"></a>Two constraints<br />
+<div class="outline-text-6" id="text-2-1-1-1-3">
+<ol class="org-ol">
+<li><b>Budget constraint</b>: weights must sum to 1.</li>
+<li><b>Non-negativity constraint</b>: allow only positive weights.</li>
+</ol>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orged6041e"></a>Criticisms of MVO<br />
+<div class="outline-text-5" id="text-2-1-1-2">
+<ol class="org-ol">
+<li>The asset allocations are highly sensitive to the inputs, especial the expected return(garbage in,garbage out)</li>
+</ol>
+</div>
+</li>
+<li><a id="org4d80008"></a>Other Issues of MVO<br /></li>
+</ol>
+</div>
+<div id="outline-container-orgeb5c60a" class="outline-4">
+<h4 id="orgeb5c60a"><span class="section-number-4">2.1.2</span> Other Models</h4>
+</div>
+</div>
+<div id="outline-container-org76656cc" class="outline-3">
+<h3 id="org76656cc"><span class="section-number-3">2.2</span> Liability-Relative Allocation</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgb426b76" class="outline-4">
+<h4 id="orgb426b76"><span class="section-number-4">2.2.1</span> Introduction of Liability-Relative Allocation</h4>
+</div>
+<div id="outline-container-org0ea0a8e" class="outline-4">
+<h4 id="org0ea0a8e"><span class="section-number-4">2.2.2</span> Approaches of liability-Relative Allocation</h4>
+</div>
+</div>
+<div id="outline-container-orgaaf4b59" class="outline-3">
+<h3 id="orgaaf4b59"><span class="section-number-3">2.3</span> Goals-Based Allocation</h3>
+</div>
+<div id="outline-container-org7fe8eb8" class="outline-3">
+<h3 id="org7fe8eb8"><span class="section-number-3">2.4</span> Other Allocation Approaches</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Bolun Liu</p>
+<p class="date">Created: 2021-09-07 二 19:07</p>
+</div>
+</body>
+</html>

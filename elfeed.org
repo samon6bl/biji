@@ -1,0 +1,17 @@
+#+TITLE: Elfeed
+* RSS :elfeed:
+** 娱乐
+*** [[https://www.douban.com/feed/review/movie][豆瓣最受欢迎的影评]]
+** 学术
+*** [[https://iseex.github.io/feed.xml][青柠学术]]
+*** [[https://qnmlgb.tech/v3/rss?i=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JfaWQiOiI1YmJiODNlYjI0NGQ0ZTQxZTlmNzZmYTIiLCJ1c2VyX2lkIjoiNjAyMGFjNTY0OTdmZjQ3NDRjYzg1Y2Q1In0.X3Fh2Riv5uNg6ja1ENiIKRh7ZZq127WRcYVulyvvKWY][计量经济圈]]
+** 科技
+*** [[https://www.moerats.com/feed/][Rat's Blog]]
+** 财经
+*** [[https://qnmlgb.tech/v3/rss?i=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JfaWQiOiI1YmJiODk3YzI0NGQ0ZTE1YTZhZDFiMGIiLCJ1c2VyX2lkIjoiNjAyMGFjNTY0OTdmZjQ3NDRjYzg1Y2Q1In0._3cxM4WlAKvGs-9Zn-RLaGeNNgt_hX8hBt6DPw25ACU][王剑的角度]]
+*** [[https://qnmlgb.tech/v3/rss?i=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JfaWQiOiI1YjY1MjAwODI0NGQ0ZTZmMjljYWI5ODEiLCJ1c2VyX2lkIjoiNjAyMGFjNTY0OTdmZjQ3NDRjYzg1Y2Q1In0.WOJEpv-CvYBaQFcWxQGiY6XscZ11QzF78pl2B1sF2WY][泽平宏观]]
+*** [[https://qnmlgb.tech/v3/rss?i=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JfaWQiOiI1YjU3NWVlMTU4ZTVjNDU4MzMzOGUwN2UiLCJ1c2VyX2lkIjoiNjAyMGFjNTY0OTdmZjQ3NDRjYzg1Y2Q1In0.LSI_yOvGS2SagspnUCb4pX6eViulHr_DKMMDv8BaR08][央视财经]]
+*** [[https://qnmlgb.tech/v3/rss?i=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JfaWQiOiI1Yjc5OWE5OTI0NGQ0ZTFhYjUxZWY4MDAiLCJ1c2VyX2lkIjoiNjAyMGFjNTY0OTdmZjQ3NDRjYzg1Y2Q1In0.Ap_RXvfoe3Grw6O8tU1KNKZ1-FMkvQCx6WJaIuwWRBI][券商中国]]
+*** [[https://qnmlgb.tech/v3/rss?i=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JfaWQiOiI1Yzk3OWFiNDQ5N2ZmNDIyY2UzNDIyNDMiLCJ1c2VyX2lkIjoiNjAyMGFjNTY0OTdmZjQ3NDRjYzg1Y2Q1In0.kf3_0PjTbJRpGgBpcZ--uhhOug_UqnaTAV7nC8WdPgs][王的机器]]
+*** [[http://feedmaker.kindle4rss.com/feeds/theeconomist.weixin.xml][经济学人]]
+*** [[https://qnmlgb.tech/v3/rss?i=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JfaWQiOiI1YzViOGZlNDQ5N2ZmNDdhYzEyMTBkNjciLCJ1c2VyX2lkIjoiNjAyMGFjNTY0OTdmZjQ3NDRjYzg1Y2Q1In0.Sz9GbrZmYHFOZ-yl6ID3oQ4sD1x_Y21J4SfDpxgm-hA][每日经济新闻]]

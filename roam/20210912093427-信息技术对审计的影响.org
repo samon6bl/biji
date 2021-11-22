@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       3f8847cf-be5e-4fdb-b985-35e26cfb1f74
+:END:
+#+title: 信息技术对审计的影响
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }

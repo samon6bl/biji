@@ -1,0 +1,102 @@
+#+title: 论文2改
+#+roam_tags: 毕业论文
+* 三种模型的建立
+** 创新之处
+按照信用等级分类 *AAA、AA、A* ，这样做法，多因子的有效因子检验 work 了，而且对分类后的组合有效因子变得可解释了。
+** 代码
+*** 传统选股模型的建立
+*** 大类因子分析
+*** 随机森林模型的建立
+#+begin_src python
+param_grid = {
+    'criterion':['entropy','gini'],
+    'max_depth':[5, 6, 7, 8],    # 深度：这里是森林中每棵决策树的深度
+    'n_estimators':[11,13,15],  # 决策树个数-随机森林特有参数
+    'max_features':[0.3,0.4,0.5],
+     # 每棵决策树使用的变量占比-随机森林特有参数（结合原理）
+    'min_samples_split':[4,8,12,16]  # 叶子的最小拆分样本量
+}
+
+import sklearn.ensemble as ensemble # ensemble learning: 集成学习
+
+rfc = ensemble.RandomForestClassifier()
+rfc_cv = GridSearchCV(estimator=rfc, param_grid=param_grid,
+                      scoring='roc_auc', cv=4)
+rfc_cv.fit(X_train, y_train)
+
+# 使用随机森林对测试集进行预测
+test_est = rfc_cv.predict(X_test)
+print('随机森林精确度...')
+print(metrics.classification_report(test_est, y_test))
+print('随机森林 AUC...')
+fpr_test, tpr_test, th_test = metrics.roc_curve(test_est, y_test)
+     # 构造 roc 曲线
+print('AUC = %.4f' %metrics.auc(fpr_test, tpr_test))
+#+end_src
+| 月度时间 | 财报分类     | 阅读时间 | 财报分类     |
+|----------+--------------+----------+--------------|
+| 1 月     | 上年三季度报 | 7 月     | 当年一季度报 |
+| 2 月     | 上年三季度报 | 8 月     | 当年半年报   |
+| 3 月     | 上年三季度报 | 9 月     | 当年半年报   |
+| 4 月     | 上年年报     | 10 月    | 当年三季度报 |
+| 5 月     | 当年一季度报 | 11 月    | 当年三季度报 |
+| 6 月     | 当年一季度报 | 12 月    | 当年三季度报 |
+*** SVM 多分类
+#+begin_src python
+X_train, X_test, y_train, y_test = train_test_split(feature,label,test_size=.2,random_state=0)
+# 训练模型
+model = OneVsRestClassifier(svm.SVC(kernel='linear',probability=True,random_state=random_state))
+print("[INFO] Successfully initialize a new model !")
+print("[INFO] Training the model…… ")
+clt = model.fit(X_train,y_train)
+print("[INFO] Model training completed !")
+# 保存训练好的模型，下次使用时直接加载就可以了
+joblib.dump(clt,"F:/python/model/conv_19_80%.pkl")
+print("[INFO] Model has been saved !")
+
+y_test_pred = clt.predict(X_test)
+ov_acc = metrics.accuracy_score(y_test_pred,y_test)
+print("overall accuracy: %f"%(ov_acc))
+print("===========================================")
+acc_for_each_class = metrics.precision_score(y_test,y_test_pred,average=None)
+print("acc_for_each_class:\n",acc_for_each_class)
+print("===========================================")
+avg_acc = np.mean(acc_for_each_class)
+print("average accuracy:%f"%(avg_acc))
+#+end_src
+
+** 写作
+*** 第三章 量化选股的理论基础
+**** 传统选股
+**** 量化选股
+***** 基本的介绍
+***** 随机森林的理论
+*指标选取在数据来源之前*
+可转换支数
+*样本选取原则*
+回测结果
+回测结果对比
+**** 量化策略
+***** 策略逻辑
+***** 策略设计与优化
+因子检验降因子维度降下来
+调整参数
+最终策略
+***** 策略的检验
+1. 样本外的检验
+2. 延时检验
+3. 调仓周期检验
+4. 样本选择检验
+***** 结论与风险提示
+**** 我的方案
+***** 随机森林 + SVM + 样本外检验 +  延时检验(1+2 日)
+| Feature         | Importance |
+|-----------------+------------|
+| 纯债到期收益率  |   0.118618 |
+| 转债溢价率      |   0.095228 |
+| 对数市值        |   0.093558 |
+| 增长率-营业收入 |   0.065713 |
+| 销售毛利率      |   0.055689 |
+| 净资产收益率    |   0.049006 |
+| 市盈率 PE        |   0.034527 |
+***** IC 因子检验 + 随机森林 + 延时检验(1+2 日)

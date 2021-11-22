@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       ce4f4be1-3bfc-4480-8b23-cf6f0182d155
+:END:
+#+title: 可转债
+#+HUGO_BASE_DIR: /home/samon/Blog/
+#+HUGO_SECTION: ./posts/
+#+hugo_auto_set_lastmod: t
+#+hugo_custom_front_matter: :toc true
+#+OPTIONS: author:nil
+* 基本概念
+** 转股溢价率(债性)
+转股溢价率 = 可转债价格/转股价格-1
+** 纯债溢价率(股性)
+纯债溢价率 = 转债市价相 - 纯债价值的溢价水平
+#+begin_example
+纯债溢价率越大，表明可转债的价格超过了其作为纯债券的价值，其蕴含的转股价值也就越大，说明投资者转股意愿较强，股性较强，债性较弱；纯债溢价率越小，则可转债的价格主要体现为其作为债券的价值，此时债性较强。另外，到期收益率也常用来衡量可转债的债性。到期收益率是按照市价买入可转债持有到期能够获得的收益水平。到期收益率水平越高，则转债的债性就越强，表明基础股票价格下跌对可转换债券价格的影响较弱。
+#+end_example

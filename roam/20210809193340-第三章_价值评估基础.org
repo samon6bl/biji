@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       df520cf1-f482-4e35-8f68-3882e8671073
+:END:
+#+OPTIONS: toc:2 num:3 H:4 ^:nil pri:t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://gongzhitaao.org/orgcss/org.css"/>
+#+STARTUP: latexpreview
+#+title:价值评估基础
+* 年金公式
+$(P/A,i,n)=\frac{1-(1+i)^{-n}}{i}$
+* 预付年金公式
+$P = A\times [(P/A,i,n-1)+1]\\ = A\times (P/A,i,n)\times (1+i)$
+* 内插值法 :ATTACH:
+[[attachment:_20210813_184122screenshot.png]]
+* 标准差
+$样本标准差=\sqrt{\frac{\sum_{i=1}^{n}(K_{i}-\bar{K})^{2}}{n-1}}$
+
+$总体标准差=\sqrt{\frac{\sum\limits_{i=1}^{n}(K_{i}-\bar{K})^{2}}{N}}$
+* 变异系数
+$变异系数 =标准差/预期值$
+* 相关系数与机会集
+机会集:$\hat{BC}$
+
+有效边界:$\hat{AB}$(有效集中向上凸的部分)
+
+相关系数*越小* ,机会集曲线就越 *弯曲*
+1. *r=1* 机会集是一条*直线*
+2. *r<1* 机会集会弯曲
+3. *r 足够小* 曲线向左凸出，风险分散化效应较强。
+* 资本市场线与证券市场线
+|           项目           |                                    证券市场线                                    |       资本市场线       |
+|           <c>            |                                       <c>                                        |          <c>           |
+|--------------------------+----------------------------------------------------------------------------------+------------------------|
+|           <l>            |                                       <l>                                        |          <l>           |
+| 投资人对待风险态度的关系 | 市场整体对风险的严恶感越强，证券市场线的斜率越大，对风险资产所要求的风险补偿越大 | 不影响最佳风险资产组合 |
+** 资本市场线
+$R_{i}=Q\times R_{m} +(1-Q)\times R_{f}$
+$\sigma_{i}=Q\times \sigma_{m}$
+$R_{i}=R_{f}+\frac{R_{m}-R_{f}}{\sigma_{m}}\times \sigma_{i}$
+** 证券市场线
+$R_{i}=R_{f}+\beta(R_{m}-R_{f})$

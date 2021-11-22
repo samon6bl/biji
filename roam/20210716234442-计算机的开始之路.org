@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       98e8f80c-eaa9-4100-a91d-c85920a41b94
+:END:
+#+title: 计算机的开始之路
+#+filetags: :学习:
+* 从这两个网站开始
+** [[https://github.com/labuladong/fucking-algorithm][fucking-algorithm github高分项目]]
+** [[https://github.com/justjavac/free-programming-books-zh_CN#python][free-programming-books-zh_CN github 高分项目]]

@@ -1,0 +1,120 @@
+:PROPERTIES:
+:ID:       4fd6949a-34b9-4617-99a9-c4f84ecfb5a2
+:END:
+#+title: Asset Allocation
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+filetags: :CFA:
+*上午主观题* 中比较容易拿分的科目
+* Overview of Asset Allocations
+** Investment Governance(投资规划)
+achieve the asset owner's =investment objectives= within the asset owner's =tisk tolerance and constraints=.
+1. Articulating investment objectives
+   * Defined benefit pension fund
+   * Endowment fund
+   * individual investor
+2. Allocation of rights and responsibilities
+3. investment policy statement
+4. Asset allocation and rebalancing policy
+5. Reporting framework
+6. The governance audit
+** A Quick Glance of Asset Allocation
+*** *Stratefic asset allocation(SAA)* =长期=
+SAA is an asset allocation that arises in =long-term= investment planning
++ 9 steps of SAA
+  * return objectives
+  * risk tolerance
+  * investment horizon
+  * constraints
+  * approach to asset allocation
+  * [[id:75caf407-369f-41bb-b2ab-e98b58015bbd][Capital Market Expectations]]
+  * asset allocation choices for consideration
+  * Test the robustness of the potential choices
+  * back to step
+*** Tactical Asset Allocation(TAA)(战术) =短期=
+- *short-term deviations* from strategic asset allocation
+- TAA is *active management* at the asset class level
+*** Economic Balance Sheet
+accounting balance sheet + *extended protfolio assets and liabilities*
+** [#B] Asset Allocation Approaches
+*** Three Categories
+~investment problem~
+**** Asset-only approach
+maximize =Sharpe raitio=
+eg. _mean-variance optimiztion(MVO)_
++ Risk measures
+  * Volatiliity(standard deviation)
+  * Tracking risk(tracking error, risk relative to benchmark)
+  * Downside risk(semi-variance, maximum drawdown, VaR)
+**** Liability-relative approach
+objective of =funding liabilities=
+eg. *surplus(A-L) optimization*
++ risk measures:
+  * Volatility of surplus(A-L)
+  * Volatility of fund(A/L)
+**** Goals-based approach
+=sub-portfolios= for each specified goals
+risk limits can be quatified as the =maximum acceptable probability= of not achieving a goal
+*** Two Categories
+    =exposures= 具体、抽象
+    *** Asset class-based approach
+    each asset class has its own =systematic risk exposure=.
+    + Five criteria to effectively specify asset class for the purpose of asset allocation:
+    * Assets within an asset class should be relatively =homogeneous=
+    * Asset classes should be =diversifying=.
+    * Asset classes should be =mutually exclusive=.
+    * The asset classes as a group should make up a preponderance of =world investable wealth=.
+    * Asset classes selected for investment should have the capacity to absorb a meaningful prportion of =an investor's portfolio=.
+*** Factor-based approach
+desired exposures to =specified risk factors=.
+_Multifactor risk models_
++ Steps
+  * Specify risk factors and the desired exposure to each risk factor
+  * Construct =factor portfolios= that isolate exposure to each risk factor.
+  * Map the exposure in *factor space* back to *asset class space*.
+=zero dollar investment=
+** [#C] Implementation of Asset Allocation
+_passive/active choice_
+ - passive : follow benchmark(Index, liability)
+ - active : beat benchmark
+
+ - Factors on Passive/Active Choices
+   + Available investments
+   + Scalability of active strategies
+   + Trade-off benefits and risks
+   + Feasibility of investing passively while incorporating client-specific constraints
+   + Beliefs concerning market informational efficiency
+   + Tax status
+** [#B] Reblancing Asset Allocation
+*Rebalancing* is the discipline of adjusting portfolio weights to mre closely align with =SAA=.
+*** Approaches to Rebalancing
+**** Calendar rebalancing
+=on a periodic basis=
+eg. monthly, quarterly, semiannually
+**** Percent-range rebalancing
+* [#A] Principles of Asset Allocation
+** [#A] Asset-Only Allocation
+*** [#A] Mean-Variance Optimiztion
+**** [#B] Introduction of MVO
+=efficient portfolio= use MVO to determine
+inputs:returns,risks(Std.Dev.),and pair-wise correlations
+***** Utility Function
+$U_{m}=E(R_{m})-0.005\lambda \sigma^{2}_{m}$
+$\lambda=1\dots10$
+***** Safety-first ratio
+$SFR=\frac{r_{p}-MAR}{\sigma^{2}}$
+#+begin_quote
+Typically, this single set weights is =relatively extreme= with very large long and short positions in each asset class
+#+end_quote
+***** Two constraints
+1. *Budget constraint*: weights must sum to 1.
+2. *Non-negativity constraint*: allow only positive weights.
+**** [#A] Criticisms of MVO
+1. The asset allocations are highly sensitive to the inputs, especial the expected return(garbage in,garbage out)
+**** Other Issues of MVO
+*** [#B] Other Models
+** [#B] Liability-Relative Allocation
+*** Introduction of Liability-Relative Allocation
+*** Approaches of liability-Relative Allocation
+** Goals-Based Allocation
+** Other Allocation Approaches

@@ -1,0 +1,169 @@
+#+title: Behavioral Finance
+#+SETUPFILE: ~/模板/theme-readtheorg.setup
+#+roam_tags: CFA
+考试占比必 1 case *大量术语* *历届真题反复操练*
+* Reading 7:The Behavioral Finance Perspective
+** Introduction of Behavioral Finance and Decision Making Process
+*** Traditional finance(Rational)
+risk-averse,self-interested utility maximizers
+*** Behavioral Finance(Normal)
+**** Behavioral Finance Micro(BFMI)
+Questions =the perfect rationality and decision-making process of individual investors=
+**** Behavioral Finance Macro(BFMA)
+BFMA questions the =efficiency of markets=
+*** Decision Making Process
+- Traditional finance :: normative: *rational solution* to the provlem at hand
+- Behavior finance :: desriptive: *the manner in which real people actually make decisions*
+- Efforts to use behavioral finance :: prescriptive: *practical advice and tools that might help people achieve results more closely approximating those of normative analysis*
+*** Rational Investors
+- utility theory
+- Bayes' formula
+- self-interested, risk-averse, perfect information, unbiased way
+*** Utility function of wealth :ATTACH:
+:PROPERTIES:
+:ID:       6a3038b5-c73c-4dae-a626-22e7b14bda34
+:END:
+utility functions are concave and show diminishing marginal utility of wealth
+- risk-neutral [[attachment:_20210323_105556screenshot.png]]
+- risk seeking [[attachment:_20210323_105637screenshot.png]]
+- risk-averse [[attachment:_20210323_105731screenshot.png]]
+*** Rational Economic Man(REM)
+** Behavioral versus Traditional Perspectives
+| Tradional Finance Assumes      | Behavior Fiannce Assumes                                                            |
+|--------------------------------+-------------------------------------------------------------------------------------|
+| Unlimited perfect knowledge    | Capacity limitations on knowledge                                                   |
+| Utility maximiztion            | Satisfice                                                                           |
+| Fully rational decision making | Cognitive limits on decision making(Bounded Rationality)                            |
+| Risk aversion                  | Reference dependence to determine gain or loss leading to possible cognitive errors |
+*** Attitudes Toward Risk
+*** [#A] Prospect Theory
+gain and loss
+**** Neuro Exonomics
+*** Bounded Rationality
+**** Decision Theory
+** Perpectives on Market Behavior and Portfolio
+*** Traditional Perspecitves on Market Behavior
+| Types                | Assumption   | Implicaiton               |
+|----------------------+--------------+---------------------------|
+| Weak-Form EMH        | Market info. | Technical Analysis       |
+| Semi Strong-Form EMH | Public info. | Fundamental Analysis     |
+| Strong-Form EMH      | All info.    | Nobody can win the market |
+*** Studies Challenging the EMH
+**** Fundamental Anomalies
+- Size effect
+- Value effect
+  *value stocks* outperfoemed *growth stocks* in a long time period
+**** Technical Anomalies
+- Moving Averages
+  eg. MACD
+- Trading Range Break(Support and Resistance)
+**** Calendar Anomalies(January Effect)
+*** The Behavioral Finance Perspective
+**** Consumption and savings
+- *Framing*
+- *Self-control bias*
+- *Mental acoounting*
+**** Behavioral asset pricing
+add a =sentiment premium= to the discount rate
+**** Behavioral portfolio theory
+construct a portfolio by layers.
+- =The importance of each goal to the investor=.
+- =Asset selection= will be done by layer and based on the goal for that layer.If high return is the goal, then higher-risk, more-speculative assets will be selected.Found 1 items, similar to Framing.
+- =The number of assets in a layer= will reflect the investor's risk aversion.
+- =information advantage= more concentrated
+- =loss-averse= hold larger cash positions
+**** Adaptive markets hypothesis
+* [#A] Reading 8:The Behavioral Biases Of Individuals
+** [#A] Cognitive Errors
+*** Belief perseverance biases(心理学解释)
+=RICCH= =案例=
+**** Representativeness bias
+based on past experiences and classifications
+- too much or too little importance to new pieces of information and have *excessive turnover*
+- *rules of thumb*
+**** illusion of control bias
+believe that they can control or influence outcomes
+*fail to adequately diversify*
+*keeping good records* to document the thinking behind ideas
+**** Conservatism bias
+**** Confirmation bias
+**** Hindsight bias
+overestimate the rate at which they *correctly predicted* events which could reinforce an emotional overconfidence
+"Do I really remember what I predicted and recommended?"
+*maintain and review complete records* to determime past errors as well as successes
+*** Information processing biases
+=FAAM=
+**** Framing bias
+differently based on the way(framed)
+- fail to properly asses risk
+- choose suboptimal risk for their portfolio
+- trade too often
+"Is my decision based on realizing a gain or a loss?"
+**** Anchoring and adjustment
+**** Availability bias
+easily the outcome comes to mind
+choose a manager based on advertisement
+**** Mental accounting bias
+*ignores correlation between layers of the portfolio*
+** [#A] Emotional Biases
+not deliberate; more of a spontaneous reaction
+*harder to correct* *adapt to it rather than correct for it*
+*** Loss aversion bias
+- hold on to losers too long but may sell winners too quickly
+- Trade too much
+maintain a discipline
+*** Overconfidence bias
+**** Prediction overconfidence
+Overcome: *Investment Policy Statement* and *Strategic Asset Allocation*
+**** Self-attribution bias
+the combination of *self-enhancing bias* and *self-protecting bias*
+**** Self-control bias
+**** Status quo bias
+lazy
+**** Endowment bias
+hold right to it
+**** Regret-aversion bias
+*Herding behavior*
+** Investment Policy and Asset Allocation
+*Goals-based investing* *pyramid*
+* Reading 9: Behavioral Finance and Investment Processes
+** Type of Investors
+*** Barnewall two-way model
+**** Passive investors
+are those who have not had to risk their own capital to gain wealth.
+**** Active investors
+risk their own capital to gain wealth and usually take an active role in investing their own money.
+*** BB&K Five Way Model :ATTACH:
+:PROPERTIES:
+:ID:       a062ddd9-f7d9-4159-bf03-a8a2013401e4
+:END:
+[[attachment:_20210405_211027screenshot.png]]
+**** confidence
+from confident to anxious
+**** method of action
+from careful to impetuous
+*** Pompian Behavioral Model :ATTACH:
+:PROPERTIES:
+:ID:       83197083-cbe9-4eda-99f0-ced8ca40fef0
+:END:
+[[attachment:_20210405_211752screenshot.png]]
+*** [#B] Limitations of classifying investors into BITs :TODO:
+both emotional biases and cognitive errors
+** Behavioral Factors & Portfolio Construction :TODO:
+*** The Client/Adviser Relationship
+** Analyst forecasts and behavior finance :TODO:
+*** Overconfidence
+- Illusion of knowledge bias
+- Illusion of control biasRepresentativeness
+- Availability bias
+- self-attribution bias
+- Hindsight bias
+- sample size
+*** The way management presents information
+- Framing
+- Anchoring and adjustment
+- Availability
+*** Biased research
+- confirmation bias
+- gambler's fallacy
+- represent bias

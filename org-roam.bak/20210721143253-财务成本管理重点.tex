@@ -1,0 +1,616 @@
+% Created 2021-08-02 一 15:53
+% Intended LaTeX compiler: pdflatex
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{nopageno}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{etoolbox}
+\usepackage[margin=2cm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[cache=false]{minted}
+\tolerance=1000
+\setsansfont{Source Han Sans SC}
+\setromanfont{Source Han Serif SC}
+\setmonofont[Scale=0.9]{Inziu Iosevka Slab SC}
+\newfontfamily\quotefont{Source Han Serif SC}
+\newfontfamily\headfootfont{Source Han Sans SC}
+\AtBeginEnvironment{quote}{\quotefont\small}
+\XeTeXlinebreaklocale ``zh''
+\XeTeXlinebreakskip = 0pt plus 1pt
+\linespread{1.0}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=[rgb]{0,0.37,0.53},
+  citecolor=[rgb]{0,0.47,0.68},
+  filecolor=[rgb]{0,0.37,0.53},
+  urlcolor=[rgb]{0,0.37,0.53},
+  pagebackref=true,
+  linktoc=all,}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyfoot[C]{} % Clear page number
+\fancyhead[RE]{\headfootfont\small\leftmark} % 在偶数页的右侧显示章名
+\fancyhead[LO]{\headfootfont\small\rightmark} % 在奇数页的左侧显示小节名
+\fancyhead[LE,RO]{\headfootfont\small~\thepage~} % 在偶数页的左侧，奇数页的右侧显示页码
+\usepackage{fontspec}
+\setmainfont{Noto Serif CJK SC}
+\usepackage{xeCJK}
+\setCJKmainfont{WenQuanYi Micro Hei }
+\author{Bolun Liu}
+\date{\today}
+\title{财务成本管理重点}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{计算公式汇总\hfill{}\textsc{计算题}}
+\label{sec:orgf401b72}
+\subsection{第一章 财务管理基本原理}
+\label{sec:orgade993a}
+\subsection{第二章 财务报表分析和财务预测}
+\label{sec:orgd61bd7f}
+\subsubsection{因素分析法}
+\label{sec:org0fa71b3}
+\begin{enumerate}
+\item 连环替代法
+\label{sec:orgb551e98}
+\begin{itemize}
+\item \(实际 F_1=A_1\times B_1\times C_0\)
+\item \(基数:F_0=A_0\times B_0\times C_0\)
+\item \(置换 A 因素:A_1 \times B_0 \times C_0\)
+\item \(置换 B 因素:A_{1}\times B_{1}\times C_0\)
+\item \(置换 C 因素:A_1\times B_1 \times C_1\)
+\end{itemize}
+\item 差额替代法
+\label{sec:org72a6761}
+\begin{itemize}
+\item A 因素变动对 F 指标的影响:\((A_{1}-A_{0})\times B_{0}\times C_{0}\)
+\item B 因素变动对 F 指标的影响:\(A_{1}\times (B_{1}-B_{0}) \times C_{0}\)
+\item C 因素变动对 F 指标的影响:\(A_{1}\times B_{1} \times (C_{1}-C_{0})\)
+\end{itemize}
+\end{enumerate}
+\subsubsection{杜邦分析体系\hfill{}\textsc{ATTACH}}
+\label{sec:org2eef257}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/home/samon/Think/Org/.attach/9c/1b1f67-526a-4851-bd2e-7e35b7a8285b/_20210731_095439webwxgetmsgimg.jpg}
+\end{center}
+\subsubsection{管理用财务报表体系}
+\label{sec:orgac5a6ad}
+\begin{enumerate}
+\item 经营资产和金融资产的区分
+\label{sec:org3d736ee}
+\item 经营负债和金融负债的区分
+\label{sec:org6f55f89}
+\item 管理用利润表
+\label{sec:orgecc6377}
+\(-金融损益(管理用利润表中的利息费用) = 财务费用 - 公允价值变动收益 + 金融资产减值损失 - 金融资产投资收益\)
+
+\(净利润 = 经营损益 + 金融损益 = 税后经营净利润 - 税后利息费用\)
+\item 管理用现金流量表
+\label{sec:org497fe0a}
+企业实体现金流量 = 税后经营净利润 + 折旧与摊销 - 经营营运资本增加 - 资本支出
+               = 税后经营净利润 - 净经营资产增加
+注: 资本支出 = 净经营长期资产增加 + 折旧与摊销
+\item 改进的财务分析体系的核心公式
+\label{sec:org87d3afe}
+\(权益净利润 = 净经营资产净利率 + (净经营资产净利率 - 税后利息率)\times \frac{净负债}{股东权益}\)
+\end{enumerate}
+\subsubsection{财务预测的步骤和方法}
+\label{sec:org25b98c7}
+\begin{enumerate}
+\item 外部融资公式
+\label{sec:org0770770}
+\(预计需要外部融资 =增加的经营资产 -增加的经营负债 - 可动用金融资产 -留存收益增加\\
+= 增加的营业收入\times 经营资产销售百分比 - 增加的营业收入\times 经营负债销售百分比 - 可动用金融资产 - 预计营业收入\times 预计营业净利率\times (1-预计股利支付率)\)
+\item 内含增长率
+\label{sec:orgc98d4ff}
+\(内含增长率 = \frac{\frac{预计净利润}{预计净经营资产}\times 预计利润留存率}{1-\frac{预计净利润}{预计净经营资产}\times 预计利润留存率}\)
+\item 可持续增长率
+\label{sec:org7f1dbc0}
+\(可持续增长率=\frac{期末权益净利率\times 本期利润留存率}{1-期末权益净利率\times 本期利润留存率}\)
+\end{enumerate}
+
+\subsection{第三章 价值评估基础}
+\label{sec:orgada0920}
+\subsubsection{年金公式}
+\label{sec:orgfffcf28}
+\((P/A,i,n)=\frac{1-(1+i)^{-n}}{i}\)
+\subsubsection{预付年金公式}
+\label{sec:org3f785ca}
+\(P = A\times [(P/A,i,n-1)+1]\\ = A\times (P/A,i,n)\times (1+i)\)
+\subsubsection{标准差}
+\label{sec:orgf889aaa}
+\(样本标准差=\sqrt{\frac{\sum_{i=1}^{n}(K_{i}-\bar{K})^{2}}{n-1}}\)
+\subsubsection{变异系数}
+\label{sec:org2b20e70}
+\(变异系数 =标准差/预期值\)
+\subsubsection{资本市场线}
+\label{sec:org0641b4a}
+\(R_{i}=Q\times R_{m} +(1-Q)\timesR_{f}\)
+\(\sigma_{i}=Q\times \sigma_{m}\)
+\(R_{i}=R_{f}+\frac{R_{m}-R_{f}}{\sigma_{m}}\times \sigma_{i}\)
+\subsubsection{证券市场线}
+\label{sec:org51922f2}
+\(R_{i}=R_{f}+\beta(R_{m}-R_{f})\)
+\subsection{第四章 资本成本}
+\label{sec:orgf008930}
+\(r_{w}=\sum_{j=1}\limits^{n}r_{j}W_{j}\)
+\subsection{第五章 投资项目资本预算}
+\label{sec:org858b891}
+\subsubsection{会计报酬率(ARR)法}
+\label{sec:orgfa34783}
+\begin{enumerate}
+\item 会计报酬率 = 年平均净利润/原始投资额
+\item \(会计报酬率 = \frac{年平均净利润}{平均资本占用}\times100\% = \frac{年平均净利润}{(原始投资额+投资净残值)/2}\times100\%\)
+\end{enumerate}
+\subsubsection{投资项目折现率的估计}
+\label{sec:org2d24023}
+\begin{enumerate}
+\item 当前加权平均资本成本
+\label{sec:orgff8216d}
+\begin{enumerate}
+\item 项目的经营风险与企业当前资产的平均经营风险相同
+\item 公司继续采用相同的资本结构为新项目筹资
+\end{enumerate}
+\item 可比公司法估计
+\label{sec:orgba38bd9}
+\begin{enumerate}
+\item 不满足等经营风险假设
+\label{sec:org4ee9c69}
+\(\beta_{资产}=\frac{可比上市公司的\beta_{权益}}{1+(1-T_{可比})\times 可比上市公司负债权益比}\)
+\item 满足等经营风险假设，但不满足等资本结构假设
+\label{sec:orgdf1c7a6}
+\(\beta_{资产}=\frac{公司原有的\beta_{权益}}{1+(1-T_{原})\times 公司原有的负债权益比}\)
+\end{enumerate}
+\item 投资项目的敏感分析
+\label{sec:org3497ff8}
+\begin{enumerate}
+\item 最大最小法
+\label{sec:orgd6a6475}
+根据净现值为零时选定变量的临界值评价项目的特有风险
+\item 敏感程度法
+\label{sec:org1c3c027}
+\(敏感系数=目标值变动百分比/选定变量变动百分比\)
+\end{enumerate}
+\end{enumerate}
+\subsection{第六章 债券、股票价值评估}
+\label{sec:orge038165}
+\subsubsection{优先股、永续债价值的评估方法}
+\label{sec:org3c4025e}
+\(V_P=\frac{D_P}{r_P}\)
+\(V_{pd}=\frac{I}{r_{pd}}\)
+\subsection{第七章 期权价值评估\hfill{}\textsc{ATTACH}}
+\label{sec:org5d394e3}
+\subsubsection{期权投资策略}
+\label{sec:orgc0a9f3e}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/home/samon/Think/Org/.attach/f7/033689-ce2e-47fe-a7f6-783ae7b6e358/_20210731_153357webwxgetmsgimg.jpg}
+\end{center}
+保护性看跌期权 = s + p
+抛补性看涨期权 = s - c
+\subsubsection{金融期权价值的评估方法}
+\label{sec:orgf6afc50}
+\begin{enumerate}
+\item 复制原理和套期保值原理
+\label{sec:org390d6d5}
+\(C_{0}=H\times S_{0}-B\)
+其中：\(H = \frac{C_{u}-C_d}{S_u-S_d}\)
+\(B=\frac{H\times S_{d}-C_{d}}{1+r}\)
+\item 风险中性原理
+\label{sec:orgae9a713}
+\(r = P\times 股价上升百分比 + (1-P)\times(-股价下降百分比)\)
+\(C_0=\frac{P\times C_u+(1-P)\times C_d}{1+r}\)
+\item 二叉树期权定价模型
+\label{sec:orgeebaef6}
+\(C_0=\frac{1+r-d}{u-d}\times \frac{C_u}{1+r}+\frac{u-1-r}{u-d}\times \frac{C_{d}}{1+r}\)
+\item 布莱克-斯科尔斯期权定价模型
+\label{sec:org095af27}
+\(C_0=S_0[N(d_1)]-Xe^{-r_{e}t}[N(d_{2})]\)
+其中：\(d_t=\frac{ln[S_{0}/PV(X)]}{\sigma\sqrt{t}}+\frac{\sigma\sqrt{t}}{2}\)
+    \(d_{2}=d_1-\sigma \sqrt{t}\)
+\item 期权恒等式
+\label{sec:org058c28b}
+s+p=c+pv(x)
+\end{enumerate}
+\subsection{第八章 企业价值评估}
+\label{sec:orgb90621c}
+\subsubsection{相对价值评估模型}
+\label{sec:org504d972}
+\textbf{先平均后修正} 和 \textbf{先修正后平均}
+\begin{enumerate}
+\item 市盈率模型
+\label{sec:org47f8e14}
+\texttt{预期增长率}
+\item 市净率模型
+\label{sec:org951c2bc}
+\texttt{预期权益净利率}
+\item 市销率模型
+\label{sec:org87c6058}
+\texttt{营业净利率}
+\end{enumerate}
+\subsection{第九章 资本结构}
+\label{sec:org95acbc9}
+\subsubsection{资本结构决策的分析方法}
+\label{sec:org3b49b47}
+\begin{enumerate}
+\item 资本成本比较法
+\label{sec:org319ba9f}
+\item 每股收益无差别点法
+\label{sec:orgd64c020}
+\(\frac{(EBIT-I_{1})(1-T)-PD_{1}}{N_{1}}=\frac{(EBIT-I_{2})(1-T)-PD_2}{N_{2}}\)
+\begin{itemize}
+\item EBIT > 无差别点  \texttt{债务筹资}
+\item EBIT < 无差别点  \texttt{权益筹资}
+\end{itemize}
+\end{enumerate}
+\subsubsection{杠杆系数}
+\label{sec:orgf6390ab}
+\begin{enumerate}
+\item 经营杠杆
+\label{sec:org013f559}
+\(DOL=\frac{Q(P-V)}{Q(P-V)-F}\)
+\item 财务杠杆效应 \texttt{优先股股息的处理}
+\label{sec:orgc80348e}
+\(DFL=\frac{Q(P-V)-F}{Q(P-V)-F-I-PD/(1-T)}\)
+\item 联合杠杆效应
+\label{sec:orgb95970b}
+\(DTL=\frac{Q(P-V)}{Q(P-V)-F-I-PD/(1-T)}\)
+\end{enumerate}
+\subsection{第十章 长期筹资}
+\label{sec:org3610b8e}
+\subsubsection{可转债的计算}
+\label{sec:orgd84552d}
+\subsubsection{附认股权证的债券计算}
+\label{sec:org46cbbd6}
+\subsubsection{租赁筹资}
+\label{sec:org5fa2dfd}
+折现率：\texttt{有担保的债券利率}
+\begin{enumerate}
+\item 短期租赁和低价值租赁
+\label{sec:orgc7cb876}
+租赁期的现金流量 = -税后租金 = -租金 \texttimes{} (1 - 所得税税率)
+\item 其他租赁
+\label{sec:org785c8c1}
+\begin{enumerate}
+\item 所有权不转移
+\label{sec:org282964d}
+\begin{itemize}
+\item 租赁期现金流量 = -租金 + 折旧 \texttimes{} T
+\item 终结期现金流量 = 未提折旧的损失抵税 = (计税基础 - 已提折旧) \texttimes{} T
+\end{itemize}
+\item 所有权转移
+\label{sec:orgdab27c6}
+\begin{itemize}
+\item 租赁期现金流量 = -租金 + 折旧 \texttimes{} T
+\item 终结期现金流量 = -买价 +期末资产余值变现价值 + 变现损失抵税
+\end{itemize}
+\end{enumerate}
+\item 购买的相关现金流量
+\label{sec:org4f71a0d}
+\begin{itemize}
+\item 初始现金流量 = -购置设备支出
+\item 营业期现金流量 = 折旧 \texttimes{} T
+\item 回收余值的现金流量 = 期末资产余值变现价值 + 变现损失抵税
+\end{itemize}
+\end{enumerate}
+\subsection{第十一章 股利分配、股票分割与股票回购\hfill{}\textsc{ATTACH}}
+\label{sec:orgcef8e2c}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/home/samon/Think/Org/.attach/4e/e69905-cbb3-4d7e-89a5-22b77948706c/_20210731_165516webwxgetmsgimg.jpg}
+\end{center}
+
+\subsection{第十二章 营运资本管理}
+\label{sec:org5accd2a}
+速动资产 = 流动资产 - 存货 - 预付账款 - 一年内到期的非流动资产 - 其他流动资产
+现金资产 = 货币资金 + 有价证券
+\subsubsection{营运资本筹资策略的衡量指标--易变现率}
+\label{sec:org89a2c50}
+\(易变现率 = \frac{股东权益+长期债务+经营性流动负债-长期资产}{经营性流动资产} = \frac{长期资金来源-长期资产}{经营性流动资产}\)
+\subsubsection{现金管理}
+\label{sec:org6e5ebb3}
+\begin{enumerate}
+\item 存货模式
+\label{sec:org73f3bd4}
+\(C^{*}=\sqrt{\frac{2\times T\times F}{K}}\)
+
+\(TC(C^{*})=\sqrt{2\times T\times F\times K}\)
+\item 随机模式
+\label{sec:org2281cd5}
+\(H=3R-2L\)
+\(R = \sqrt[3]{\frac{3b\delta^{2}}{4i}}+L\)
+\end{enumerate}
+\subsubsection{应收账款管理}
+\label{sec:orgf57d0c8}
+\(收益-成本\)
+成本:
+\begin{enumerate}
+\item 占用资金的应计利息(占用资金 \texttimes{} 资本成本)
+\begin{enumerate}
+\item 应收账款占用资金的应计利息
+\(应收账款占用资金 = 应收账款平均余额\times 变动成本率 =日赊销额\times 平均收现期 \times 变动成本率\)
+\item 存货占用资金的应计利息
+\(存货占用资金 = 存货平均余额\)
+
+\(存货占用资金 = 平均库存量\times 单位产品变动成本\)
+
+\(存货占用资金 = 营业成本/存货周转率(=营业收入/存货周转率)\)
+\item 应付账款占用资金的应计利息
+\(应付账款占用资金 = 应付账款平均余额\)
+\end{enumerate}
+\item 收账费用和坏账损失
+\item 折扣成本
+\(折扣成本=\sum(赊销额\times 折扣率\times 享受折扣的客户比率)\)
+\end{enumerate}
+\subsubsection{存货管理}
+\label{sec:org5cf956f}
+\begin{enumerate}
+\item 基本模型
+\label{sec:org16ea40b}
+\(Q^{*}=\sqrt{\frac{2KD}{K_{e}}}\)
+
+\(TC(Q^{*})=\sqrt{2KDK_{e}}\)
+\item 基本模型的扩展
+\label{sec:org1d757d0}
+\(Q^{*}=\sqrt{\frac{2KD}{K_{e}}}\times \frac{P}{P-d}\)
+
+\(TC(Q^{*})=\sqrt{2KDK_{e}\times (1-\frac{d}{P})}\)
+
+\(经济订货量占用资金=\frac{Q^{*}}{2}\times (1-\frac{d}{P})\times U\)
+\item 保险储备
+\label{sec:org18e599c}
+\(R=L\times d +B\)
+
+\(TC(S、B)=K_U\times S\times N+B\times K_{e}\)
+
+\(L:平均交货时间\)
+
+\(d:平均日需求\)
+\end{enumerate}
+\subsubsection{短期债务筹资}
+\label{sec:org1b6a672}
+\(放弃现金折扣成本 =\frac{折扣百分比}{1-折扣百分比}\times \frac{360}{信用期-折扣期}\)
+\begin{verbatim}
+展延付款: 信用期-->付款期
+\end{verbatim}
+\(加息法付息(分期等额偿还本息)\approx \frac{贷款额\times 报价利率}{贷款额/2}\approx2\times 报价利率\)
+
+\subsection{第十三章 产品成本计算}
+\label{sec:orgc6b7fcf}
+\subsubsection{辅助生产费用的归集和分配}
+\label{sec:org3e55b46}
+\begin{enumerate}
+\item 直接分配法
+\label{sec:org01f84e1}
+\item 交互分配法
+\label{sec:org034dff5}
+\end{enumerate}
+\subsubsection{制造费用的归集}
+\label{sec:orgeacaae9}
+\subsubsection{完工产品和在产品的成本分配}
+\label{sec:orga51bacc}
+月初在产品成本 = 本月发生生产费用 = 本月完工产品成本 + 月末在产品成本
+\begin{enumerate}
+\item 约当产量法
+\label{sec:org7ba5b2e}
+\item 定额比例法
+\label{sec:orgb11b4d1}
+\item 在产品成本按其所耗用的原材料费用计算
+\label{sec:org31896c3}
+\end{enumerate}
+\subsubsection{联产品的成本计算}
+\label{sec:org7d02e6f}
+\begin{enumerate}
+\item 分离点售价法
+\label{sec:org4836b8f}
+\item 可变现净值法
+\label{sec:org3898a6c}
+\item 实物数量法
+\label{sec:org77a5a11}
+\end{enumerate}
+\subsubsection{产品成本计算的基本方法}
+\label{sec:orgf095da7}
+\begin{enumerate}
+\item 品种法
+\label{sec:org941eb4d}
+\item 分步法
+\label{sec:org6d5df62}
+\begin{enumerate}
+\item 逐项综合结转分步法
+\label{sec:org292f262}
+\begin{enumerate}
+\item 方法一
+\label{sec:org67815a7}
+\begin{enumerate}
+\item 成本还原分配率 = 产成品耗用上步骤半成品成本合计/上步骤生产该种半成品成本合计 \texttimes{} 100\%
+\item 半成品成本还原 = 成本还原分配率 \texttimes{} 本月所产半成品成本项目金额
+\item 还原后产品成本 = 还原前产品成本 + 半产品成本换
+\end{enumerate}
+\item 方法二
+\label{sec:org66e2297}
+\begin{enumerate}
+\item 各项目比重 = 本月所产半产品成本项目金额/本月所产半成品成本合计金额 \texttimes{} 100\%
+\item 半产品成本还原 = 各项目比重 \texttimes{} 产成品耗用上步骤半成本品成本合计
+\item 还原后产品成本 = 还原前产品成本 + 半成品成本还原
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\subsection{第十四章 标准成本法}
+\label{sec:orgf9797bd}
+价格差异---实际数量 \texttimes{} 价格差异
+数量差异---标准价格 \texttimes{} 数量差异
+\subsubsection{固定制造费用差异分析}
+\label{sec:org49eec41}
+\begin{enumerate}
+\item 二因素法
+\label{sec:org3f1568f}
+\begin{enumerate}
+\item 耗费差异
+\item 能量差异(产量不同)
+\end{enumerate}
+\item 三因素法
+\label{sec:orgbce759f}
+\begin{enumerate}
+\item 耗费差异(实际 - 生产能量)
+\item 闲置能量差异(生产能量与实际工时)
+\item 效率差异(人工效率不同，即实际工时与标准工时)
+\end{enumerate}
+\end{enumerate}
+\subsection{第十五章 作业成本法}
+\label{sec:org53848e7}
+\texttt{与第十三章 产品成本计算 联合起来考}
+\subsubsection{作业成本的计算原理}
+\label{sec:orgffc838e}
+\begin{enumerate}
+\item 作业成本库的设计
+\label{sec:org3fc23b9}
+\begin{description}
+\item[{单位级作业成本库}] 产量
+\item[{批次级作业成本库}] 批次
+\item[{品种级作业成本库}] 品种总数
+\item[{生产维持级作业成本库}] 维护生产能力
+\end{description}
+\item 作业成本的计算
+\label{sec:orgedd3ae1}
+\(实际作业的分配 = \frac{当期实际发生的作业成本}{当期实际作业产出}\)
+\(某产品耗用的作业成本 = \sum(该产品耗用的作业量 \times 实际作业成本分配率)\)
+\(某产品当期发生总成本 = 当期投入该产品的直接成本 + 该产品当期耗用的各项作业成本\)
+\begin{quote}
+若有作业成本差异
+作业成本差异 = 当期实际作业成本 - 应分配的作业成本
+\begin{enumerate}
+\item 发生的差异可以直接结转本期营业成本
+\item 发生的差异也可以计算作业成本差异率并据以分配给有关产品
+\end{enumerate}
+\end{quote}
+\end{enumerate}
+\subsection{第十六章 本量利分析}
+\label{sec:orgf54e58e}
+\subsubsection{保本分析}
+\label{sec:orgf7be92f}
+\begin{enumerate}
+\item \(保本额(S_{0})=\frac{固定成本}{边际贡献率}\)
+\item \(盈亏临界点作业率 = \frac{Q_0}{Q}或\frac{S_0}{S}\)
+\item \(盈亏临界点作业率 + 安全边际率 = 1\)
+\item \(息税前利润 = 安全边际额 \times 边际贡献率 = 安全边际率 \times 边际贡献\)
+\item \(销售息税前利润率 = 安全边际率 \times 边际贡献率\)
+\end{enumerate}
+\subsubsection{保利分析}
+\label{sec:org5e52f7d}
+\(保利量 = \frac{固定成本+目标利润}{单价 - 单位变动成本}\)
+
+\(保利额 = \frac{固定成本+目标利润}{边际贡献率}\)
+
+\(安全边际率\times 经营杠杆系数 =1\)
+\subsection{第十七章 短期经营决策}
+\label{sec:orge5e96fc}
+\subsubsection{生产决策}
+\label{sec:orgbce72cc}
+\begin{enumerate}
+\item 差量分析法
+\label{sec:org1dec74d}
+\begin{itemize}
+\item 差额收入
+\item 差额成本
+\end{itemize}
+\item 边际贡献分析法
+\label{sec:org2dcfc68}
+单位约束资源边际贡献 = 单位产品边际贡献/该单位产品耗用的约束资源量
+\item 本量利分析
+\label{sec:org0aff18d}
+息税前利润 = (单价 - 单位变动成本) \texttimes{} 销量 - 固定成本
+\end{enumerate}
+\subsubsection{亏损产品是否停产的决策}
+\label{sec:orga316bab}
+\begin{enumerate}
+\item 若亏损产品的生产能力可以转移
+边际贡献 > 机会成本
+\item 若亏损产品的生产能力不可以转移且有\texttt{专属成本}
+边际贡献 > 专属成本
+\end{enumerate}
+\subsection{第十八章 全面预算\hfill{}\textsc{ATTACH}}
+\label{sec:orgc0f9a1c}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/home/samon/Think/Org/.attach/0e/d65b7f-3b18-44a8-b803-142c6adb26d5/_20210731_174149webwxgetmsgimg.jpg}
+\end{center}
+\subsubsection{营业预算的编制}
+\label{sec:orgca56ea2}
+现金收入 = 当期现销收入 + 收回前期的应收账款
+\subsubsection{生产预算}
+\label{sec:orgfe41678}
+预计生产量 = 预计销售量 + 预计期末产成品存货 - 预计期初产成品存货
+\subsubsection{直接材料预算}
+\label{sec:org0e06099}
+预计材料采购量 = 预计生产需用量 + 预计期末材料存量 - 预计期初材料存量
+\subsubsection{直接工人预算}
+\label{sec:orgc15ad0e}
+预算数
+\subsubsection{制造费用预算}
+\label{sec:orgbbeb64b}
+预算数 - 非付现成本
+\subsubsection{销售费用和管理费用}
+\label{sec:orga03af4b}
+预算数 - 非付现成本
+\subsection{第十九章 责任会计}
+\label{sec:org9b75f78}
+\subsubsection{投资中心的考核指标}
+\label{sec:org1b5923b}
+\begin{enumerate}
+\item 部门投资报酬率
+\label{sec:orgdb99ccc}
+部门投资报酬率 = 部门税前经营利润/部门平均净经营资产
+\item 部门剩余收益
+\label{sec:orgf2426b5}
+部门剩余收益 = 部门税前经营利润 - 部门平均净经营资产\texttimes{} 要求的税前投资报酬率
+\end{enumerate}
+\subsection{第二十章 业绩评价}
+\label{sec:orgfad056b}
+\subsubsection{简化的经济增加值}
+\label{sec:orgb27d51c}
+\(经济增加值 = 税后净营业利润 - 调整后的资本 \times 平均资本成本率\)
+\begin{enumerate}
+\item 税后净营业利润 = 净利润 + (利息支出 + 研究发开费用调整项) \texttimes{} (1-25\%)
+\item 调整后资本 = 平均所有者权益 + 平均带息负债 - 平均在建工程
+\item 平均资本成本率 = 债券(税前)资本成本率 \texttimes{} 平均带息负债/(平均带息负债+平均所有者权益) \texttimes{} (1-25\%)
+\end{enumerate}
+\subsubsection{披露的经济增加值}
+\label{sec:org306f126}
+\section{知识点重难点和易错点\hfill{}\textsc{客观题}}
+\label{sec:org9c1a947}
+\subsection{第一章 财务管理基本原理}
+\label{sec:org9b59bfd}
+\begin{itemize}
+\item 主张股东财富最大化，\texttt{不会}忽略其他利益相关者的利益。
+股东权益是剩余权益，只有满足其他方面的利益之后才会有股东的利益。
+\item 利益是\texttt{风险和报酬的权衡关系}.
+\end{itemize}
+\subsection{第二章 财务报表分析和财务预测}
+\label{sec:orgd9de5e1}
+\subsubsection{财务比率分析}
+\label{sec:org7b43ff3}
+\begin{itemize}
+\item \(现金流量比率=\frac{经营活动现金流量}{流动负债}\)
+\item $$速动比率=\frac{货币资金 + 交易性金融资产 + 各种应收款项等}{流动负债}(速动资产=流动资产 - 存货 - 预付账款 - 一年内到期的非流动资产 - 其他流动资产)$$
+\item \(利息保障倍数=息税前利润/利息支出=\frac{净利润+利息费用+所得税费用}{利息支出(包括资本化利息)}\)
+\item \(现金流量利息保障倍数 = 经营活动现金流量净额/利息支出\)
+\item \(产权比率 = \frac{总负债}{股东权益}\)
+\item \(权益乘数 = \frac{总资产}{股东权益}\)
+\item 每股净收益： 净利润 - 当年宣告或累计的\texttt{优先股股息}
+\item 每股净资产： 净资产 - 优先股权益(包括优先股\texttt{清算价值}和\texttt{拖欠股息})
+\end{itemize}
+\end{document}

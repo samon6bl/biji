@@ -1,0 +1,18 @@
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+
+* 星期六, 11 九月 2021
+** [[审计的概念]]
+*** 审计业务的三方关系人
+1. 委托人通常是财务报告预期使用者之一，也可能由责任方承担。
+2. 如果注册会计师无法识别出使用报告的所有组织或人员，则预期使用者主要是指那些与财务报表有重要和共同利益的主要利益相关者。
+*** 管理层责任
+*** 提高职业判断的可辩护性
+- 对职业判断问题和目标的描述;
+- 解决职业判断相关问题的思路;
+- 收集到的相关信息;
+- 得出的结论以及得出结论的理由;
+- 就决策结论与被审计单位进行沟通方式和时间。

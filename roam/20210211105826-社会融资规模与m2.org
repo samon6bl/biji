@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       eb16788a-b616-4e8f-83e3-9b729f0885fa
+:END:
+#+title: 社会融资规模与M2
+* 社会融资规模与 M2 的差异
+[[file:~/Think/Org/pic/社会融资规模与_M2_的差异/2021-02-11_11-42-28_screenshot.png]]

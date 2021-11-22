@@ -1,0 +1,370 @@
+* VBA Always Optimize Your Code and Speedup
+:PROPERTIES:
+:collapsed: true
+:END:
+#+BEGIN_SRC vb
+‘turn off some Excel functionality so your code runs faster
+Application.ScreenUpdating = False
+Application.DisplayStatusBar = False
+Application.Calculation = xlCalculationManual
+Application.EnableEvents = False
+ActiveSheet.DisplayPageBreaks = False      ‘note this is a sheet-level setting
+  
+‘Your code here
+  
+Application.ScreenUpdating = screenUpdateState
+Application.DisplayStatusBar = statusBarState
+Application.Calculation = calcState
+Application.EnableEvents = eventsState
+ActiveSheet.DisplayPageBreaks = displayPageBreaksState
+#+END_SRC
+* 程序选择结构
+:PROPERTIES:
+:collapsed: true
+:END:
+** If … Then 结构
+:PROPERTIES:
+:collapsed: true
+:END:
+#+BEGIN_SRC vb
+If 条件表达式 Then
+    '表达式为真时，执行的代码
+End If
+#+END_SRC
+** If … Else 结构
+#+BEGIN_SRC vb
+If 条件表达式 Then
+    '真时执行的代码
+Else
+    '假时执行的代码
+End If
+#+END_SRC
+** If ElseIf Else 结构
+#+BEGIN_SRC vb
+If 条件表达式1 Then
+    '表达式1真时，执行的代码
+ElseIf 条件表达式2 Then
+    '表达式2真时，执行的代码
+ElseIf 条件表达式3 Then
+    '表达式3真时，执行的代码
+    ...
+ElseIf 条件表达式n Then
+    '表达式n真时，执行的代码
+Else
+    '以上表达式都不为真时，执行的代码
+End If
+#+END_SRC
+** Select Case 结构 
+#+BEGIN_SRC vb
+Select Case 变量
+	Case 判断条件 1
+    	'条件 1 真时，执行的代码
+	Case 判断条件 2
+    	'条件 2 真时，执行的代码
+	Case 判断条件 3
+    	'条件 3 真时，执行的代码
+    Case Else
+    	'之前的所有条件都不为真时，执行的代码
+End Select
+#+END_SRC
+** VBA循环结构
+:PROPERTIES:
+:collapsed: true
+:END:
+*** For 循环
+**** For … Next 循环
+#+BEGIN_SRC vb
+For [变量] = [初始值] To [结束值] Step [步长]
+    '这里是循环执行的语句
+Next
+#+END_SRC
+***** For Each 循环
+#+BEGIN_SRC vb
+For Each [元素] In [元素集合]
+    '循环执行的代码
+Next [元素]
+#+END_SRC
+***** Exit For 语句
+#+BEGIN_SRC vb
+    For i = 1 To 10
+    
+        sum = sum + i
+        
+        If sum > 30 Then
+            Exit For
+        End If
+        
+    Next
+#+END_SRC
+****
+*** Do While 循环
+**** Do While … Loop 循环
+#+BEGIN_SRC vb
+Do While [条件表达式]
+    '循环执行的代码
+Loop
+#+END_SRC
+**** Do … Loop While 循环
+#+BEGIN_SRC vb
+Do
+    '循环执行的代码
+Loop While [条件表达式]
+#+END_SRC
+**** Exit Do 语句
+与 Exit For 语句类似，Exit Do 语句用于跳出 Do While 循环。
+*** Do Until 循环
+**** Do Until … Loop 循环
+#+BEGIN_SRC vb
+Do Until [条件表达式]
+    '循环执行的代码
+Loop
+#+END_SRC
+**** Do … Loop Until 循环
+#+BEGIN_SRC vb
+Do
+    '循环执行的代码
+Loop Until [条件表达式]
+#+END_SRC
+* With 结构
+** With 结构语法
+#+BEGIN_SRC vb
+With [对象]
+    .[属性] = [数据]
+    .[方法]
+    '其他属性和方法
+End With
+#+END_SRC
+** 嵌套With结构
+#+BEGIN_SRC vb
+    With Worksheets("Sheet1")
+        .Name = "新名称"
+        .Tab.ThemeColor = xlThemeColorLight1
+        .Visible = xlSheetHidden
+        
+        With .Range("A1:A10")
+            .Interior.ThemeColor = xlThemeColorAccent1
+            .Font.Size = 12
+            .Font.Name = "等线"
+        End With
+#+END_SRC
+* GoTo 结构
+:PROPERTIES:
+:collapsed: true
+:END:
+#+BEGIN_SRC vb
+GoTo [标签]
+'被跳过的代码
+...
+[标签]:
+'被执行的代码
+#+END_SRC
+* VBA 过程和函数 (Sub | Function)
+** 过程基础语法
+VBA 过程以 Sub 语句开始，以 End Sub 语句结束，包含一个或多个语句，完成一个特定的目标。
+*** 无参数过程
+#+BEGIN_SRC vb
+Sub [过程名]()
+    语句1
+    语句2
+    ...
+    语句n
+End Sub
+#+END_SRC
+*** 有参数过程
+#+BEGIN_SRC vb
+Sub [过程名]([变量名1] As [数据类型1],...[变量名n] As [数据类型n])
+    语句1
+    语句2
+    ...
+    语句3
+End Sub
+#+END_SRC
+** 调用子过程（Sub）
+*** 直接调用
+#+BEGIN_SRC vb
+Sub Main()
+    MySub
+End Sub
+
+Sub MySub()
+    '代码
+End Sub
+#+END_SRC
+*** 使用关键词 Call 调用
+#+BEGIN_SRC vb
+Sub Main()
+    Call MySub(2019,"年")
+End Sub
+
+Sub MySub(val1 As Integer, val2 As String)
+    '代码
+End Sub
+#+END_SRC
+** 提前退出过程
+*** Exit Sub 语句
+*这里需要注意的是，Exit Sub 语句只作用于当前过程，不影响调用它的父过程。*
+#+BEGIN_SRC vb
+Sub Main()
+    Call MySub
+    Msgbox "父过程"
+End Sub
+
+Sub MySub()
+    Exit Sub
+    Msgbox "子过程"
+End Sub
+
+'运行 Main 过程，返回结果：
+=> "父过程"
+#+END_SRC
+*** End 语句
+在一个过程，当程序运行到 End 语句时，立即*结束当前运行的所有 VBA 过程。*
+#+BEGIN_SRC vb
+Sub Main()
+    Call MySub
+    Msgbox "父过程"
+End Sub
+
+Sub MySub()
+	End
+    Msgbox "子过程"
+End Sub
+
+'运行 Main 过程，返回结果：
+=> 无返回结果
+#+END_SRC 
+End 语句的效果类似于电脑的强制关机命令，立即结束所有程序，不会保存任何值，于 VBA 有以下效果：
++ 程序中对象的各类事件不会被触发；
++ 任何在运行的 VBA 程序都会停止；
++ 对象引用都会失效；
++ 任何打开的窗体都被关闭。
+* VBA 函数(Function)
+VBA 函数与 VBA 过程很相似，除了使用的关键词外，主要区别是，函数可以返回值。
+** 无参数函数
+#+BEGIN_SRC vb
+Function [函数名]() As [返回值类型]
+    语句1
+    语句2
+    ...
+    语句n
+    [函数名] = [返回值]
+End Function
+#+END_SRC
+** 有参数函数
+#+BEGIN_SRC vb
+Function [函数名]([变量名1] As [数据类型1],...[变量名n] As [数据类型n]) As [返回值类型]
+    语句1
+    语句2
+    ...
+    语句3
+    [函数名] = [返回值]
+End Function
+#+END_SRC
+** 调用函数
+#+BEGIN_SRC vb
+Sub Main()
+    '使用变量存储函数返回的值
+    Dim result As Double
+    result = Add(12, 345)
+    
+    '函数返回值继续参与计算
+    Dim result As Double
+    result = RandNum + Add(12, 345)
+End Sub
+
+'函数：返回一个随机值
+Function RandNum()
+    RandNum = Rnd * 100
+End Function
+'函数：返回两数的和
+Function Add(num1 As Double, num2 As Double) As Double
+    Add = num1 + num2
+End Function
+#+END_SRC
+** 提前退出函数 
+Exit Function 语句
++ 在一个函数中，当程序运行到 Exit Function 语句时，立即结束当前函数，提前退出。 
++ 这里需要注意的是，Exit Function 语句只作用于当前过程，不影响调用它的父过程或函数。
+**
+* VBA 函数与过程的 6 个不同点
++ 第1点：声明语句不同
++ 第2点：函数可以返回值
++ 第3点：函数需指定返回值类型
++ 第4点：函数主体代码中，返回值赋值到函数自己
++ 第5点：调用函数时，使用类型与函数返回值类型相同的变量获得返回值
++ 第6点：函数可在单元格内公式中使用
+* VBA 过程和函数：传递参数
+** 带参数的子过程定义方法
+#+BEGIN_SRC vba
+'声明一个带参数的子过程
+Sub CustomLog(num As Double, base As Integer)
+    Debug.Print Log(num) / Log(base)
+End Sub
+#+END_SRC
+** 调用带参数的子过程
+*** 按顺序书写参数
+#+BEGIN_SRC vba
+'主入口
+Sub Main()
+    CustomLog 100, 10
+End Sub
+#+END_SRC
+*** 给出参数名
+[参数名]:=[实际参数值]
+#+BEGIN_SRC vba
+'主入口
+Sub Main()
+    CustomLog 100, 10 '方式一
+    CustomLog num:=100, base:=10 '方式二
+    CustomLog base:=10, num:=100 '方式三
+End Sub
+#+END_SRC
+** 可选参数的用法
+* Excel文件操作
+** Workbook对象
+1. Workbook("XX.xlsx")
+2. Workbook(序列)
+3. Thisworkbook
+** Windows对象
+1. Windows("XX.xlsx")
+2. Windows(序列)
+** 工作表对象
+#+BEGIN_SRC vba
+Dim A as Workbook
+Set sh as Sheets.Add
+	sh.Name = "模板"
+	
+#+END_SRC
+** Sheets对象
+1. Sheets("XX")
+2. Sheets(序列)
+** 单元格的选取
+#+BEGIN_SRC vba
+Range(al).Select
+Cells(1, 1). Select
+Range("a"&1).Select
+Cells(1,“A").Select
+#+END_SRC
+** 相邻单元格的选取
+#+BEGIN_SRC vba
+Range(al: c5). Select
+Range("A1“,“C5"). Select
+Range(Cells(1, 1), Cells(5, 3). Select
+Range("a1: a10").Offset (0, 1).Select
+Range("a1"). Resize (5, 3). Select
+#+END_SRC
+** 不相邻单元格的选取
+#+BEGIN_SRC vba
+Range("a1,c1:f4,a7").Select
+Union(Range("al"), Range(c1: f4"), Range(a7")).Select
+#+END_SRC
+** 连续区域
+*行和列*都连续
+** 两个区域的交集
+Intersect(A,B)
+** Address函数
+1. Address(0,0):行列相对引用
+2. Address(1,0):行绝对引用，列相对引用
+** 颜色格式
+** 数字格式
+**

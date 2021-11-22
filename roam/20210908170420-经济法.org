@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       d0629e8d-bd35-470e-af46-ea9a97fd298a
+:END:
+#+title: 经济法
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+#+filetags: :CPA:
+* 学习方法
+#+DOWNLOADED: screenshot @ 2021-09-08 17:04:30
+#+ATTR_foo: :width 300
+[[file:images/20210908-170430_screenshot.png]]

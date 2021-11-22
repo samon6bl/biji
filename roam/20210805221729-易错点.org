@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       239390c9-e0c9-4969-b54b-acdbb52a4f79
+:END:
+#+title: 易错点
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+$财务杠杆=\frac{EBIT}{EBIT-I-\frac{PD}{1-T}}$
+$变现净值 = 变现价格 - 处理费用$

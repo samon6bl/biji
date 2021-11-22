@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       682a71dc-84c1-4a1c-961f-2b93d7b7fb11
+:END:
+#+title: 审计证据
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+* 获取证据的程序
+1. 询问
+2. 观察
+3. 检查
+4. 重新执行
+5. 重新计算
+6. 分析
+7. 函证
+[[https://i.imgur.com/NIGItjI.png]]
+| 方法     | 风险评估 | 实质性程序 | 控制测试 | 总体复核 | 了解内部控制 |
+|----------+----------+------------+----------+----------+--------------|
+| 询问     | 可用     | 可用       | 可用     | 可用     | 可用         |
+| 观察     | 可用     | 可用       | 可用     | 可用     | 可用         |
+| 检查     | 可用     | 可用       | 可用     | 可用     | 可用         |
+| 分析     | 必须用   | 可用       | ❌       | 必须用   | ❌           |
+| 重新执行 | ❌       | ❌         | 可用     | 可用     | ❌(穿行测试) |
+| 重新计算 | ❌       | 可用       | ❌       | 可用     | ❌           |
+| 函证     | ❌       | 可用       | ❌       | 可用     | ❌           |

@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       14ffc31f-5a96-4380-9040-1e90fec16dc9
+:ROAM_REFS: https://www.zhihu.com/people/Mr_Michael
+:END:
+#+title: C++量化学习书藉推荐
+* Sams Teach Yourself C++ in One Hour a Day
+Author:Siddhartha Rao
+
+这本书专门为初学者编写，目前现在已是第8版，涵盖了C++的基础语法：变量、表达式、函数、控制流，数组和字符串等，后半部分讨论了面向对象的编程；对于具备其他编程语言的金融从业人员来说，大大降低的上手的难度。
+
+推荐阅读对象：成为C++ 入门的程序员必备，量化研究值得拥有，量化开发所需知识最低限度。
+
+* C++: A Beginner's Guide, Second Edition
+Author:Herbert Schildt
+
+这本书涵盖的基础内容与Siddhartha的类似。但是在特定部分有更多细节,因此，可以作第一本的补充读物。此书的附录中包含了在初学者书籍中很少提及的预处理器的内容；现实工作中的开发环境往往并非按最新软件进行配置，quant编译程序时也许会因为编译器版本出现问题，本书还包含这部分问题的处理。
+
+推荐阅读对象：C++入门程序员可以通过此书给自己加个BUFF
+
+* Accelerated C++: Practical Programming by Example
+Author: Andrew Koenig, Barbara E. Moo
+
+上面两本书C++基础内容，而这本书是以实际例子出发，假定读者已经熟悉了C++的基础语法，讲述面向对象的内容：内存管理、继承、多态等等，非常值得一提的是，此书讨论了智能指针，在现实的量化算法交易开发过程中，智能指针使用的非常多。
+
+推荐阅读对象：C++入门程序员到C++面向对象程序员的晋级宝典
+
+* An Object-Oriented Approach (The Wiley Finance Series)
+Author: Daniel J. Duffy
+
+Daniel Duffy的这本书我现在正在读。十分全面，对于面向对象编程的语法结构只是简述了，更多的是结合金融理论、数值理论进行编程了，包含常见的BS模型、数值分析、金融数据结构、蒙特卡洛模拟等。
+
+推荐阅读对象：晋级金融量化大师级程序员必经之路。
+
+* Effective C++: 55 Specific Ways to Improve Your Programs and Designs
+Author: Scott Meyers
+
+如果说John Hull的《Futures Options And Other Derivatives》是金融工程的圣经，那么这本书就是量化开发的圣经，Scott在本书中提供了C++的55个“技巧”，包括构造函数、析构函数、内存管理、继承、多态性，模板类等等。每个“技巧”都讨论的非常细致，这些内容经常在Quant和Quant Developer工作和面试中出现。
+
+推荐阅读对象：所有人。量化开发圣经。

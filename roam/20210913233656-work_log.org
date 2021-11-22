@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a552c81f-820d-4dfa-b5b8-b8d4711da916
+:END:
+#+title: Work Log
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+*

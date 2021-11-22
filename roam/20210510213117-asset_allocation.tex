@@ -1,0 +1,253 @@
+% Created 2021-09-07 二 19:06
+% Intended LaTeX compiler: pdflatex
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{nopageno}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{etoolbox}
+\usepackage[margin=2cm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[cache=false]{minted}
+\tolerance=1000
+\setsansfont{Source Han Sans SC}
+\setromanfont{Source Han Serif SC}
+\setmonofont[Scale=0.9]{Inziu Iosevka Slab SC}
+\newfontfamily\quotefont{Source Han Serif SC}
+\newfontfamily\headfootfont{Source Han Sans SC}
+\AtBeginEnvironment{quote}{\quotefont\small}
+\XeTeXlinebreaklocale ``zh''
+\XeTeXlinebreakskip = 0pt plus 1pt
+\linespread{1.0}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=[rgb]{0,0.37,0.53},
+  citecolor=[rgb]{0,0.47,0.68},
+  filecolor=[rgb]{0,0.37,0.53},
+  urlcolor=[rgb]{0,0.37,0.53},
+  pagebackref=true,
+  linktoc=all,}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyfoot[C]{} % Clear page number
+\fancyhead[RE]{\headfootfont\small\leftmark} % 在偶数页的右侧显示章名
+\fancyhead[LO]{\headfootfont\small\rightmark} % 在奇数页的左侧显示小节名
+\fancyhead[LE,RO]{\headfootfont\small~\thepage~} % 在偶数页的左侧，奇数页的右侧显示页码
+\usepackage{fontspec}
+\setmainfont{Noto Serif CJK SC}
+\author{Bolun Liu}
+\date{\today}
+\title{Asset Allocation}
+\hypersetup{
+ pdfauthor={Bolun Liu},
+ pdftitle={Asset Allocation},
+ pdfkeywords={},
+ pdfsubject={},
+ colorlinks=true,
+ linkcolor=black
+}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\textbf{上午主观题} 中比较容易拿分的科目
+\section{Overview of Asset Allocations}
+\label{sec:orgb323ae1}
+\subsection{Investment Governance(投资规划)}
+\label{sec:org6759c0b}
+achieve the asset owner's \texttt{investment objectives} within the asset owner's \texttt{tisk tolerance and constraints}.
+\begin{enumerate}
+\item Articulating investment objectives
+\begin{itemize}
+\item Defined benefit pension fund
+\item Endowment fund
+\item individual investor
+\end{itemize}
+\item Allocation of rights and responsibilities
+\item investment policy statement
+\item Asset allocation and rebalancing policy
+\item Reporting framework
+\item The governance audit
+\end{enumerate}
+\subsection{A Quick Glance of Asset Allocation}
+\label{sec:org4d40019}
+\subsubsection{\textbf{Stratefic asset allocation(SAA)} \texttt{长期}}
+\label{sec:orge11a20b}
+SAA is an asset allocation that arises in \texttt{long-term} investment planning
+\begin{itemize}
+\item 9 steps of SAA
+\begin{itemize}
+\item return objectives
+\item risk tolerance
+\item investment horizon
+\item constraints
+\item approach to asset allocation
+\item \href{20210416100520-capital_market_expectations.org}{Capital Market Expectations}
+\item asset allocation choices for consideration
+\item Test the robustness of the potential choices
+\item back to step
+\end{itemize}
+\end{itemize}
+\subsubsection{Tactical Asset Allocation(TAA)(战术) \texttt{短期}}
+\label{sec:org6a6f4da}
+\begin{itemize}
+\item \textbf{short-term deviations} from strategic asset allocation
+\item TAA is \textbf{active management} at the asset class level
+\end{itemize}
+\subsubsection{Economic Balance Sheet}
+\label{sec:org7cb8bd5}
+accounting balance sheet + \textbf{extended protfolio assets and liabilities}
+\subsection{Asset Allocation Approaches}
+\label{sec:org2276592}
+\subsubsection{Three Categories}
+\label{sec:orgea39829}
+\texttt{investment problem}
+\begin{enumerate}
+\item Asset-only approach
+\label{sec:orgce3479f}
+maximize \texttt{Sharpe raitio}
+eg. \uline{mean-variance optimiztion(MVO)}
+\begin{itemize}
+\item Risk measures
+\begin{itemize}
+\item Volatiliity(standard deviation)
+\item Tracking risk(tracking error, risk relative to benchmark)
+\item Downside risk(semi-variance, maximum drawdown, VaR)
+\end{itemize}
+\end{itemize}
+\item Liability-relative approach
+\label{sec:org3bc14a5}
+objective of \texttt{funding liabilities}
+eg. \textbf{surplus(A-L) optimization}
+\begin{itemize}
+\item risk measures:
+\begin{itemize}
+\item Volatility of surplus(A-L)
+\item Volatility of fund(A/L)
+\end{itemize}
+\end{itemize}
+\item Goals-based approach
+\label{sec:orga75cde9}
+\texttt{sub-portfolios} for each specified goals
+risk limits can be quatified as the \texttt{maximum acceptable probability} of not achieving a goal
+\end{enumerate}
+\subsubsection{Two Categories}
+\label{sec:orge5a4c8a}
+\texttt{exposures} 具体、抽象
+\textbf{*} Asset class-based approach
+each asset class has its own \texttt{systematic risk exposure}.
+\begin{itemize}
+\item Five criteria to effectively specify asset class for the purpose of asset allocation:
+\item Assets within an asset class should be relatively \texttt{homogeneous}
+\item Asset classes should be \texttt{diversifying}.
+\item Asset classes should be \texttt{mutually exclusive}.
+\item The asset classes as a group should make up a preponderance of \texttt{world investable wealth}.
+\item Asset classes selected for investment should have the capacity to absorb a meaningful prportion of \texttt{an investor's portfolio}.
+\end{itemize}
+\subsubsection{Factor-based approach}
+\label{sec:orgcf5d4fa}
+desired exposures to \texttt{specified risk factors}.
+\uline{Multifactor risk models}
+\begin{itemize}
+\item Steps
+\begin{itemize}
+\item Specify risk factors and the desired exposure to each risk factor
+\item Construct \texttt{factor portfolios} that isolate exposure to each risk factor.
+\item Map the exposure in \textbf{factor space} back to \textbf{asset class space}.
+\end{itemize}
+\end{itemize}
+\texttt{zero dollar investment}
+\subsection{Implementation of Asset Allocation}
+\label{sec:orgf552c2f}
+\uline{passive/active choice}
+\begin{itemize}
+\item passive : follow benchmark(Index, liability)
+\item active : beat benchmark
+
+\item Factors on Passive/Active Choices
+\begin{itemize}
+\item Available investments
+\item Scalability of active strategies
+\item Trade-off benefits and risks
+\item Feasibility of investing passively while incorporating client-specific constraints
+\item Beliefs concerning market informational efficiency
+\item Tax status
+\end{itemize}
+\end{itemize}
+\subsection{Reblancing Asset Allocation}
+\label{sec:org56a4bd5}
+\textbf{Rebalancing} is the discipline of adjusting portfolio weights to mre closely align with \texttt{SAA}.
+\subsubsection{Approaches to Rebalancing}
+\label{sec:org61f9534}
+\begin{enumerate}
+\item Calendar rebalancing
+\label{sec:org777d93e}
+\texttt{on a periodic basis}
+eg. monthly, quarterly, semiannually
+\item Percent-range rebalancing
+\label{sec:orgc6727c2}
+\end{enumerate}
+\section{Principles of Asset Allocation}
+\label{sec:orgea8c978}
+\subsection{Asset-Only Allocation}
+\label{sec:orgd089649}
+\subsubsection{Mean-Variance Optimiztion}
+\label{sec:org1dfc579}
+\begin{enumerate}
+\item Introduction of MVO
+\label{sec:org912d7aa}
+\texttt{efficient portfolio} use MVO to determine
+inputs:returns,risks(Std.Dev.),and pair-wise correlations
+\begin{enumerate}
+\item Utility Function
+\label{sec:orgcd3b9c0}
+\(U_{m}=E(R_{m})-0.005\lambda \sigma^{2}_{m}\)
+\(\lambda=1\dots10\)
+\item Safety-first ratio
+\label{sec:org1b3e102}
+\(SFR=\frac{r_{p}-MAR}{\sigma^{2}}\)
+\begin{quote}
+Typically, this single set weights is \texttt{relatively extreme} with very large long and short positions in each asset class
+\end{quote}
+\item Two constraints
+\label{sec:org3a01eba}
+\begin{enumerate}
+\item \textbf{Budget constraint}: weights must sum to 1.
+\item \textbf{Non-negativity constraint}: allow only positive weights.
+\end{enumerate}
+\end{enumerate}
+\item Criticisms of MVO
+\label{sec:org9f59e8e}
+\begin{enumerate}
+\item The asset allocations are highly sensitive to the inputs, especial the expected return(garbage in,garbage out)
+\end{enumerate}
+\item Other Issues of MVO
+\label{sec:org72be8ff}
+\end{enumerate}
+\subsubsection{Other Models}
+\label{sec:org2567323}
+\subsection{Liability-Relative Allocation}
+\label{sec:org071c559}
+\subsubsection{Introduction of Liability-Relative Allocation}
+\label{sec:orga0853e9}
+\subsubsection{Approaches of liability-Relative Allocation}
+\label{sec:org5855434}
+\subsection{Goals-Based Allocation}
+\label{sec:org353e0a4}
+\subsection{Other Allocation Approaches}
+\label{sec:orge759c77}
+\end{document}

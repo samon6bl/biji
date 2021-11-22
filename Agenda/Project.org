@@ -1,0 +1,10 @@
+#+TITLE: Project
+* PROJ CPA
+:PROPERTIES:
+:ID:       bce18980-b10a-45c7-8654-bbe6e276ecfc
+:END:
+明年争取考过所有科目。
+* PROJ Excel 技能
+:PROPERTIES:
+:ID:       88d26800-53dd-4cff-9eb1-4eb37b08b5a4
+:END:

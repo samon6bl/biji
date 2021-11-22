@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       231f75bd-b064-4ca2-8099-de013fd9399a
+:END:
+#+title: 债券、股票价值评估
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+
+* 股票估值
+$股票的期望报酬率=\frac{D_1}{P_0} +g$
+1. $\frac{D_1}{P_0}$叫做*股利收益率*
+2. g 叫做*股利增长率*或*资本利得收益率*
+
+* 债券估值
+| 种类                     | 新发债券     | 流通债券 |
+|--------------------------+--------------+----------|
+| 当债券利率高于必要报酬率 | 逐渐下降     | 波动下降 |
+| 当债券利率低于必要报酬率 | 逐渐上升     | 波动上升 |
+| 当债券利率等于必要报酬率 | 水平线，不变 | 波动     |
+* 优先股、永续债价值的估值方法
+$V_P=\frac{D_P}{r_P}$
+$V_{pd}=\frac{I}{r_{pd}}$
+** 表决权的限制
+
+[[attachment:_20210813_185735screenshot.png]]

@@ -1,0 +1,1249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-04-22 四 21:17 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CPA 会计</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Bolun Liu" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/hideshow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">CPA 会计</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd6e2ae2">1. 教材梳理</a>
+<ul>
+<li><a href="#orgd99007b">1.1. 命题规律总结及趋势预测</a>
+<ul>
+<li><a href="#org6fe13b4">1.1.1. 题型</a></li>
+</ul>
+</li>
+<li><a href="#org9175746">1.2. 总论</a>
+<ul>
+<li><a href="#org974f9d5">1.2.1. 财务报告目标</a></li>
+<li><a href="#orgbf12abb">1.2.2. 会计基本假设</a></li>
+<li><a href="#orga8c7ca8">1.2.3. 会计基础</a></li>
+<li><a href="#orgdf69763">1.2.4. 会计信息质量要求</a></li>
+<li><a href="#org4503168">1.2.5. 会计要素</a></li>
+<li><a href="#org06325ab">1.2.6. “账面价值”与“账面余额”&#xa0;&#xa0;&#xa0;<span class="tag"><span class="TODO">TODO</span></span></a></li>
+<li><a href="#org2d30c30">1.2.7. 收入与利得、费用与损失</a></li>
+<li><a href="#org7c51cf0">1.2.8. 会计要素计量属性</a></li>
+</ul>
+</li>
+<li><a href="#orgaff4d05">1.3. 存货</a>
+<ul>
+<li><a href="#org46fc5ca">1.3.1. 存货的确认与初始计量</a></li>
+<li><a href="#orgb6bdd29">1.3.2. 发出存货的计量</a></li>
+<li><a href="#org5946c30">1.3.3. 期末存货的计量</a></li>
+<li><a href="#org7c6e12a">1.3.4. 存货的盘点清查</a></li>
+</ul>
+</li>
+<li><a href="#orgf4547b2">1.4. 固定资产</a>
+<ul>
+<li><a href="#orgcf330db">1.4.1. 固定资产的确认和初始计量</a></li>
+<li><a href="#orgf6bc795">1.4.2. 固定资产的后续计量</a></li>
+<li><a href="#org8b937c2">1.4.3. 固定资产的处置</a></li>
+</ul>
+</li>
+<li><a href="#org2a4e86f">1.5. 无形资产</a>
+<ul>
+<li><a href="#org2db07cf">1.5.1. 无形资产的确认和初始计量</a></li>
+<li><a href="#orgd728f65">1.5.2. 内部研究开发支出的确认和计量</a></li>
+<li><a href="#org130df34">1.5.3. 无形资产的后续计量</a></li>
+<li><a href="#org6133bae">1.5.4. 无形资产的处置</a></li>
+</ul>
+</li>
+<li><a href="#org2fb0cd9">1.6. 投资性房地产</a></li>
+<li><a href="#org88f3495">1.7. 长期股权投资与合营安排</a></li>
+<li><a href="#orga986dbb">1.8. 资产减值</a></li>
+<li><a href="#org5301dea">1.9. 负债</a></li>
+<li><a href="#org6c7913e">1.10. 职工薪酬</a></li>
+<li><a href="#org632aa2a">1.11. 借款费用</a></li>
+<li><a href="#org8a5fe81">1.12. 股份支付</a></li>
+<li><a href="#org5b77e8f">1.13. 或有事项</a></li>
+<li><a href="#orgd7cb6e6">1.14. 金融工具</a></li>
+<li><a href="#org2a6cd94">1.15. 所有者权益</a></li>
+<li><a href="#org2cadf0f">1.16. 收入、费用和利润</a></li>
+<li><a href="#orgf86f147">1.17. 政府补助</a></li>
+<li><a href="#org9190542">1.18. 非货币性资产交换</a></li>
+<li><a href="#orgc43142f">1.19. 债务重组</a></li>
+<li><a href="#org907d054">1.20. 所得税</a></li>
+<li><a href="#org3940b23">1.21. 外币折算</a></li>
+<li><a href="#org1b9203a">1.22. 租赁</a></li>
+<li><a href="#org7ccfdeb">1.23. 财务报告</a></li>
+<li><a href="#org6243021">1.24. 资产负债表日后事项</a></li>
+<li><a href="#orgac68cc3">1.25. 持有待售的非流动资产、处置组和终止经营</a></li>
+<li><a href="#orgf1aea4d">1.26. 企业合并</a></li>
+<li><a href="#org8dbedfa">1.27. 合并财务报表</a></li>
+<li><a href="#org4d89e27">1.28. 每股收益</a></li>
+<li><a href="#orgc6f0601">1.29. 公允价值计量</a></li>
+<li><a href="#orgf335127">1.30. 政府及民间非营利组织会计</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd6e2ae2" class="outline-2">
+<h2 id="orgd6e2ae2"><span class="section-number-2">1</span> 教材梳理</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgd99007b" class="outline-3">
+<h3 id="orgd99007b"><span class="section-number-3">1.1</span> 命题规律总结及趋势预测</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org6fe13b4" class="outline-4">
+<h4 id="org6fe13b4"><span class="section-number-4">1.1.1</span> 题型</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>客观题
+<ul class="org-ul">
+<li>单选题</li>
+<li>双选题</li>
+</ul></li>
+<li>主观题
+<ul class="org-ul">
+<li>计算分析题</li>
+<li>综合题</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9175746" class="outline-3">
+<h3 id="org9175746"><span class="section-number-3">1.2</span> 总论</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org974f9d5" class="outline-4">
+<h4 id="org974f9d5"><span class="section-number-4">1.2.1</span> 财务报告目标</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+财务报告的目标是向财务报告使用者提供与企业财务状况、经营成果和现金流量等有关的会计信息。
+<b>决策有用观</b> <b>受托责任观</b>
+</p>
+</div>
+</div>
+<div id="outline-container-orgbf12abb" class="outline-4">
+<h4 id="orgbf12abb"><span class="section-number-4">1.2.2</span> 会计基本假设</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>会计主体会计主体是指企业会计确认、计量和报告的 <b>空间范围</b> 。
+<b>一般来说，会计主体必然</b> 是一个会计主体，但会计主体 <b>不一定</b> 是法律主体。</li>
+<li>持续经营持续经营是指可预见的将来，企业将会按当前的规模和状态继续经营下去，不会停业，也不会大规模消减业务。
+<b>持续经营</b> 是 <b>会计分期</b> 的前提。</li>
+<li>会计分期会计分期是指将一个企业持续经营的生产经营活动划分为一个个连续的、间隔相同的期间。</li>
+<li>货币计量货币计量是指会计主体在财务会计确认、计量和报告时一货币作为计量尺度，反映会计主体的生产经营活动。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga8c7ca8" class="outline-4">
+<h4 id="orga8c7ca8"><span class="section-number-4">1.2.3</span> 会计基础</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>权责发生制凡是 <b>当期已经实现</b> 的收入和 <b>已经发生或应当负担</b> 的费用，无论款项是否收付，都应当作为当期的收入和费用，计入利润表。</li>
+<li>收付实现制以收到或支付的现金作为确认收入和费用等的依据。
+<b>政府会计中的预算会计</b> 采用收付实现制</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf69763" class="outline-4">
+<h4 id="orgdf69763"><span class="section-number-4">1.2.4</span> 会计信息质量要求</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ul class="org-ul">
+<li>可靠性要求企业应当以 <b>实际发生</b> 的交易或者事项为依据进行确认、计量和报告。 <b>真实可靠、内容完整</b></li>
+<li>相关性与投资者等财务报告使用者的经济决策需要相关。以 <b>可靠性</b> 为基础。</li>
+<li>可理解性清晰明了</li>
+<li>可比性</li>
+<li>实质重于形式要求企业应当按照交易或者事项的 <b>经济实质</b> 进行会计确认、计量和报告，不应仅以交易或者事项的法律形式为依据。</li>
+<li>重要性反映与企业财务状况、经营成果和现金流量有关的所有重要交易或者事项。
+eg. 本期发现不重要的前期差错，不进行追溯重述。</li>
+<li>谨慎性不应高估资产或收益、低估负债或费用。</li>
+<li>及时性企业对于 <b>已经发生的交易或者事项</b> ，应当 <b>及时</b> 进行确认、计量和报告， <b>不得提前或者延后</b> 。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4503168" class="outline-4">
+<h4 id="org4503168"><span class="section-number-4">1.2.5</span> 会计要素</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<ul class="org-ul">
+<li>资产
+<b>过去的交易或者事项形成的</b></li>
+<li>负债
+<b>现时义务</b></li>
+<li>所有者权益
+<b>剩余权益</b></li>
+<li>收入
+<b>日常活动</b> <b>总流入</b></li>
+<li>费用
+<b>日常活动</b> <b>总流出</b></li>
+<li>利润利润=收入-费用+直接计入当期利润的利得和损失等</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org06325ab" class="outline-4">
+<h4 id="org06325ab"><span class="section-number-4">1.2.6</span> “账面价值”与“账面余额”&#xa0;&#xa0;&#xa0;<span class="tag"><span class="TODO">TODO</span></span></h4>
+<div class="outline-text-4" id="text-1-2-6">
+</div>
+<ol class="org-ol">
+<li><a id="org332fd5f"></a>固定资产<br /></li>
+<li><a id="org8374f44"></a>无形资产<br /></li>
+<li><a id="org9e4375a"></a>投资性房地产<br /></li>
+<li><a id="orge3998bd"></a>以摊余成本计量的金融资产<br /></li>
+<li><a id="org78e07b7"></a>以公允价值计量且其变动计入其他综合收益的金融资产<br /></li>
+<li><a id="org3f42595"></a>以公允价值计算且其变动计入当期损益的金融资产<br /></li>
+</ol>
+</div>
+<div id="outline-container-org2d30c30" class="outline-4">
+<h4 id="org2d30c30"><span class="section-number-4">1.2.7</span> 收入与利得、费用与损失</h4>
+<div class="outline-text-4" id="text-1-2-7">
+<ul class="org-ul">
+<li>收入与利得与所有者投入资本无关。</li>
+<li>费用与损失与向所有者分配利润无关。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7c51cf0" class="outline-4">
+<h4 id="org7c51cf0"><span class="section-number-4">1.2.8</span> 会计要素计量属性</h4>
+<div class="outline-text-4" id="text-1-2-8">
+<p>
+一般应当采用历史成本，某些情况下，为了提高会计信息质量，实现财务报告目标，企业会计准则允许采用重置成本、可变现净值、现值、公允价值计量。
+</p>
+<ul class="org-ul">
+<li>历史成本取得资产时是按照取得时的公允价值计量。</li>
+<li>重置成本盘盈的固定资产等实物资产用 <b>重置成本</b> 计量。</li>
+<li>可变现净值存货期末按成本与可变现净值 <b>熟低</b> 计量。</li>
+<li>现值
+<b>融资性质的</b></li>
+<li>公允价值
+<ul class="org-ul">
+<li>以公允价值计量且其变动计入其他综合收益的金融资产</li>
+<li>以公允价值计算且其变动计入当期损益的金融资产</li>
+<li>采用公允价值模型进行后续计量的投资性房地产</li>
+<li>现金结算的股份支付确认的莺谷职工薪酬等期末用公允价值计量</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaff4d05" class="outline-3">
+<h3 id="orgaff4d05"><span class="section-number-3">1.3</span> 存货</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org46fc5ca" class="outline-4">
+<h4 id="org46fc5ca"><span class="section-number-4">1.3.1</span> 存货的确认与初始计量</h4>
+</div>
+<div id="outline-container-orgb6bdd29" class="outline-4">
+<h4 id="orgb6bdd29"><span class="section-number-4">1.3.2</span> 发出存货的计量</h4>
+</div>
+<div id="outline-container-org5946c30" class="outline-4">
+<h4 id="org5946c30"><span class="section-number-4">1.3.3</span> 期末存货的计量</h4>
+</div>
+<div id="outline-container-org7c6e12a" class="outline-4">
+<h4 id="org7c6e12a"><span class="section-number-4">1.3.4</span> 存货的盘点清查</h4>
+</div>
+</div>
+<div id="outline-container-orgf4547b2" class="outline-3">
+<h3 id="orgf4547b2"><span class="section-number-3">1.4</span> 固定资产</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-orgcf330db" class="outline-4">
+<h4 id="orgcf330db"><span class="section-number-4">1.4.1</span> 固定资产的确认和初始计量</h4>
+<div class="outline-text-4" id="text-1-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="orge048da6"></a>固定资产的性质和确认条件<br />
+<div class="outline-text-5" id="text-1-4-1-1">
+<ul class="org-ul">
+<li>定义：具有下列特征的有形资产
+<ul class="org-ul">
+<li>为生产商品、提供了无、出租或经营管理而持有的</li>
+<li>使用寿命<b>超过一个会计年度</b></li>
+</ul></li>
+<li>确认条件
+<ul class="org-ul">
+<li>与该固定资产有关的经济利益很可能流入企业</li>
+<li>该固定资产的成本能够可靠地计量</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org7c209e6"></a>固定资产的初始计量<br />
+<div class="outline-text-5" id="text-1-4-1-2">
+<dl class="org-dl">
+<dt><b>取得成本</b></dt><dd>企业为构建某项固定资产，是其 <b>达到预订可使用状态前</b> 所发生的可归属于该项固定资产的一切合理必要的之处。
+<ul class="org-ul">
+<li>购买价款</li>
+<li>运杂费</li>
+<li>保险费</li>
+<li>包装费</li>
+<li>安装成本</li>
+</ul></dd>
+</dl>
+</div>
+<ol class="org-ol">
+<li><a id="org734e718"></a>外购固定资产<br />
+<div class="outline-text-6" id="text-1-4-1-2-1">
+<ul class="org-ul">
+<li>购买价款</li>
+<li>相关税费</li>
+<li>使固定资产达到预订可使用状态前所发生的可归属于该项资产的运输费</li>
+<li>装卸费</li>
+<li>安装费</li>
+<li>专业人员服务费</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgca1e915"></a>购入 <b>不需要安装</b> 的固定资产<br />
+<div class="outline-text-7" id="text-1-4-1-2-1-1">
+<pre class="example" id="org8505b6f">
+借：固定资产
+    应交税费--应交增值税(进项税额)
+贷：银行存款
+</pre>
+</div>
+</li>
+<li><a id="orgb75440d"></a>购入 <b>需要安装</b> 的固定资产<br />
+<div class="outline-text-7" id="text-1-4-1-2-1-2">
+<ul class="org-ul">
+<li>购入时</li>
+</ul>
+<pre class="example" id="orgebc1b8b">
+借：*在建工程*
+应交税费-应交增值税（进项税额）
+贷：银行存款等
+</pre>
+<ul class="org-ul">
+<li>安装固定资产</li>
+</ul>
+<pre class="example" id="org4d71a94">
+借：在建工程
+贷：应付职工薪酬
+</pre>
+<ul class="org-ul">
+<li>达到预订可使用状态后转入固定资产</li>
+</ul>
+<pre class="example" id="org1467a26">
+借：固定资产
+贷：在建工程
+</pre>
+</div>
+</li>
+<li><a id="org2a95225"></a>外购固定资产的特殊考虑<br />
+<div class="outline-text-7" id="text-1-4-1-2-1-3">
+<ol class="org-ol">
+<li><b>没有单独标价</b> 的固定资产，应当按照各项固定资产的 <b>公允价值比例</b> 对总成本进行分配。</li>
+<li>购买价款超过正常信用条件延期支付，实质上 <b>具有融资性质</b></li>
+</ol>
+<pre class="example" id="org05267b8">
+借：在建工程
+未确认融资费用
+贷：长期应付款
+</pre>
+<p>
+未确认融资费用摊销 = 期初应负本余额 x 实际利率 =(期初长期应付款余额 - 期初确认融资费用余额)
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org066166b"></a>自行建造固定资产其他方式取得的固定资产的成本<br />
+<ol class="org-ol">
+<li><a id="org77da793"></a>自营方式建造固定资产<br />
+<div class="outline-text-7" id="text-1-4-1-2-2-1">
+<p>
+直接材料、直接人工、直接机器施工费买价、运输费、保险费
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">盘亏、报废及毁损</th>
+<th scope="col" class="org-left">盘盈</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">建设期间</td>
+<td class="org-left">借：在建工程（净损失）</td>
+<td class="org-left">借：工程物资</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">贷：工程物资</td>
+<td class="org-left">贷：在建工程</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">自然灾害原因计入<b>营业外支出</b></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">工程完工后</td>
+<td class="org-left">借：营业外支出（净损失）</td>
+<td class="org-left">借：工程物资</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">贷：工程物资</td>
+<td class="org-left">贷：营业外收入（净收益）</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>其他
+<ul class="org-ul">
+<li>建造固定资产领用工程物资、原材料或库存商品 <b>实际成本</b></li>
+<li>资本化条件的肩宽费用</li>
+</ul></li>
+<li>已达到预订可使用状态，但 <b>尚未办理竣工决算</b>
+<ul class="org-ul">
+<li>暂按 <b>暂估价值</b></li>
+<li>办理竣工决算手续后再调整原来的暂估价值，但 <b>不需要调整愿以计提的折旧额</b></li>
+</ul></li>
+<li><p>
+高危行业企业按照国家规定提取的安全生产费
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">提取安全生产费时</th>
+<th scope="col" class="org-left">借：生产成本、制造费用</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">贷：专项储备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">使用提取的安全生产费时</td>
+<td class="org-left">(1)属于费用性支出，直接冲减专项储备</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">借：专项储备</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">贷：银行存款</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">(2)形成固定资产的</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">发生支出时：</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">借：在建工程</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">应交税费-应交增值税(进项税额)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">贷：银行存款或应付职工薪酬等</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">达到预定可使用状态时:</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">借：固定资产</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">贷：在建工程</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">借：专项储备</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">贷：累计折旧（按固定资产入账金额 <b>一次性</b> 计提折旧</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<blockquote>
+<p>
+在“其他综合收益”和“盈余公积”项目之间增设“专项储备”
+</p>
+</blockquote>
+</div>
+</li>
+<li><a id="org8af01cf"></a>出包方式建造固定资产<br />
+<div class="outline-text-7" id="text-1-4-1-2-2-2">
+<ul class="org-ul">
+<li>建筑工程支出</li>
+<li>安装工程支出</li>
+<li id="需要摊计入个固定资产价值的待摊支出">建设期发生的，不能直接计入
+<ul class="org-ul">
+<li>建造工程发成的管理费</li>
+<li>可行性研究费</li>
+<li>建设期间发生的工程物资盘亏</li>
+<li><b>负荷联合试车费</b></li>
+</ul></li>
+</ul>
+<p>
+待摊支出分配率 = 累计发生的待摊支出 / (建筑工程支出 + 安装工程支出 + 在安装设备支出) x 100%
+</p>
+<blockquote>
+<p>
+为取得土地使用权而缴纳的土地出让金 属于 <b>无形资产</b>
+</p>
+</blockquote>
+</div>
+</li>
+<li><a id="org91d0032"></a>其他方式取得的固定资产<br />
+<div class="outline-text-7" id="text-1-4-1-2-2-3">
+<p>
+<b>作为前期会计差错处理</b> : <b>以前年度损益调整</b>
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org051d10f"></a>存在弃置费用的固定资产<br />
+<div class="outline-text-6" id="text-1-4-1-2-3">
+<pre class="example" id="org9cd66fa">
+借：固定资产
+贷：在建工程
+    *预计负债*
+借：财务费用
+贷：预计负债
+借：预计负债
+贷：银行存款
+</pre>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgf6bc795" class="outline-4">
+<h4 id="orgf6bc795"><span class="section-number-4">1.4.2</span> 固定资产的后续计量</h4>
+<div class="outline-text-4" id="text-1-4-2">
+</div>
+<ol class="org-ol">
+<li><a id="org83528ab"></a>固定资产折旧<br />
+<div class="outline-text-5" id="text-1-4-2-1">
+<p>
+应计折旧 = 固定资产原价 -预计净残值 - 已计提固定资产减值准备累计金额
+</p>
+<ul class="org-ul">
+<li><b>按月计提折旧</b>
+固定资产增加，本月不计提，下月计提固定资产减少，本月仍计提，下月不计提</li>
+<li><b>提足折旧</b> 后，不再计提折旧</li>
+<li>固定资产在定期 <b>大修理期间</b> ，照提折旧。</li>
+<li>固定资产折方法
+<ul class="org-ul">
+<li>年限平均法</li>
+<li>工作量法</li>
+<li>双倍月递减法</li>
+<li>年数综合法</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgd4368d5"></a>固定资产的后续支出<br />
+<ol class="org-ol">
+<li><a id="org6a9c3b9"></a>资本化的后续支出<br />
+<div class="outline-text-6" id="text-1-4-2-2-1">
+<pre class="example" id="orgfb8672a">
+借：在建工程（按原固定资产的账面价值）
+    累计折旧
+    固定资产减值准备
+贷：固定资产
+借：银行存款
+    营业外支出
+贷：在建工程
+借：在建工程
+贷：应付职工薪酬、原材料等
+借：固定资产
+贷：在建工程
+</pre>
+</div>
+</li>
+<li><a id="org1f9a245"></a>费用化的后续支出<br />
+<div class="outline-text-6" id="text-1-4-2-2-2">
+<ul class="org-ul">
+<li>管理费用 ： 行政管理部门的固定资产发生的修理费用</li>
+<li>销售费用 ： 企业专设的销售机构固定资产的日常修理费用</li>
+<li>制造费用 ： 与存货的生产和加工相关的固定资产修理费用</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div id="outline-container-org8b937c2" class="outline-4">
+<h4 id="org8b937c2"><span class="section-number-4">1.4.3</span> 固定资产的处置</h4>
+<div class="outline-text-4" id="text-1-4-3">
+</div>
+<ol class="org-ol">
+<li><a id="orge992304"></a>确认条件（任意之一）<br />
+<div class="outline-text-5" id="text-1-4-3-1">
+<ol class="org-ol">
+<li>该固定资产处于处置状态</li>
+<li>该固定资产预期通过使用或处置不能产生经济利益</li>
+</ol>
+</div>
+</li>
+<li><a id="org30f2e54"></a>帐务处理<br />
+<div class="outline-text-5" id="text-1-4-3-2">
+<ul class="org-ul">
+<li><b>已丧失使用功能</b> 或 <b>因自然灾害发生毁损</b> :  <b>营业收入</b></li>
+<li>出售、转让等原因 ： 资产处置损益</li>
+</ul>
+</div>
+</li>
+<li><a id="org76dcf86"></a>固定资产的清查<br />
+<div class="outline-text-5" id="text-1-4-3-3">
+<ul class="org-ul">
+<li>盘盈
+<b>以前年度损益调整</b></li>
+<li>盘亏
+<b>营业外支出</b></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">原因</th>
+<th scope="col" class="org-left">处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">存货</td>
+<td class="org-left"><b>计量差错</b>、管理不善的净损失</td>
+<td class="org-left">计入管理费用</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">工程物资</td>
+<td class="org-left"><b>建设期间</b> 盘亏、报废损失（非自然灾害导致）的净损失</td>
+<td class="org-left">计入在建工程成本</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>完工后</b> 发生盘亏、报废损失的净损失</td>
+<td class="org-left">计入营业外支出</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">固定资产</td>
+<td class="org-left">当期盘查中盘亏净损失</td>
+<td class="org-left">计入营业外支出</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">上述资产</td>
+<td class="org-left">自然灾害等以外净损失</td>
+<td class="org-left">计入营业外支出</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org2a4e86f" class="outline-3">
+<h3 id="org2a4e86f"><span class="section-number-3">1.5</span> 无形资产</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-org2db07cf" class="outline-4">
+<h4 id="org2db07cf"><span class="section-number-4">1.5.1</span> 无形资产的确认和初始计量</h4>
+<div class="outline-text-4" id="text-1-5-1">
+</div>
+<ol class="org-ol">
+<li><a id="org97d191b"></a>无形资产的定义与特征<br />
+<div class="outline-text-5" id="text-1-5-1-1">
+<dl class="org-dl">
+<dt>定义</dt><dd>企业拥有或者控制的没有实物形态的 <b>可辨认</b> 非货币性资产。</dd>
+</dl>
+<blockquote>
+<p>
+商誉的存在无法与企业自身分离， <b>不具有可辨认性</b> ，不属于无形资产。
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>内容
+<ul class="org-ul">
+<li>专利权</li>
+<li>非专利技术</li>
+<li>商标权</li>
+<li>著作权</li>
+<li>土地使用权</li>
+<li>特许权</li>
+</ul></li>
+<li>确认条件
+<ul class="org-ul">
+<li>与该无形资产有关的经济利益 <b>很可能</b> 流入企业</li>
+<li>该无形资产的成本能够可靠地计量</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org28f8734"></a>无形资产的初始计量<br />
+<div class="outline-text-5" id="text-1-5-1-2">
+<ul class="org-ul">
+<li>包括：
+<ul class="org-ul">
+<li>购买价款</li>
+<li>相关税费</li>
+<li>直接归属于该项资产达到预定用途所发生的其他支出
+<ul class="org-ul">
+<li>使无形资产达到预定用途所发生的专业服务费用</li>
+<li>测试无形资产使佛能够正常发挥作用的费用</li>
+</ul></li>
+</ul></li>
+<li>不包括：
+<ul class="org-ul">
+<li>为引入新产品进行宣传发生的广告费、管理费用及其他间接费用</li>
+<li>无形资产已经达到预定用途以后发生的费用</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>
+无形资产的摊销属于 <code>管理费用</code>
+</p>
+</blockquote>
+<dl class="org-dl">
+<dt>投资者投入的无形资产的成本</dt><dd><code>投资合同或协议约定的价值</code></dd>
+<dt>政府补助</dt><dd><code>公允价值</code></dd>
+<dt>土地使用权的处理</dt><dd><ul class="org-ul">
+<li>自行开发建造厂房时，土地使用权与地上建筑物分别进行摊销和计提折旧</li>
+<li>建造对外出售的房屋建筑物，计入 <code>房屋建筑物成本</code></li>
+<li>外购房屋建筑物时，在建筑物与土地使用权之间进行分配。<b>难以合理分配的</b> ，全部作为 <code>固定资产</code>。</li>
+<li>改变用途的，用于赚取租金或资本增值时，视为 <code>投资性房地产</code></li>
+</ul></dd>
+<dt>(no term)</dt><dd>企业合并中取得的无形资产成本 <a href="20210422164900-to_note.html">To-note</a></dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgd728f65" class="outline-4">
+<h4 id="orgd728f65"><span class="section-number-4">1.5.2</span> 内部研究开发支出的确认和计量</h4>
+<div class="outline-text-4" id="text-1-5-2">
+</div>
+<ol class="org-ol">
+<li><a id="org1dec62a"></a>研究阶段和开发阶段的划分<br />
+<div class="outline-text-5" id="text-1-5-2-1">
+<ul class="org-ul">
+<li>研究阶段
+<ul class="org-ul">
+<li>计划性</li>
+<li>探索性</li>
+</ul></li>
+<li>开发阶段
+<ul class="org-ul">
+<li>针对性</li>
+<li>形成成果的可能性</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org9a3d2dd"></a>开发阶段有关支出资本化的条件<br />
+<div class="outline-text-5" id="text-1-5-2-2">
+<ul class="org-ul">
+<li>完成该无形资产以使其能够使用或出售在技术上具有可行性</li>
+<li>具有完成该无形资产并使用或出售的意图</li>
+<li>无形资产产生经济利益的方式
+<ul class="org-ul">
+<li>证明运用该无形资产生产的产品存在市场或无形资产自身存在市场</li>
+<li>内部使用的有用性</li>
+</ul></li>
+<li>有足够的技术、财务资源和其他资源支持，以完成该无形资产的开发，并有能力使用或出售该无形资产</li>
+<li>归属于该无形资产开发阶段的支出能够可靠地计量</li>
+</ul>
+</div>
+</li>
+<li><a id="orgc1f506a"></a>会计处理<br />
+<div class="outline-text-5" id="text-1-5-2-3">
+<ul class="org-ul">
+<li>管理费用
+<ul class="org-ul">
+<li>研究阶段支出</li>
+<li>开发阶段不符合资本化条件支出</li>
+</ul></li>
+<li>无形资产
+<ul class="org-ul">
+<li>开发阶段符合资本化条件支出</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>
+无法区分研究阶段的支出和开发阶段的支出，应将其所发生的研发支出 <code>全部费用化</code>
+</p>
+</blockquote>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org130df34" class="outline-4">
+<h4 id="org130df34"><span class="section-number-4">1.5.3</span> 无形资产的后续计量</h4>
+<div class="outline-text-4" id="text-1-5-3">
+</div>
+<ol class="org-ol">
+<li><a id="org676c25c"></a>无形资产后续计量的原则<br />
+<div class="outline-text-5" id="text-1-5-3-1">
+<ul class="org-ul">
+<li>估计无形资产的使用寿命
+<dl class="org-dl">
+<dt>有限的</dt><dd><code>年限</code> 或者 <code>构成使用寿命的产量</code></dd>
+<dt>无法预见经济利益期限的</dt><dd><code>使用寿命不确定</code></dd>
+</dl></li>
+<li>无形资产使用寿命的确定
+<dl class="org-dl">
+<dt>源自合同性权利或其他法定权利</dt><dd><b>不应超过</b> 合同性权利或其他法定权利的期限</dd>
+<dt>使用资产的 <b>预期的期限短于合同性权利或其他法定权利规定的期限</b></dt><dd><code>预期企业使用的期限</code></dd>
+</dl></li>
+<li>无形资产使用寿命的复核
+<ul class="org-ul">
+<li><b>至少每年年终了</b> 对使用寿命有限的无线资产的 <b>使用寿命及摊销方法</b> 进行 <b>复核</b></li>
+<li><b>使用寿命及摊销方法</b> <b>不同于以前的估计</b> 应该改变方法 并按照 <code>会计估计变更</code> 处理</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgbf5b8cb"></a>使用寿命有限的无形资产<br />
+<div class="outline-text-5" id="text-1-5-3-2">
+<ul class="org-ul">
+<li>摊销期
+<ul class="org-ul">
+<li>当月增加的无形资产，当月开始摊销</li>
+<li>当月减少的无形资产，当月不再摊销</li>
+</ul></li>
+<li id="摊销方法">直线法、产量法
+<ul class="org-ul">
+<li>无法可靠确定其预期消耗方式的，应当采用 <code>直线法</code> 进行摊销</li>
+<li><code>收入法</code> 摊销的情况
+<ul class="org-ul">
+<li>企业根据合同约定确定无形资产固定的根本性限制条款</li>
+<li>有确凿的证据表明收入的金额和无形资产经济利益的消耗是高度相关的</li>
+</ul></li>
+</ul></li>
+<li>会计处理
+<ul class="org-ul">
+<li>一般应当计入 <code>当期损益（管理费用、其他业务成本等）</code></li>
+<li>无形资产包含的经济利益是通过 <b>转入到所生产的产品或其他资产实现</b> 的，金额应当计入 <code>相关资产的成本</code>
+<ul class="org-ul">
+<li><code>生产成本(直接费用)</code></li>
+<li><code>制造费用(间接费用)</code></li>
+</ul></li>
+<li>待售的无形资产不进行摊销，按照 账面价值 与 公允价值减去出售费用后的净额熟低进行计量</li>
+</ul></li>
+<li id="残值的确定">一般为零
+<ul class="org-ul">
+<li>特殊情况
+<ul class="org-ul">
+<li>有第三方承诺在无形资产使用寿命结束时购买该项无形资产</li>
+<li>可以根据活跃市场得到无形资产预计残值信息，并且该市场在该项无形资产使用寿命结束时可能存在</li>
+</ul></li>
+<li>残值确定至少应于每年年末进行复核，预计其残值与原估计金额不同时，应按照 <code>会计估计变更</code> 进行处理。</li>
+<li>如果 残值重新估计 大于 账面价值 ，则无形资产 <code>不再摊销</code> ，直至残值降至低于账面价值时再恢复摊销</li>
+</ul></li>
+</ul>
+<pre class="example" id="org23c95ff">
+借：管理费用、制造费用等
+贷：累计摊销
+</pre>
+</div>
+</li>
+<li><a id="org5dc9bad"></a>使用寿命不确定的无形资产<br />
+<div class="outline-text-5" id="text-1-5-3-3">
+<p>
+在持有期间不需要摊销，但应当在每个会计期间进行 <code>减值测试</code>
+</p>
+<pre class="example" id="orgb54e490">
+借：资产减值损失
+贷：无形资产减值准备
+</pre>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org6133bae" class="outline-4">
+<h4 id="org6133bae"><span class="section-number-4">1.5.4</span> 无形资产的处置</h4>
+<div class="outline-text-4" id="text-1-5-4">
+<ul class="org-ul">
+<li>无形资产的出售</li>
+</ul>
+<pre class="example" id="org0a5b091">
+借：银行存款
+    无形资产减值准备
+    累计摊销
+贷：无形资产
+    应交税费-应交增值税（销项税额）
+    *资产处置损益*
+</pre>
+<ul class="org-ul">
+<li>无形资产的的出租 <code>其他业务收入</code> 或者 <code>其他业务成本</code></li>
+<li>无形资产的报废 <code>营业外支出</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2fb0cd9" class="outline-3">
+<h3 id="org2fb0cd9"><span class="section-number-3">1.6</span> 投资性房地产</h3>
+</div>
+<div id="outline-container-org88f3495" class="outline-3">
+<h3 id="org88f3495"><span class="section-number-3">1.7</span> 长期股权投资与合营安排</h3>
+</div>
+<div id="outline-container-orga986dbb" class="outline-3">
+<h3 id="orga986dbb"><span class="section-number-3">1.8</span> 资产减值</h3>
+</div>
+<div id="outline-container-org5301dea" class="outline-3">
+<h3 id="org5301dea"><span class="section-number-3">1.9</span> 负债</h3>
+</div>
+<div id="outline-container-org6c7913e" class="outline-3">
+<h3 id="org6c7913e"><span class="section-number-3">1.10</span> 职工薪酬</h3>
+</div>
+<div id="outline-container-org632aa2a" class="outline-3">
+<h3 id="org632aa2a"><span class="section-number-3">1.11</span> 借款费用</h3>
+</div>
+<div id="outline-container-org8a5fe81" class="outline-3">
+<h3 id="org8a5fe81"><span class="section-number-3">1.12</span> 股份支付</h3>
+</div>
+<div id="outline-container-org5b77e8f" class="outline-3">
+<h3 id="org5b77e8f"><span class="section-number-3">1.13</span> 或有事项</h3>
+</div>
+<div id="outline-container-orgd7cb6e6" class="outline-3">
+<h3 id="orgd7cb6e6"><span class="section-number-3">1.14</span> 金融工具</h3>
+</div>
+<div id="outline-container-org2a6cd94" class="outline-3">
+<h3 id="org2a6cd94"><span class="section-number-3">1.15</span> 所有者权益</h3>
+</div>
+<div id="outline-container-org2cadf0f" class="outline-3">
+<h3 id="org2cadf0f"><span class="section-number-3">1.16</span> 收入、费用和利润</h3>
+</div>
+<div id="outline-container-orgf86f147" class="outline-3">
+<h3 id="orgf86f147"><span class="section-number-3">1.17</span> 政府补助</h3>
+</div>
+<div id="outline-container-org9190542" class="outline-3">
+<h3 id="org9190542"><span class="section-number-3">1.18</span> 非货币性资产交换</h3>
+</div>
+<div id="outline-container-orgc43142f" class="outline-3">
+<h3 id="orgc43142f"><span class="section-number-3">1.19</span> 债务重组</h3>
+</div>
+<div id="outline-container-org907d054" class="outline-3">
+<h3 id="org907d054"><span class="section-number-3">1.20</span> 所得税</h3>
+</div>
+<div id="outline-container-org3940b23" class="outline-3">
+<h3 id="org3940b23"><span class="section-number-3">1.21</span> 外币折算</h3>
+</div>
+<div id="outline-container-org1b9203a" class="outline-3">
+<h3 id="org1b9203a"><span class="section-number-3">1.22</span> 租赁</h3>
+</div>
+<div id="outline-container-org7ccfdeb" class="outline-3">
+<h3 id="org7ccfdeb"><span class="section-number-3">1.23</span> 财务报告</h3>
+</div>
+<div id="outline-container-org6243021" class="outline-3">
+<h3 id="org6243021"><span class="section-number-3">1.24</span> 资产负债表日后事项</h3>
+</div>
+<div id="outline-container-orgac68cc3" class="outline-3">
+<h3 id="orgac68cc3"><span class="section-number-3">1.25</span> 持有待售的非流动资产、处置组和终止经营</h3>
+</div>
+<div id="outline-container-orgf1aea4d" class="outline-3">
+<h3 id="orgf1aea4d"><span class="section-number-3">1.26</span> 企业合并</h3>
+</div>
+<div id="outline-container-org8dbedfa" class="outline-3">
+<h3 id="org8dbedfa"><span class="section-number-3">1.27</span> 合并财务报表</h3>
+</div>
+<div id="outline-container-org4d89e27" class="outline-3">
+<h3 id="org4d89e27"><span class="section-number-3">1.28</span> 每股收益</h3>
+</div>
+<div id="outline-container-orgc6f0601" class="outline-3">
+<h3 id="orgc6f0601"><span class="section-number-3">1.29</span> 公允价值计量</h3>
+</div>
+<div id="outline-container-orgf335127" class="outline-3">
+<h3 id="orgf335127"><span class="section-number-3">1.30</span> 政府及民间非营利组织会计</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Bolun Liu</p>
+<p class="date">Created: 2021-04-22 四 21:17</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       02aa99ec-cbdd-41fb-8687-97a22954b5d9
+:END:
+#+title: Use-package用法
+* 结合 evil 键盘映射
+#+begin_src lisp
+(use-package org
+   :demand 5
+   :init
+   (spacemacs/declare-prefix "o" "org")
+
+   :general
+   ("ob" . org-iswitchb)
+   ("oc" . org-clock-goto)
+   ("ok" . org-capture)
+   ("ol" . org-store-link)
+   ("oL" . org-insert-link)
+   ("os" . org-search-view)
+
+   (:keymaps org-mode-map
+             ("C-c C-." . org-time-stamp-inactive)
+             ("M-p" . org-metaup)
+             ("M-n" . org-metadown)
+             ("C-c c" . org-columns))
+
+   (:keymaps org-mode-map
+             :state normal
+             ("RET" . org-return))
+#+end_src

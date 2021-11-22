@@ -1,0 +1,21 @@
+* 学习[[VBA]] [[https://www.lanrenexcel.com/excel-vba-tutorial/][web教程]]
+**
+: ( 英文冒号)
+通常，VBA 中直接将多个语句放置在一行，VBA 会报错。如果想要放置在一行，需要用 :( 英文冒号)连接多个语句。 
+#+BEGIN_SRC vb
+Sub MyCode()
+    Dim name As String : Dim age As Integer
+End Sub
+#+END_SRC
+*** _ (下划线)
+相反，当一条语句过长时，可能需要分成多好书写。如果把一条语句直接回车分成多行，VBA 也会报错。这时需要把空格 + _放置在换行处。
+#+BEGIN_SRC vb 
+Sub MyCode()
+    
+    Dim name As String
+    
+    name = "Hello" & _
+    	"World"
+    
+End Sub
+#+END_SRC

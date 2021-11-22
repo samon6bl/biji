@@ -1,0 +1,9 @@
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+* 星期六, 21 八月 2021
+** 易变现率
+$易变现率 = \frac{所有者权益 + 长期负债 + 流动性经营负债 - 长期资产}{流动性经营资产}$
+** 金融损益
+金融损益=-利息费用 x(1-所得税率)=(公允价值变动收益+金脏资产投资收益-金融资产减值损失-财务费用)×(1-所得税率)
