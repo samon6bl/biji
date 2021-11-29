@@ -4,7 +4,6 @@
 #+title: CPA 会计
 #+SETUPFILE: ~/模板/theme-bigblow.setup
 #+filetags: :CPA:
-
 * 命题规律总结及趋势预测
 ** 题型
 + 客观题
