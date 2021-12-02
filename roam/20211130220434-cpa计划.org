@@ -1,0 +1,62 @@
+:PROPERTIES:
+:ID:       a6bcd510-9b35-4bbc-a320-a5e6a3bb7637
+:END:
+#+title: CPA计划
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
+* 会计复习计划
+** STRT CPA 会计 [0/14]
+DEADLINE: <2022-02-01 二>
+1. [ ] [[id:dc59ad14-5d59-48cc-8a8a-b532219d2bf2][CH1 总论]]
+2. [ ] [[id:29ca8717-23f8-4aa9-a1b1-a35a200ddd45][CH2 存货]]
+3. [ ] [[id:32330c11-cd8d-44ef-b0c1-2f57b8521979][CH3 固定资产]]
+4. [ ] CH4 无形资产
+5. [ ] CH5 投资性房地产
+6. [ ] CH6 长期股权投资和合营安排
+7. [ ] CH7 资产减值
+8. [ ] CH8 负债
+9. [ ] CH9 职工薪酬
+10. [ ] CH10 股份支付
+11. [ ] CH11 借款费用
+12. [ ] CH12 或有事项
+13. [ ] CH13 金融工具
+14. [ ] CH14 租赁
+[[file:~/Downloads/会计计划下.jpg]]
+[[file:~/Downloads/会计计划.jpg]]
+* TODO 审计复习计划 [0/23]
+DEADLINE: <2022-02-28 一>
+1. [ ] CH1 审计概述
+2. [ ] CH2 审计计划
+3. [ ] CH3 审计证据
+4. [ ] CH4 审计抽样方法
+5. [ ] CH5 信息技术对审计的影响
+6. [ ] CH6 审计工作底稿
+7. [ ] CH7 风险评估
+8. [ ] CH8 风险应对
+9. [ ] CH9 销售与收款循环的审计
+10. [ ] CH10 采购与付款循环的审计
+11. [ ] CH11 生产与存货循环的审计
+12. [ ] CH12 货币资金的审计
+13. [ ] CH13 对舞弊和法律法规的考虑
+14. [ ] CH14 审计沟通
+15. [ ] CH15 注册会计师利用他人的工作
+16. [ ] CH16 对集团财务报表审计的特殊考虑
+17. [ ] CH17 其他特殊项目的审计
+18. [ ] CH18 完成审计工作
+19. [ ] CH19 审计报告
+20. [ ] CH20 企业内部控制审计
+21. [ ] CH21 会计事务所业务质量管理
+22. [ ] CH22 职业道德基本原则和概念框架
+23. [ ] Ch23 审计业务对独立性的要求
+
+[[file:~/Downloads/审计计划.jpg]]
+[[file:~/Downloads/审计计划下.jpg]]
+* TODO 税法复习计划 [0/3]
+DEADLINE: <2022-02-01 二>
+- [ ] CH1 税法总论
+- [ ] CH2 增值税法
+- [ ] CH3 消费税法
+[[file:~/Downloads/税法计划.jpg]]

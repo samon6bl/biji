@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       dc59ad14-5d59-48cc-8a8a-b532219d2bf2
+:END:
+#+title: CH1 总论
+#+tags: "CPA-会计"
+#+startup: latexpreview
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont{Noto Serif CJK SC}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei }
