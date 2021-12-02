@@ -1,1 +1,95 @@
+:PROPERTIES:
+:ID:       7640b928-ec2b-47e3-b7eb-107ccf82f580
+:END:
 #+title: Pythonå­¦ä¹ 
+* æŠ€èƒ½
+** pdf å¤„ç†
+** é‚®ç®±å‘é€
+:PROPERTIES:
+:ID:       658fe259-31c9-4f83-945a-46a21989f543
+:END:
+[[https://www.cnblogs.com/yufeihlf/p/5726619.html]]
+#+begin_src python
+
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+from email.header import Header
+
+#ÉèÖÃsmtplibËùĞèµÄ²ÎÊı
+#ÏÂÃæµÄ·¢¼şÈË£¬ÊÕ¼şÈËÊÇÓÃÓÚÓÊ¼ş´«ÊäµÄ¡£
+smtpserver = 'smtp.163.com'
+username = 'XXX@163.com'
+password='XXX'
+sender='XXX@163.com'
+#receiver='XXX@126.com'
+#ÊÕ¼şÈËÎª¶à¸öÊÕ¼şÈË
+receiver=['XXX@126.com','XXX@126.com']
+
+subject = 'Python email test'
+#Í¨¹ıHeader¶ÔÏó±àÂëµÄÎÄ±¾£¬°üº¬utf-8±àÂëĞÅÏ¢ºÍBase64±àÂëĞÅÏ¢¡£ÒÔÏÂÖĞÎÄÃû²âÊÔok
+#subject = 'ÖĞÎÄ±êÌâ'
+#subject=Header(subject, 'utf-8').encode()
+
+#¹¹ÔìÓÊ¼ş¶ÔÏóMIMEMultipart¶ÔÏó
+#ÏÂÃæµÄÖ÷Ìâ£¬·¢¼şÈË£¬ÊÕ¼şÈË£¬ÈÕÆÚÊÇÏÔÊ¾ÔÚÓÊ¼şÒ³ÃæÉÏµÄ¡£
+msg = MIMEMultipart('mixed')
+msg['Subject'] = subject
+msg['From'] = 'XXX@163.com <XXX@163.com>'
+#msg['To'] = 'XXX@126.com'
+#ÊÕ¼şÈËÎª¶à¸öÊÕ¼şÈË,Í¨¹ıjoin½«ÁĞ±í×ª»»ÎªÒÔ;Îª¼ä¸ôµÄ×Ö·û´®
+msg['To'] = ";".join(receiver)
+#msg['Date']='2012-3-16'
+
+#¹¹ÔìÎÄ×ÖÄÚÈİ
+text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.baidu.com"
+text_plain = MIMEText(text,'plain', 'utf-8')
+msg.attach(text_plain)
+
+#¹¹ÔìÍ¼Æ¬Á´½Ó
+sendimagefile=open(r'D:\pythontest\testimage.png','rb').read()
+image = MIMEImage(sendimagefile)
+image.add_header('Content-ID','<image1>')
+image["Content-Disposition"] = 'attachment; filename="testimage.png"'
+msg.attach(image)
+
+#¹¹Ôìhtml
+#·¢ËÍÕıÎÄÖĞµÄÍ¼Æ¬:ÓÉÓÚ°üº¬Î´±»Ğí¿ÉµÄĞÅÏ¢£¬ÍøÒ×ÓÊÏä¶¨ÒåÎªÀ¬»øÓÊ¼ş£¬±¨554 DT:SPM £º<p><img src="cid:image1"></p>
+html = """
+<html>
+  <head></head>
+  <body>
+    <p>Hi!<br>
+       How are you?<br>
+       Here is the <a href="http://www.baidu.com">link</a> you wanted.<br>
+    </p>
+  </body>
+</html>
+"""
+text_html = MIMEText(html,'html', 'utf-8')
+text_html["Content-Disposition"] = 'attachment; filename="texthtml.html"'
+msg.attach(text_html)
+
+
+#¹¹Ôì¸½¼ş
+sendfile=open(r'D:\pythontest\1111.txt','rb').read()
+text_att = MIMEText(sendfile, 'base64', 'utf-8')
+text_att["Content-Type"] = 'application/octet-stream'
+#ÒÔÏÂ¸½¼ş¿ÉÒÔÖØÃüÃû³Éaaa.txt
+#text_att["Content-Disposition"] = 'attachment; filename="aaa.txt"'
+#ÁíÒ»ÖÖÊµÏÖ·½Ê½
+text_att.add_header('Content-Disposition', 'attachment', filename='aaa.txt')
+#ÒÔÏÂÖĞÎÄ²âÊÔ²»ok
+#text_att["Content-Disposition"] = u'attachment; filename="ÖĞÎÄ¸½¼ş.txt"'.decode('utf-8')
+msg.attach(text_att)
+
+#·¢ËÍÓÊ¼ş
+smtp = smtplib.SMTP()
+smtp.connect('smtp.163.com')
+#ÎÒÃÇÓÃset_debuglevel(1)¾Í¿ÉÒÔ´òÓ¡³öºÍSMTP·şÎñÆ÷½»»¥µÄËùÓĞĞÅÏ¢¡£
+#smtp.set_debuglevel(1)
+smtp.login(username, password)
+smtp.sendmail(sender, receiver, msg.as_string())
+smtp.quit()
+#+end_src
