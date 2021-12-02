@@ -1,13 +1,10 @@
 :PROPERTIES:
 :ID:       7640b928-ec2b-47e3-b7eb-107ccf82f580
 :END:
-#+title: Pythonå­¦ä¹ 
-* æŠ€èƒ½
-** pdf å¤„ç†
-** é‚®ç®±å‘é€
-:PROPERTIES:
-:ID:       658fe259-31c9-4f83-945a-46a21989f543
-:END:
+#+title: PythonÑ§Ï°
+* °ì¹«×Ô¶¯»¯
+** pdf ´¦Àí
+** ÓÊ¼ş´¦Àí
 [[https://www.cnblogs.com/yufeihlf/p/5726619.html]]
 #+begin_src python
 

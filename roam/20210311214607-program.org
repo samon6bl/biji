@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       b19fb792-63da-4319-91a0-ce7a13dd23ad
-:END:
-#+title: Program

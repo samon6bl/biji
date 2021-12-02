@@ -9,3 +9,165 @@
  * 《分析与思考》了解中国资本市场的入门书\\
  * 《贫穷的本质》解答了为什么赚钱的道理我都知道但我仍然如此贫穷\\
  * 《被讨厌的勇气》认识自卑的本质
+* [[https://zhidao.baidu.com/question/150894461.html][存货包括生产成本吗？_百度知道]] :website:
+
+[2021-12-02 四 20:01]
+
+存货包含生产成本。
+
+存货包含生产成本是因为生产成本除损失以后，最终报应的对象就是存货，是存货成本的最重要的组成部分。如果生产成本账不对，存货成本就不可能对。
+
+生产成本与存货的勾稽关系，本期生产成本的贷方发生额，等于企业产成品的借方发生额上面的这个勾稽关系是在不考虑特殊情况的时候用的，生产成本的期末余额表示在产品。应写在报表中的存货里。他是存货的组成部分。
+
+[[https://iknow-pic.cdn.bcebos.com/0b46f21fbe096b6381beaac702338744eaf8ac86][[[https://iknow-pic.cdn.bcebos.com/0b46f21fbe096b6381beaac702338744eaf8ac86?x-bce-process%3Dimage%2Fresize%2Cm_lfit%2Cw_600%2Ch_800%2Climit_1%2Fquality%2Cq_85%2Fformat%2Cf_jpg]]]]
+
+*扩展资料：*
+
+为了核算生产成本，可设置生产成本账户进行核算，并可以分设基本生产成本和辅助生产成本账户核算。
+
+制造费用在未计入各产品成本计算对象之前，应先在制造费用账户中进行归集核算，然后再按一定标准分配计入各产品成本之中。
+
+本期发生的生产费用加上期初在产品成本，减去期末在产品成本，便能计算出本期完工产品成本。期初在产品成本 + 本期发生生产费用 = 本期完工产品成本 +期末在产品成本。
+
+生产成本的主要账务处理：
+
+（一）企业发生的各项直接生产成本，借记本科目（基本生产成本、辅助生产成本），贷记“原材料”、“库存现金”、“银行存款”、“应付职工薪酬”等科目。
+
+各生产车间应负担的制造费用，借记本科目（基本生产成本、辅助生产成本），贷记“制造费用”科目。
+
+辅助生产车间为基本生产车间、企业管理部门和其他部门提供的劳务和产品，期（月）末按照一定的分配标准分配给各受益对象。
+
+借记本科目（基本生产成本）、“管理费用”、“销售费用”、“其他业务成本”、“在建工程”等科目，贷记本科目（辅助生产成本）。
+
+企业已经生产完成并已验收入库的产成品以及入库的自制半成品，应于期（月）末，借记“库存商品”等科目，贷记本科目（基本生产成本）。
+
+（二）生产性生物资产在产出农产品过程中发生的各项费用，借记“农业生产成本”科目，贷记“库存现金”、“银行存款”、“原材料”、“应付职工薪酬”、“生产性生物资产累计折旧”等科目。
+
+农业生产过程中发生的应由农产品、消耗性生物资产、生产性生物资产和公益性生物资产共同负担的费用，借记“农业生产成本------共同费用”科目。
+
+贷记“库存现金”、“银行存款”、“原材料”、“应付职工薪酬”、“农业生产成本”等科目。
+
+期（月）末，可按一定的分配标准对上述共同负担的费用进行分配，借记“农业生产成本------农产品”、“消耗性生物资产”、“生产性生物资产”、“公益性生物资产”等科目。
+
+贷记“农业生产成本------共同费用”科目。应由生产性生物资产收获的农产品负担的费用，应当采用合理的方法在农产品各品种之间进行分配。
+
+如有尚未收获的农产品，还应当在已收获和尚未收获的农产品之间进行分配。生产性生物资产收获的农产品验收入库时，按其实际成本，借记“农产品”科目，贷记本科目（农产品）。
+
+存货一般具有以下特点：
+
+1、存货是有形资产，这一点有别于无形资产。
+
+2、存货具有较强的流动性。在企业中，存货经常处于不断销售、耗用、购买、或重置中，具有较快的变现能力和明显的流动性。
+
+3、存货具有时效性和发生潜在损失的可能性。在正常的经营活动下，存货能够规律地转换为货币资产或其他资产，但长期不能耗用的存货就有可能变为积压物资或降价销售，从而造成企业的损失。
+* [[https://blog.csdn.net/qq_41489540/article/details/109643821][使用 Git 实现自动 Commit 和 Push_张俊杰 的博客-CSDN博客_git 自动push]] :website:
+
+[2021-12-02 四 22:11]
+#+begin_src shell
+set /p commit_log=请输入 commit 日志信息:
+git status
+git add -A
+git commit -m "%commit_log%"
+git push origin master
+pause
+#+end_src
+* [[https://zhuanlan.zhihu.com/p/85358471][如何理解应交增值税的会计处理 - 知乎]] :website:
+
+[2021-12-02 四 22:49]
+
+** 如何理解应交增值税的会计处理
+  :PROPERTIES:
+  :CUSTOM_ID: 如何理解应交增值税的会计处理
+  :CLASS: Post-Title
+  :END:
+
+<<Popover8-toggle>>
+[[https://www.zhihu.com/people/zuo-zuo-ye-22][[[https://pic3.zhimg.com/v2-7b044e7931b7b191eecc4b2661a0ec75_xs.jpg?source=172ae18b]]]]
+
+<<Popover9-toggle>>
+[[https://www.zhihu.com/people/zuo-zuo-ye-22][只谈逻辑的关耳]]
+
+注册会计师
+
+130 人赞同了该文章
+
+不喜欢把一堆知识点列出来，如果有这个闲功夫，那直接建议别人去翻教材就行了。我写的东西都是我自己总结而来的，尽量做到“浅显易懂”。
+
+会计处理离不开业务，离不开经济实质。如何把复杂的会计处理理解透，第一步肯定是要先了解这个业务在现实中是怎么走的，这是我写会计相关文章的出发点。
+
+很多人看不到为什么要“这样”做账，其实只是因为你没接触过实务，不知道这个会计处理背后反映的经济业务是什么，程序是怎么走的，当然看不明白账务处理。这就跟学英语一样，你学了一句话或一个新单词，但是不知道在什么语境下去用它，只会干巴巴地背，一下子就忘了。
+
+--------------
+
+今天就来讲讲应交增值税的会计处理背后的逻辑，[[https://www.zhihu.com/search?q=%E5%87%BA%E5%8F%A3%E9%80%80%E7%A8%8E&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A85358471%7D][出口退税[[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld2JveD0iMCAwIDE1IDE1IiBjbGFzcz0iY3NzLXVrcWFrMSI+PHBhdGggZD0iTTEwLjg5IDkuNDc3bDMuMDYgMy4wNTlhMSAxIDAgMCAxLTEuNDE0IDEuNDE0bC0zLjA2LTMuMDZhNiA2IDAgMSAxIDEuNDE0LTEuNDE0ek02IDEwYTQgNCAwIDEgMCAwLTggNCA0IDAgMCAwIDAgOHoiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==]]]]等下一讲再写。
+
+增值税这一块的会计处理，初学者一看容易晕，因为看上去好像科目好多，每个科目什么时候用，很多书本又没说清楚。
+
+首先，为什么科目这么多，其实科目一点也不多，准确来说，科目就一个，应交税费。
+
+而*应交增值税，未交增值税，代抵扣/待认证进项税额，代转销项税额，以及和出口退税相关的科目*就是应交税费的二级明细，专门用来核算增值税相关的业务。
+
+你可以理解为
+
+一个企业到年底的时候，应交税费会有个余额，这个余额代表了不仅仅是应交增值税多少钱，还包括应交什么房产税，城建税，教育费附加，[[https://www.zhihu.com/search?q=%E5%9C%9F%E5%9C%B0%E5%A2%9E%E5%80%BC%E7%A8%8E&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A85358471%7D][土地增值税[[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld2JveD0iMCAwIDE1IDE1IiBjbGFzcz0iY3NzLXVrcWFrMSI+PHBhdGggZD0iTTEwLjg5IDkuNDc3bDMuMDYgMy4wNTlhMSAxIDAgMCAxLTEuNDE0IDEuNDE0bC0zLjA2LTMuMDZhNiA2IDAgMSAxIDEuNDE0LTEuNDE0ek02IDEwYTQgNCAwIDEgMCAwLTggNCA0IDAgMCAwIDAgOHoiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==]]]]等等各种杂七杂八的税，而增值税只是其中的一项，那上面列举的这些增值税相关二级科目的余额加总起来，就是企业年末的时候关于应交增值税的余额。
+
+[[https://pic1.zhimg.com/v2-ff6e9c271e9ca4a55ea104d4fa072670_b.jpg]]
+
+*先理解一下应交增值税这个科目。*
+
+*应交增值税一点也不难，它只是有很多三级明细，我们说应交税费是一级明细，应交税费-应交增值税是二级明细，而应交增值税-进项税/[[https://www.zhihu.com/search?q=%E9%94%80%E5%94%AE%E7%A8%8E&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A85358471%7D][销售税[[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld2JveD0iMCAwIDE1IDE1IiBjbGFzcz0iY3NzLXVrcWFrMSI+PHBhdGggZD0iTTEwLjg5IDkuNDc3bDMuMDYgMy4wNTlhMSAxIDAgMCAxLTEuNDE0IDEuNDE0bC0zLjA2LTMuMDZhNiA2IDAgMSAxIDEuNDE0LTEuNDE0ek02IDEwYTQgNCAwIDEgMCAwLTggNCA0IDAgMCAwIDAgOHoiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==]]]]等就是三级明细了。*
+
+[[https://pic1.zhimg.com/v2-de29f8771e1cef5942dfe497a175f0cc_b.jpg]]
+
+这些三级明细有借方科目，也有贷方科目，每个科目都是代表了特定的经济业务，如果不结合实务来看，就比较难理解。
+
+这些科目就像是天平的两侧，借方代表少交，贷方代表多交，然后到期末，借贷的余额就是企业应交的增值税税额。
+
+我们先举个最简单的例子。
+
+#+caption: 整个天平代表的是应交增值税这一个二级科目。
+[[https://pic1.zhimg.com/v2-fe227646a40d389148566bc3d50345c8_b.jpg]]
+
+如图所示，我们假设这个天平代表的是应交增值税这个二级科目，那三级科目就是这个天平两侧，会计上的[[https://www.zhihu.com/search?q=%E5%80%9F%E6%96%B9&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A85358471%7D][借方[[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld2JveD0iMCAwIDE1IDE1IiBjbGFzcz0iY3NzLXVrcWFrMSI+PHBhdGggZD0iTTEwLjg5IDkuNDc3bDMuMDYgMy4wNTlhMSAxIDAgMCAxLTEuNDE0IDEuNDE0bC0zLjA2LTMuMDZhNiA2IDAgMSAxIDEuNDE0LTEuNDE0ek02IDEwYTQgNCAwIDEgMCAwLTggNCA0IDAgMCAwIDAgOHoiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==]]]]上天平左侧，会计上的[[https://www.zhihu.com/search?q=%E8%B4%B7%E6%96%B9&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A85358471%7D][贷方[[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld2JveD0iMCAwIDE1IDE1IiBjbGFzcz0iY3NzLXVrcWFrMSI+PHBhdGggZD0iTTEwLjg5IDkuNDc3bDMuMDYgMy4wNTlhMSAxIDAgMCAxLTEuNDE0IDEuNDE0bC0zLjA2LTMuMDZhNiA2IDAgMSAxIDEuNDE0LTEuNDE0ek02IDEwYTQgNCAwIDEgMCAwLTggNCA0IDAgMCAwIDAgOHoiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==]]]]是天平右侧。最后的余额就是反映这个天平的倾向。
+
+企业销售货物要缴税吧，如果有一点点会计基础的人，都知道每做一笔销售收入确认，贷方都有个应交增值税-销项税，那个就是企业针对该笔销售要交的税，在贷方，所以应该在天平右侧。
+
+企业采购货物，取得了[[https://www.zhihu.com/search?q=%E5%A2%9E%E5%80%BC%E7%A8%8E%E4%B8%93%E7%94%A8%E5%8F%91%E7%A5%A8&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A85358471%7D][增值税专用发票[[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld2JveD0iMCAwIDE1IDE1IiBjbGFzcz0iY3NzLXVrcWFrMSI+PHBhdGggZD0iTTEwLjg5IDkuNDc3bDMuMDYgMy4wNTlhMSAxIDAgMCAxLTEuNDE0IDEuNDE0bC0zLjA2LTMuMDZhNiA2IDAgMSAxIDEuNDE0LTEuNDE0ek02IDEwYTQgNCAwIDEgMCAwLTggNCA0IDAgMCAwIDAgOHoiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==]]]]，怎么做账？是不是借方会有个应交增值税-进项税，进项税可以抵扣销项税，那此时这个进项税就在天平左侧。
+
+到了要交增值税的时点，我要交的税不就是两边相减的差额。
+
+借贷原理搞清楚了，这些三级科目就很好理解，反正最简单的理解就是*借少交，贷多交*。
+
+比如借方有一个叫做 销项税抵减的三级明细，这个是什么意思呢？
+
+举个实务的例子。
+
+在实务中，[[https://www.zhihu.com/search?q=%E9%87%91%E8%9E%8D%E5%95%86%E5%93%81&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A85358471%7D][金融商品[[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld2JveD0iMCAwIDE1IDE1IiBjbGFzcz0iY3NzLXVrcWFrMSI+PHBhdGggZD0iTTEwLjg5IDkuNDc3bDMuMDYgMy4wNTlhMSAxIDAgMCAxLTEuNDE0IDEuNDE0bC0zLjA2LTMuMDZhNiA2IDAgMSAxIDEuNDE0LTEuNDE0ek02IDEwYTQgNCAwIDEgMCAwLTggNCA0IDAgMCAwIDAgOHoiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==]]]]买卖是按差额来计算应交增值税的。企业买了 100 股股票，成本是 100，持有几个月后卖了 300，应该缴纳的增值税是（300-100）*6%=12，税率 6%。那我在做账的时候，实际上我卖了 300，增值税销项税额应该是 300*6%=18，但是我应该交的只有 12，所以有 6 块钱我记在借方，增值税-[[https://www.zhihu.com/search?q=%E9%94%80%E9%A1%B9%E7%A8%8E%E9%A2%9D&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A85358471%7D][销项税额[[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld2JveD0iMCAwIDE1IDE1IiBjbGFzcz0iY3NzLXVrcWFrMSI+PHBhdGggZD0iTTEwLjg5IDkuNDc3bDMuMDYgMy4wNTlhMSAxIDAgMCAxLTEuNDE0IDEuNDE0bC0zLjA2LTMuMDZhNiA2IDAgMSAxIDEuNDE0LTEuNDE0ek02IDEwYTQgNCAwIDEgMCAwLTggNCA0IDAgMCAwIDAgOHoiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==]]]]抵减 6，因此借贷相抵后，贷方为 12，也就是我应该缴纳 12。
+
+再比如说，贷方有个[[https://www.zhihu.com/search?q=%E8%BF%9B%E9%A1%B9%E7%A8%8E%E9%A2%9D&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A85358471%7D][进项税额[[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld2JveD0iMCAwIDE1IDE1IiBjbGFzcz0iY3NzLXVrcWFrMSI+PHBhdGggZD0iTTEwLjg5IDkuNDc3bDMuMDYgMy4wNTlhMSAxIDAgMCAxLTEuNDE0IDEuNDE0bC0zLjA2LTMuMDZhNiA2IDAgMSAxIDEuNDE0LTEuNDE0ek02IDEwYTQgNCAwIDEgMCAwLTggNCA0IDAgMCAwIDAgOHoiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==]]]]转出，又是什么意思？
+
+在实务中，企业拿到进项税之后是应该先拿去税局认证的，认证后税局说，可以了，你这个发票没问题，可以拿去抵扣销项税，这个时候你交税的时候才能抵。但有些情况下，你拿去认证之后，后面突然这个发票抵不了了，比如什么情况呢，比如你这张发票是采购了一些原材料来的，但后面因为你没看好这些原材料，被人偷了，属于管理不善导致原材料不见了，这时候你这些原材料就没办法用到企业的生产经营啊，所以就不能拿去抵了。
+
+为什么呢？很简单，增值税是针对什么来征税的？
+
+*增值税是以商品（含应税劳务）在流转过程中产生的[[https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/%25E5%25A2%259E%25E5%2580%25BC%25E9%25A2%259D/7066625][增值额]]作为计税依据而征收的一种[[https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/%25E6%25B5%2581%25E8%25BD%25AC%25E7%25A8%258E/316877][流转税]]。*
+
+你这个商品（原材料）都没了，也就是到你这里就是最后一环了，你不幸成为最后的消费者，承担了这部分税。
+
+最后，再来说一下*应交增值税和未交增值税这两个二级明细有什么区别。*
+
+在实务中，增值税实行的是每月或每季度预缴，年末汇算清缴的形式。
+
+每个月月末（实际上已经是下个月月初）你自己去网上填写申报表，填你这个月的收入是多少，自己算一下销项税是多少，可以抵扣多少进项税，要缴纳多少钱，理论上算出来的应缴纳的增值税额就是你账上应交税费-应交增值税的余额。
+
+接着，这个数从你申报到缴纳一般会有个时间差，这时，我们申报完后，就做一笔账，把应交税费-应交增值税的余额，转到应交税费-未交增值税，实际上就是从应交增值税的贷方，转到未交增值税的贷方，都是负债，没什么区别。
+
+所以，可以理解为，应交增值税是用来核算企业日常经营过程中关于增值税增减变动的明细，到期末，余额就转到未交增值税了，所以未交增值税用来反映在期末，我欠税局多少钱（贷方），或者税局欠我多少钱（借方）。
+
+什么时候税局会欠我钱？
+
+比如说，房地产企业在预售房产的时候，针对预收的房款，是需要先预先缴纳增值税的。可能税局怕你拿了钱跑路了。所以，企业在预收房款时，每个月需要申报缴纳增值税，但是这个税也只是预缴，因为企业并未交房，要等交房后，这个商品才流转，这个时候才会是真正意义需要要缴税的时点。所以我们在账上，就把预交的增值税记到未交增值税的借方，于是到年末就不是欠税局钱了，而是税局欠我们钱。
+
+ok，关于出口退税的核算，以及二级明细的理解，下一篇再写。
+
+（/我是传播审计正能量的萤火虫南南，欢迎关注，我会努力更新会计和审计的文章，和各位一起成长）/
